@@ -1,0 +1,44 @@
+<!--pages/index/gourmetSpecialty/index.wxml-->
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class' bind:click-left="onClickLeft">
+	<view slot="left" class="nav_left">
+		<van-icon name="arrow-left" />
+		<text class="nav_left_text">美食特产</text>
+	</view>
+</van-nav-bar>
+<view class="attractions">
+	<view class="head_box">
+		<view class="head">
+			<view bindtap="click_option" data-index="first" data-id="first" class="first  {{activeNum == 'first' ? 'active_color':''}}">
+				柳州市
+				<text class=" {{activeNum == 'first' ? 'active':''}}"></text>
+			</view>
+			<view class="scroll_tab">
+				<view class="{{activeNum == index ? 'active_color':''}}" wx:for='{{cityList}}' bindtap="click_option" wx:key data-index="{{index}}" data-id="{{item.id}}">
+					{{item.name}}
+					<text class=" {{activeNum == index ? 'active':''}}"></text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="content" wx:if="{{foodList.length>0}}">
+		<view class="one" wx:for="{{foodList}}" wx:key data-item="{{item.id}}" bindtap="toFoodDetails">
+			<image src="{{host}}{{item.coverUrl}}" />
+			<view class="one_box">
+				<view class="title">{{item.name}}</view>
+				<view class="title_button">
+					<view class="button_left">
+						<view class="button_see">
+							<image src="{{iconUrl}}/see.png" />{{item.watchCount}}</view>
+						<view class="button_share">
+							<image src="{{iconUrl}}/share.png" />{{item.shareCount}}</view>
+					</view>
+					<view class="button_right">人均<text>{{item.price}}元</text></view>
+				</view>
+			</view>
+		</view>
+	</view>
+  <view wx:else class="_nothing_box">
+    <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+    <view>暂无内容</view>
+  </view>
+</view>

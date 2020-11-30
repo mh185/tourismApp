@@ -1,0 +1,27 @@
+/* pages/user/merchantCheckIn/bmap/index.wxss */
+.map_container{ 
+  height: calc(100% - 146rpx); 
+  width: 100%; 
+} 
+.map { 
+  height: 100%; 
+  width: 100%; 
+}
+.footer{
+  padding-top: 30rpx;
+  width:100%;
+  padding-bottom: 30rpx;
+}
+.operate-btn{
+  width:100%!important;
+  height: 86rpx;
+  padding: 0;
+  margin:0;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 86rpx;
+  text-align: center;
+  background-color:#027D58;
+  border-radius: 44rpx;
+}

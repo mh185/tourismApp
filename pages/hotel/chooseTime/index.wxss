@@ -1,0 +1,25 @@
+/* pages/hotel/chooseTime/index.wxss */
+.top {
+  position: relative;
+  height: 125rpx;
+}
+.hotelTop {
+  position: absolute;
+  left: 19.42rpx;
+  top: 60rpx;
+  right: 0;
+  /* margin: auto; */
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.hotelTopLeft {
+  width: 16rpx;
+  height: 32rpx;
+}
+.head_title {
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 400;
+}

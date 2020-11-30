@@ -1,0 +1,221 @@
+<!--pages/enterfoodShop/index.wxml-->
+<view class="head">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="shop">
+            <view class="shop_head">
+                <image mode="widthFix" src="{{imgUrl}}{{sellerInfor.shopImg}}"></image>
+            </view>
+            <view class="shop_detail">
+                <view class="shop_title">
+                    <view class="shop_name">{{sellerInfor.shopName}}</view>
+                    <view class="shop_collection" bindtap='collect' wx:if='{{!sellerInfor.collection}}'>
+                        <image mode="widthFix" src="../../images/icon-sc.png">
+                        </image>
+                    </view>
+                    <view class="shop_collection" bindtap='cancelCollect' wx:else>
+                        <image mode="widthFix" src="../../images/icon-scY.png">
+                        </image>
+                    </view>
+                </view>
+                <!-- 提取方式 -->
+                <view class="carry_mode">
+                    <view class="carry_modetxt">￥{{sellerInfor.avgPrice}}/人</view>
+                    <!-- <view class="carry_modetxt">指定地点自取</view> -->
+                </view>
+                <view class="give">
+                    {{sellerInfor.address}}
+                </view>
+                <view class="greyColor">
+                   距离当前{{sellerInfor.distanceUm ? sellerInfor.distanceUm : 0}}公里
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- <block wx:if="{{tabs[1].isActive}}">
+        <view class="shop">
+            <view class="shop_head">
+                <image mode="widthFix" src="{{sellerInfor.headImg}}"></image>
+            </view>
+            <view class="shop_detail">
+                <view class="shop_title">
+                    <view class="shop_name">{{sellerInfor.nickName}}</view>
+                    <view class="shop_collection" bindtap='collect' wx:if='{{!sellerInfor.collection}}'>
+                        <image mode="widthFix" src="../../images/icon-sc.png">
+                        </image>
+                    </view>
+                    <view class="shop_collection" bindtap='cancelCollect' wx:else>
+                        <image mode="widthFix" src="../../images/icon-scY.png">
+                        </image>
+                    </view>
+                </view>
+                <view class="carry_mode">
+                    <view class="carry_modetxt">可自提</view>
+                    <view class="carry_modetxt">指定地点自取</view>
+                </view>
+                <view class="give">
+                    配送 :<text> 20元起</text>
+                </view>
+                <view class="give">
+                    配送范围 :<text> 2公里</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[2].isActive}}">
+        <view class="shop">
+            <view class="shop_head">
+                <image mode="widthFix" src="{{sellerInfor.headImg}}"></image>
+            </view>
+            <view class="shop_detail">
+                <view class="shop_title">
+                    <view class="shop_name">{{sellerInfor.nickName}}</view>
+                    <view class="shop_collection" bindtap='collect' wx:if='{{!sellerInfor.collection}}'>
+                        <image mode="widthFix" src="../../images/icon-sc.png">
+                        </image>
+                    </view>
+                    <view class="shop_collection" bindtap='cancelCollect' wx:else>
+                        <image mode="widthFix" src="../../images/icon-scY.png">
+                        </image>
+                    </view>
+                </view>
+                <view class="carry_mode">
+                    <view class="carry_modetxt">可自提</view>
+                    <view class="carry_modetxt">指定地点自取</view>
+                </view>
+                <view class="give">
+                    配送 :<text> 20元起</text>
+                </view>
+                <view class="give">
+                    配送范围 :<text> 2公里</text>
+                </view>
+            </view>
+        </view>
+    </block> -->
+</view>
+
+<view class="main">
+    <view class="tabs">
+        <view class="tabs_title">
+            <view class="title_item {{item.isActive?'active':''}}" wx:for="{{tabs}}" wx:key="id" bindtap="handleItemTap"
+                data-index="{{index}}">
+                {{item.value}}
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="seatmeal_container">
+            <view class="seatmeal_name">
+                套餐选择
+            </view>
+            <view class="searmeal_list">
+                <scroll-view scroll-y="{{true}}" style="height:100%">
+                    <view class="searmeal_item" wx:for="{{sellerInfor.minLabels}}" wx:key="{{id}}" wx:if="{{sellerInfor.minLabels.length!==0}}">
+                        <block>
+                            <view class="searmeal_headImg" wx:if="{{item.labelImg!==null}}">
+                                <image mode="widthFix" src="{{imgUrl}}{{item.labelImg}}"></image>
+                            </view>
+                            <view class="searmeal_headImg" wx:else>
+                                <image mode="widthFix" src="{{imgUrl}}{{item.goodImg}}"></image>
+                            </view>
+                        </block>
+                        <!-- 套餐信息 -->
+                        <view class="searmeal_datail">
+                            <view class="searmeal_name">{{item.labelName}}</view>
+                            <view class="searmeal_info">
+                                商品简介:{{item.body}}
+                            </view>
+                            <view class="searmeal_price">￥{{item.price}}</view>
+                        </view>
+                        <view class="searmeal_buyBtn" bindtap="goFoodBuy" data-id="{{item.goodsId}}" data-price="{{item.price}}" data-labelid="{{item.id}}" data-labelname="{{item.labelName}}">购买</view>
+                    </view>
+                    <view class="noset" wx:if="{{sellerInfor.minLabels.length==0}}">
+                        <view>目前暂无套餐选择~</view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[1].isActive}}">
+        <view class="menu_container">
+            <!-- 左侧 -->
+            <view class="menu_left">
+                <scroll-view scroll-y>
+                    <view class="menu_leftitem {{index===itemIndex? 'item_active' : ''}}" wx:for="{{4}}" wx:key="*this"
+                        bindtap="leftItem" data-index="{{index}}">
+                        分类1
+                    </view>
+                </scroll-view>
+            </view>
+            <!-- 右侧 -->
+            <view class="menu_right">
+                <scroll-view scroll-y>
+                    <view class="goods_main">
+                        <view class="goods_list" wx:for="{{40}}">
+                            <view class="goodsImg">
+                                <image mode="widthFix"></image>
+                            </view>
+                            <view class="goods_detail">
+                                <view class="goods_name">菜品名称</view>
+                                <view class="goods_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus excepturi architecto officiis rerum dicta explicabo veritatis eaque. Sapiente, aspernatur laudantium deserunt eum, alias corrupti explicabo nihil, expedita architecto cumque rem!</view>
+                                <view class="goodsMoney">
+                                    <view class="goods_price">
+                                        ￥25
+                                    </view>
+                                    <view class="goods_num">+</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- <view class="goods_group" wx:for="{{rightContent}}" wx:for-index="index1" wx:for-item="item1">
+                        <view class="goods_title">
+                            <text class="delimiter">/</text>
+                            <text class="title">{{item1.cat_name}}</text>
+                            <text class="delimiter">/</text>
+                        </view>
+                        <view class="goods_list">
+                            <navigator wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2"
+                                wx:key="cat_id" url="../goods_list/index?cid={{item2.cat_id}}">
+                                <image src="{{item2.cat_icon}}" mode="widthFix"></image>
+                                <view>{{item2.cat_name}}</view>
+                            </navigator>
+
+                        </view>
+                    </view> -->
+                </scroll-view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[2].isActive}}">
+        <view>2222222222222</view>
+    </block>
+
+</view>
+<!-- 评价 -->
+<view class='comment'>
+    <view class="commentTit">评价</view>
+    <view class="commentBox" wx:if="{{ThemeComment.length>0}}">
+        <view class='commentBoxList clearfix' wx:for="{{ThemeComment}}" wx:for-index="index">
+            <view class="commentBoxListHeadImg fl">
+                <image class="headImg" src="{{item.headImg}}"></image>
+            </view>
+            <view class="fr commentBoxListRight">
+                <view class="commentBoxListName">{{item.nickName}}</view>
+                <view class="commentBoxListPentagram ">
+                    <block wx:for="{{commentPoint}}" wx:for-item="commentPointList" wx:for-index="key">
+                        <image class="PentagramImg" wx:if="{{item.describeScore>key}}" src="{{commentPointList.bright}}"></image>
+                        <image class="PentagramImg" wx:else src="{{commentPointList.dark}}"></image>
+                    </block>
+                </view>
+                <view class="commentBoxListContent">评价内容:<text>{{item.comment}}</text></view>
+                <view class="commentBoxListImg clearfix">
+                    <image class="fl" wx:for="{{item.file}}" wx:for-index="i" wx:for-item="fileImg" src='{{imgUrl}}{{fileImg.uploadfilepath}}{{fileImg.uploadfilename}}'></image>
+                </view>
+                <view class="commentBoxListColor">{{item.label||'暂无'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="noComment" wx:else>暂无评论</view>
+    <view class="commentBoxMore" wx:if="{{ThemeComment.length>0}}">
+        <view class="commentBoxMoreBtn" bindtap='allcomment'>全部评论</view>
+    </view>
+</view>

@@ -1,0 +1,93 @@
+<!--pages/more/travelNotesIntroduction/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">游记攻略</text>
+  </view>
+</van-nav-bar>
+<!-- 搜索 -->
+<view class="search_box">
+  <van-search 
+    bind:search='onSearch' 
+    bind:change='onChange'
+    shape="round" 
+    placeholder="搜索游记名称" 
+    value="{{key}}" 
+  />
+</view>
+<view class="attractions">
+  <!-- <view class="head">
+    <view bindtap="click_option" data-index="first" data-id="first" class="first  {{activeNum == 'first' ? 'active_color':''}}"> 
+      柳州市 
+      <text class=" {{activeNum == 'first' ? 'active':''}}"></text>
+    </view>
+    <view class="scroll_tab">
+      <view class="{{activeNum == index ? 'active_color':''}}" wx:for='{{navType}}' bindtap="click_option" wx:key="index" data-index="{{index}}" data-id="{{item.id}}">
+        {{item.name}}
+        <text class=" {{activeNum == index ? 'active':''}}"></text>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view class="content">
+    <swiper bindchange="swiperBindchange">
+      <block wx:for="{{travelsBaner}}" wx:for-item="item" wx:key="item.id">
+        <swiper-item>
+          <image class="head_img" src="{{host}}{{item.coverFileManageUrl}}"/>
+          <view>{{item.title}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+  <!-- 轮播 -->
+  <view class="head">
+    <swiper bindchange="swiperBindchange">
+      <block wx:for="{{travelsBaner}}" wx:for-item="item" wx:key="item.id">
+        <swiper-item>
+          <image class="head_img" src="{{host}}{{item.coverFileManageUrl}}" />
+          <view class="title_box">{{item.title}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="current_class">
+      {{current}}/{{travelsBaner.length}}
+    </view>
+  </view>
+  <view class="list" wx:if='{{listData.length > 0}}'>
+    <!-- <view class="box" wx:for="{{listaDte}}" wx:key="index" bindtap="toDetails" wx:for-item="item" data-index='{{item.id}}' > -->
+    <view class="box" wx:for="{{listData}}" wx:key="index" wx:for-item="item" >
+      <image src="{{host}}{{item.coverFileManageUrl}}" bindtap="toDetails" data-index='{{item.id}}' />
+      <view class="box_right">
+        <view bindtap="toDetails" data-index='{{item.id}}'>
+          <view class="right_title">
+            <rich-text nodes="{{item.title}}"></rich-text>
+          </view>
+          <!-- <view class="right_title">{{item.title}}</view> -->
+          <view class="right_moddle">
+            <image src="{{host}}{{item.officialUrl}}" />
+            {{item.officialName}}
+          </view>
+        </view>
+        <view class="right_lower">
+          <view class="lower_left"><image src="{{iconUrl}}/see.png"/>{{item.seeNum}}</view>
+          <view class="lower_right">
+            <button class="but" data-id="{{id}}" data-index='{{item.id}}' open-type="share"><image src="{{iconUrl}}/share.png" /></button>
+            {{item.shareNum}}
+          </view>
+          <!-- <view class="lower_right"><image src="{{iconUrl}}/share.png"/>{{item.shareNum}}</view> -->
+        </view>
+      </view>
+    </view>
+    <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+    <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <view wx:else class="_nothing_box">
+    <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+    <view>暂无内容</view>
+  </view>
+</view>

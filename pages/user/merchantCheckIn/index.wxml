@@ -1,0 +1,178 @@
+<!--pages/user/merchantCheckIn/index.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="ckin-tit">店铺信息<text class="required">（必填）</text> </view>
+  <view class="ckin-wrap">
+    <view class="ckin-item">
+      <view class="ckin-label">店铺名称</view>
+      <view class="ckin-input">
+        <input class="ipt" name="shopName" name="shopName" placeholder-class="place" placeholder="请输入店铺名称"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">法人</view>
+      <view class="ckin-input">
+        <input class="ipt" name="corporateName" placeholder-class="place" placeholder="请输入店铺法人"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">性别</view>
+      <view class="ckin-input">
+        <!-- <input class="ipt" name="sex" placeholder-class="place" placeholder="请输入店铺名称"></input> -->
+         <picker bindchange="bindGenderChange" name="sex" value="{{sex}}" range-key="text" range="{{sexArr}}">
+            <view class="picker {{!sex ? 'place' : ''}}">{{sex==='1'?'男':sex==='0'?'女':'请选择性别'}}</view>
+          </picker>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">年龄</view>
+      <view class="ckin-input">
+        <input type="number" min="0" max="150" class="ipt" name="age" placeholder-class="place" placeholder="请输入店铺法人年龄"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">文化程度</view>
+      <view class="ckin-input">
+         <picker bindchange="bindDegreeChange" name="degreeArr" value="{{degree}}" range="{{degreeArr}}">
+            <view class="picker {{!degree ? 'place' : ''}}">{{degree? degree : '请选择店铺法人文化程度'}}</view>
+          </picker>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">地址</view>
+      <navigator wx:if="{{!address}}" class="ckin-input" url="./bmap/index" hover-class="none">
+        <input class="ipt" disabled="true" value="{{address}}" name="address" placeholder-class="place" placeholder="请选择地图定位地址"></input>
+      </navigator>
+      <view class="ckin-input" wx:if="{{address}}">
+        <input class="ipt"value="{{address}}" name="address" bindinput="addressChange" maxlength="30" placeholder-class="place" placeholder="请选择地图定位地址"></input>
+      </view>
+      <input type="hidden" class="hide" name="lat" value="{{lat}}"></input>
+      <input type="hidden" class="hide" name="lng" value="{{lng}}"></input>
+      <input type="hidden" class="hide" name="pro" value="{{pro}}"></input>
+      <input type="hidden" class="hide" name="city" value="{{city}}"></input>
+      <input type="hidden" class="hide" name="area" value="{{area}}"></input>
+      <input type="hidden" class="hide" name="code" value="{{code}}"></input>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">经营种类</view>
+      <view class="ckin-input">
+        <input class="ipt" name="runType" placeholder-class="place" placeholder="请输入店铺经营种类"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">身份证号码</view>
+      <view class="ckin-input">
+        <input type="idcard" class="ipt" name="corporateNumber" placeholder-class="place" maxlength="18" placeholder="请输入店铺法人身份证号码"></input>
+      </view>
+    </view>
+    <!-- <view class="ckin-item">
+      <view class="ckin-label">手机号码</view>
+      <view class="ckin-input">
+        <input type="number" class="ipt" name="phone" placeholder-class="place" maxlength="11" placeholder="请输入店铺法人手机号码"></input>
+      </view>
+    </view> -->
+    <view class="ckin-item">
+      <view class="ckin-label">座机<text class="un-required">（非必填）</text></view>
+      <view class="ckin-input">
+        <input type="number" class="ipt" name="landPhone" placeholder-class="place" placeholder="请输入店铺座机"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">传真<text class="un-required">（非必填）</text></view>
+      <view class="ckin-input">
+        <input type="number" class="ipt" name="fax" placeholder-class="place" placeholder="请输入店铺传真"></input>
+      </view>
+    </view>
+  </view>
+  <view class="ckin-tit">账户信息<text class="required">（必填）</text> </view>
+  <view class="ckin-wrap tar">
+    <view class="ckin-item">
+      <view class="ckin-label">收款账户开户行</view>
+      <view class="ckin-input">
+        <input class="ipt" name="bankName" placeholder-class="place" placeholder="请输入店铺收款账户开户行"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">收款帐号</view>
+      <view class="ckin-input">
+        <input type="number" class="ipt" name="shopName" placeholder-class="place" placeholder="请输入店铺收款帐号"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">收款帐号省份</view>
+      <view class="ckin-input">
+        <input class="ipt" name="shopName" placeholder-class="place" placeholder="请输入店铺收款帐号省份"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">收款帐号地区</view>
+      <view class="ckin-input">
+        <input class="ipt" name="shopName" placeholder-class="place" placeholder="请输入店铺收款帐号地区"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">收款帐号地区号码</view>
+      <view class="ckin-input">
+        <input class="ipt" name="shopName" placeholder-class="place" placeholder="请输入店铺收款帐号地区号码"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">收款帐号地区名称</view>
+      <view class="ckin-input">
+        <input class="ipt" name="shopName" placeholder-class="place" placeholder="请输入店铺收款帐号地区名称"></input>
+      </view>
+    </view>
+    <view class="ckin-item">
+      <view class="ckin-label">收款帐号账户短信</view>
+      <view class="ckin-input">
+        <input class="ipt" name="shopName" placeholder-class="place" placeholder="收款帐号账户短信"></input>
+      </view>
+    </view>
+    <view class="ckin-upload">
+      <view class="ckin-label">上传营业执照<text class="required">（必填）</text> </view>
+      <view class="upload-wrap" bindtap="uploadImg">
+        <!-- <image class="up-icon"></image> -->
+        <view class="up-tips">
+          <image src="../../../images/upload.png"></image>
+          <view class="tips-desc">请上传营业执照</view>
+        </view>
+      </view>
+    </view>
+    <view class="ckin-upload">
+      <view class="ckin-label">上传身份证<text class="required">（必填）</text> </view>
+      <view class="upload-wrap" bindtap="uploadImg">
+        <!-- <image class="up-icon"></image> -->
+        <view class="up-tips">
+          <image src="../../../images/upload.png"></image>
+          <view class="tips-desc">请上传身份证正面</view>
+        </view>
+      </view>
+      <view class="upload-wrap" bindtap="uploadImg">
+        <!-- <image class="up-icon"></image> -->
+        <view class="up-tips">
+          <image src="../../../images/upload.png"></image>
+          <view class="tips-desc">请上传身份证反面</view>
+        </view>
+      </view>
+    </view>
+    <view class="ckin-upload">
+      <view class="ckin-label">上传银行卡<text class="required">（必填）</text> </view>
+      <view class="upload-wrap" bindtap="uploadImg">
+        <!-- <image class="up-icon"></image> -->
+        <view class="up-tips">
+          <image src="../../../images/upload.png"></image>
+          <view class="tips-desc">请上传银行卡正面</view>
+        </view>
+      </view>
+      <view class="upload-wrap" bindtap="uploadImg">
+        <!-- <image class="up-icon"></image> -->
+        <view class="up-tips">
+          <image src="../../../images/upload.png"></image>
+          <view class="tips-desc">请上传银行卡反面</view>
+        </view>
+      </view>
+    </view>
+    <view class="footer">
+      <button class="operate-btn" formType="submit">提交</button>
+    </view> 
+  </view>
+</form>

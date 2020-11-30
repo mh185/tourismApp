@@ -1,0 +1,101 @@
+<!--pages/more/tourGuide/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+>
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">导游查询</text>
+  </view>
+</van-nav-bar>
+
+<view class="tourGuide">
+  <!-- 搜索 -->
+  <view>
+    <van-search shape="round" value="{{ value }}" bind:change="keyword" placeholder="请输入搜索关键词" />
+  </view>
+  <!-- 筛选 -->
+  <view class="screening">
+    <view>
+      <view class="screening_box" bindtap="showScreening">
+        <view class="screening_right">筛选</view>
+        <!-- <view wx:if="{{SelectDisplay}}" wx:for="{{Select}}"> -->
+        <view wx:for="{{select}}" wx:key="unique">
+          <view wx:if="{{item.name}}" class="options action">{{item.name}}</view>
+        </view>
+        <!-- <view class="options action" wx:if="{{}}">男</view>
+        <view class="options action">初级</view> -->
+      </view>
+      <view wx:if='{{screeningBool}}'>
+        <view class="screening_box" bindtap="choiceGender">
+          <view class="screening_right">性别</view>
+          <view class="options {{sex === '1' ? 'action' : ''}}" data-id="1">男</view>
+          <view class="options {{sex === '0' ? 'action' : ''}}" data-id="0">女</view>
+        </view>
+        <view class="screening_box" bindtap="choiceGrade">
+          <view class="screening_right">等级</view>
+          <view class="options {{grade === 'INITIAL' ? 'action' : ''}}" data-id="INITIAL">初级</view>
+          <view class="options {{grade === 'MIDDLE' ? 'action' : ''}}" data-id="MIDDLE">中级</view>
+          <view class="options {{grade === 'SENIOR' ? 'action' : ''}}" data-id="SENIOR">高级</view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="showScreening">
+      <van-icon wx:if='{{!screeningBool}}' name="arrow-down" />
+      <van-icon wx:else name="arrow-up" />
+    </view>
+  </view>
+  <!-- 导游证号 -->
+  <view class="resuilt_list_scroll"  wx:if='{{showList}}'>
+    <view class="resuilt_list" wx:for="{{cardList}}" wx:key="index">
+      <view class="list_item">
+        <view class="item_right_border">
+          <image src="{{iconUrl}}/item-2.png"></image>
+          <view class="border_right">
+            <view class="list_item_line">
+              <text class="left">导游证号</text>
+              <text class="right">{{item.guideIdCardNumber}}</text>
+            </view>
+            <view class="list_item_line">
+              <text class="left">姓名</text>
+              <text class="right">{{item.name}}</text>
+            </view>
+            <view class="list_item_line">
+              <text class="left">等级</text>
+              <text class="right">{{item.nameZh}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+    <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <!-- 开始搜索 -->
+  <view class="food">
+    <!-- wx:if="{{showButton}}" -->
+    <view class="food_button" bindtap="toSearch">开始搜索</view>
+  </view>
+</view>
+<!-- 提醒 -->
+<van-popup show="{{ show }}" custom-class='popup_box' bind:close="onClose">
+  <view class="showPopup">
+    <view class="pop_head">
+      提醒
+    </view>
+    <view class="pop_content">
+      查询更新频率以文旅部发布为准，该查询仅供参考。
+    </view>
+    <view class="bottom_box">
+      <view class="bottom">
+        <view class="bottom_left bottom_title" bindtap="toMyAppointment">取消</view>
+        <view class="bottom_right bottom_title" bindtap="toSearchList">继续查询</view>
+      </view>
+    </view>
+  </view>
+</van-popup>
+
+<!-- <van-dialog id="van-dialog" /> -->

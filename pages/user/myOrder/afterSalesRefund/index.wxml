@@ -1,0 +1,53 @@
+<!--pages/user/myOrder/afterSalesRefund/index.wxml-->
+<view class="afterSalesRefund">
+    <block wx:for="{{orderdetails.goods}}" wx:for-item="item" wx:for-index="index" wx:key='index'>
+        <view class="commodityBoxList clearfix">
+            <image class="commodityImg fl" src="{{imgUrl}}{{item.goodsHeadImg.uploadfilepath}}{{item.goodsHeadImg.uploadfilename}}" />
+            <view class="fl commodityBoxListLeft">
+                <view class="commodityName">{{item.goodsTitle}}</view>
+                <view class="commodityProduct">
+                    <text class="commodityProductName">{{item.goodsLabel}}</text>
+                </view>
+                <view class="commodityMoney">
+                    ￥{{item.goodsNowPrice}}
+                    <text class="fr commodityNum">x{{item.goodsNum}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+
+    <view class="reasonReturnTit">
+        <text>退款原因<text class="reasonReturnTitRTis">(必填)</text></text>
+        <view class="fr reasonReturnRight">
+            <picker bindchange="bindPickerChange" range-key="displayValue" value="{{index}}" range="{{recuseData}}">
+                <view class="picker">
+                    <text wx:if='{{refundCauseId}}'>{{ recuseData[index].displayValue}}</text>
+                    <text wx:else>请选择</text>
+                    <image class="fr" src="../../../../images/right.png"></image>
+                </view>
+            </picker>
+        </view>
+        <!-- <view class="fr reasonReturnRight">请选择<image class="fr" src="../../../../images/right.png"></image></view> -->
+    </view>
+    <view class="reasonReturnTit">
+        <text>退款类型<text class="reasonReturnTitRTis">(必填)</text></text>
+        <view class="fr reasonReturnRight">
+            <picker bindchange="bindTypeChange" range-key="displayValue" value="{{recuseTypeIndex}}" range="{{recuseType}}">
+                <view class="picker">
+                    <text wx:if='{{refundCauseType}}'>{{ recuseType[recuseTypeIndex].displayValue}}</text>
+                    <text wx:else>请选择</text>
+                    <image class="fr" src="../../../../images/right.png"></image>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="reasonReturnDetails">
+        <view class="reasonReturnDetailsTit">详细原因<text class="reasonReturnTitRTis">(必填)</text></view>
+        <view class="reasonReturnDetailsContent">
+            <textarea value="{{detailCause}}" bindinput="geDetailCause" cols="30" rows="10" placeholder="请填写详细，不少于15个字"></textarea>
+        </view>
+    </view>
+</view>
+<view class="operatingBtnBox">
+    <view class="referBtn" bind:tap="btnRefund">提交</view>
+</view>

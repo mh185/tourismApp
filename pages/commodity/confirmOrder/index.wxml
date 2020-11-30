@@ -1,0 +1,154 @@
+<!--pages/commodity/confirmOrder/index.wxml-->
+<wxs module="filters" src="../../../utils/filters.wxs"></wxs>
+<view class="userInfor" wx:if="{{addressData!=null&&addressData!=''}}" bindtap='getAddress'>
+    <view class="userInforName">{{addressData.name}}<text class="tel">{{addressData.phone}}</text></view>
+    <view class="userInforAddress">{{addressData.address}}</view>
+    <image class="userInforRight" src="../../../images/right.png"></image>
+</view>
+<view class="userInfor setAddress" wx:else bindtap='getAddress'>
+    请前往设置收货地址
+</view>
+<view class="allShop" wx:if="{{confirmOrderList!=null&&confirmOrderList.length>0}}">
+    <view class="allShopBox" wx:for="{{confirmOrderList}}" wx:for-index="index" wx:for-item="item">
+        <view class="allShopBoxTit" data-sellerid='{{item.sellerId}}'>
+            <image class="shopIcon fl" src="../../../images/dp-icon.png" /> {{item.shopName}}
+            <image class="right fr" src="../../../images/right.png" />
+        </view>
+        <view class="allShopBoxProduct">
+            <view class="allShopBoxProductList clearfix" wx:for="{{item.goods}}" wx:for-index="i"
+                wx:for-item="goodslist">
+                <image class="fl allShopBoxProductListImg"
+                    src="{{imgUrl}}{{goodslist.headImg.uploadfilepath}}{{goodslist.headImg.uploadfilename}}"></image>
+                <view class="fl allShopBoxProductListRight">
+                    <view class="allShopBoxProductListName">{{goodslist.name}}</view>
+                    <view class="allShopBoxProductListSpecification"><text>{{goodslist.cartLabel}}</text></view>
+                    <view class="allShopBoxProductListMoney">
+                        <text class="fl money">￥{{filters.toFix(goodslist.cartNum*goodslist.cartPrice||0)}}</text>
+                        <view class="fr specificaShopNuminput clearfix">
+                            <text class="less fl" bindtap='less' data-cartid='{{goodslist.cartId}}'>-</text>
+                            <text class="numebr fl">{{goodslist.cartNum}}</text>
+                            <text class="plus fl" bindtap='plus' data-cartid='{{goodslist.cartId}}'>+</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="allShopBoxInfor">
+            <view class="allShopBoxInforList clearfix">
+                <text class="fl RemarksTit">备注</text>
+                <view class="fr RemarksInput">
+                    <input class="Remarks" bindinput="remarks" data-sellerid='{{item.sellerId}}' placeholder="选填，留言" />
+                </view>
+            </view>
+            <view class="allShopBoxInforList clearfix">
+                <text class="fl RemarksTit">发票信息</text>
+                <view class="fr RemarksInput" wx:if='{{invoiceData!=null&&invoiceData[item.sellerId]}}'
+                    bindtap='invoice' data-sellerid='{{item.sellerId}}'>
+                    普通发票-{{invoiceData[item.sellerId].typesOf==1?'个人':'企业'}}-{{invoiceData[item.sellerId].invoice}}
+                </view>
+                <view wx:else class="fr RemarksInput" bindtap='invoice' data-sellerid='{{item.sellerId}}'>
+                    不开具发票
+                </view>
+            </view>
+            <view class="allShopBoxInforList clearfix">
+                <text class="fl RemarksTit">快递费</text>
+                <view class="fr RemarksInput">
+                    ￥{{item.courierFee!=null&&item.courierFee!=''&&item.courierFee!=0?item.courierFee:0}}
+                </view>
+            </view>
+
+            <view class="allShopBoxInforList clearfix" wx:if="{{item.goods_type==1 || item.goods_type==3}}">
+                <text class="fl RemarksTit">优惠</text>
+                <view class="fr RemarksInput">
+                    ￥0.00
+                </view>
+            </view>
+            <view class="allShopBoxInforList clearfix flex_c_c" data-index="{{index}}" data-id='{{item.sellerId}}'
+                bindtap="openCouponModelBtn" wx:if="{{item.goods_type==0 || item.goods_type==2}}">
+                <view class="flex_c">
+                    <text class="fl RemarksTit">优惠</text>
+                    <view class="activitiesMan">
+                        <image mode="widthFix" src="../../../images/man.png"></image>
+                    </view>
+                    <view>满减</view>
+                </view>
+
+                <view class=" RemarksInput flex_1">
+                    ￥{{discountIds[item.sellerId].DiscountAmount?discountIds[item.sellerId].DiscountAmount:'0.00'}}
+                    <image class="cardIcon " src="../../../images/right.png" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 平台优惠券 -->
+    <!-- <view class="allShopBoxInfor">
+        <view class="allShopBoxInforList clearfix flex_c_c" data-index="{{index}}" data-id='{{item.sellerId}}'
+            bindtap="openCouponModelBtn">
+            <view class="flex_c">
+                <text class="fl RemarksTit">平台优惠券</text>
+                <view class="activitiesMan">
+                    <image mode="widthFix" src="../../../images/man.png"></image>
+                </view>
+                <view>满减</view>
+            </view>
+
+            <view class=" RemarksInput flex_1">
+                ￥{{discountIds[item.sellerId].DiscountAmount?discountIds[item.sellerId].DiscountAmount:'0.00'}}
+                <image class="cardIcon " src="../../../images/right.png" />
+            </view>
+        </view>
+    </view> -->
+
+</view>
+
+<view class="payBox clearfix">
+    <text class="fl payBoxMoney">实付金额 <text>￥{{totalMoney}}</text></text>
+    <view class="fr payBoxBtn" bindtap='getprompt'>立即支付</view>
+</view>
+
+<view class="popup" wx:if="{{prompt}}">
+    <view class="popupCenter">
+        <view class="popupCenterTit">请顾客再次确认收货地址是否准确</view>
+        <view class="popupCenterWeb">
+            <view class="userInforName">{{addressData.name}}<text class="tel">{{addressData.phone}}</text></view>
+            <view class="userInforAddress">{{addressData.address}}</view>
+        </view>
+        <view class="popupCenterBtn clearfix">
+            <view class="fl popupCenterBtnLeft " bindtap='getprompt'>取消</view>
+            <view class="fr popupCenterBtnRight " bindtap='getSaveOrder'>确定</view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 优惠券弹窗 -->
+<view class="specificaPopupcBox" wx:if="{{couponModel}}" style="padding-top:10rpx;">
+    <view class="couponTitle">
+        <view class="couponTitlefl">优惠券</view>
+        <view class="couponTitlefr" bindtap='couponModelBtn'>
+            <image mode="widthFix" src="../../../images/close.png"></image>
+        </view>
+    </view>
+    <view class="couponcontent">
+        <scroll-view scroll-y style="height: 100%;">
+            <block wx:for="{{cardList}}" wx:if="{{cardList.length}}">
+                <view class="card_roll">
+                    <view class="card_l">
+                        <view class="money">{{item.discount}}</view>
+                        <view class="full_money">满{{item.full}}元可用</view>
+                    </view>
+                    <view class="card_r">
+                        <view style="font-size: 28rpx;">{{item.discountName}}</view>
+                        <view>使用期限: {{item.endDate}}到期</view>
+                    </view>
+                    <view class="receiveBtn" data-id="{{item.id}}" data-discount="{{item.discount}}"
+                        data-full="{{item.full}}" bindtap="useCard">
+                        <view class="cardBtn">立即使用</view>
+                    </view>
+                </view>
+            </block>
+            <view wx:if="{{cardList.length==0}}" class="noData">暂无可使用的优惠卷~</view>
+        </scroll-view>
+    </view>
+    <view class="specificaPopupcBoxBtn" bindtap='couponModelBtn'>确定</view>
+</view>

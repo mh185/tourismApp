@@ -1,0 +1,43 @@
+/* pages/logIn/registrationAgreement/index.wxss */
+page {
+    background-color: #fff;
+    font-size: 24rpx;
+}
+.nav_left{
+    font-size: 40rpx;
+    color: #000000;
+    font-weight: 500;
+    font-family: Source Han Serif CN;
+  
+  }
+  .nav_left .nav_left_text{
+    margin-left:24rpx;
+  }
+.box {
+    margin: 50rpx 30rpx;
+}
+.main {
+    padding: 0 20rpx 100rpx;
+}
+
+.text_title {
+    margin-top: 50rpx;
+    text-align: center;
+    font-size: 32rpx;
+}
+/* 首行缩进 */
+.indent {
+     text-indent: 2em;
+}
+/* 加粗 */
+.bold {
+    font-weight: 700;
+}
+/* 居中 */
+.center {
+    text-align: center;
+}
+/* 首行缩进5 */
+.indentfive {
+    padding-left: 100rpx;
+}

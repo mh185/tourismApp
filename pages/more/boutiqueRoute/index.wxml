@@ -1,0 +1,39 @@
+<!--pages/boutiqueRoute/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+>
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">精品路线</text>
+  </view>
+</van-nav-bar>
+
+<view class="bj">
+  <view class="head">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="全部"></van-tab>
+
+    <van-tab wx:for="{{navType}}" wx:for-item="{{item}}" wx:key="{{item.id}}" wx:for-item="item" title="{{item.name}}"></van-tab>
+
+    </van-tabs>
+    <view class="listItem" bindtap="toDetails" wx:for="{{listDate.rows}}" wx:key="index" wx:for-item="item" data-index='{{item.id}}' >
+      <view class="list">
+        <view class="list-img">
+          <image src="{{host}}{{item.fileUrl}}" />
+        </view>
+        <view class="list-rignt">
+          <view class="list-title">{{item.title}}</view>
+          <!-- <view class="list_middle">
+            <image class="list_middle_img" src="{{host}}{{item.travelAgentsLogo}}" />
+            <text>{{item.travelAgentsName}}</text>
+          </view> -->
+          <!-- <view class="list_money">￥<text>199</text>.00</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

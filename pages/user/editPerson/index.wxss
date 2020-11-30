@@ -1,0 +1,148 @@
+/* pages/user/editPerson/index.wxss */
+
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.editPersonBox{
+    background: #fff;
+    height:calc(100vh - 100rpx); 
+    padding: 0 30rpx;
+}
+.editList{
+    width: 100%;
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(226,226,226,0.6);
+}
+.editList:last-child{
+    border-bottom: none;
+}
+.editListLeft{
+    color: #B9B9B9;
+    font-size: 30rpx;
+}
+.editListLast {
+    width: 100%;
+    padding: 18rpx 0;
+}
+.editListRight{
+    width:calc(100vw - 300rpx);
+    display: flex;
+    align-items: center;
+    justify-content:flex-end
+}
+.error-tips {
+    max-width: 300rpx;
+    font-size: 26rpx;
+    color: red;
+}
+.headImg{
+    display: block;
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+}
+.editListRightInput,.picker{
+    min-width: 300rpx;
+    text-align: right;
+    color: #212121;
+    font-size: 30rpx;
+}
+.noInfo{
+    color: rgb(128,128,128);
+}
+.editListRightInput:last-child{
+    text-align: left;
+}
+.iconRight{
+    width: 24rpx;
+    height: 24rpx;
+    display: block;
+    margin-left: 16rpx;
+}
+.remarkNum{
+    color: #9A9A9A;
+    font-size: 24rpx;
+}
+.operatingBtnBox{
+    /* height: 98rpx; */
+    height:300rpx;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0rpx;
+    /* left: 50%;
+    transform: translateX(-50%);  */
+  }
+  .operatingBtn{
+    width: 90%!important;
+    font-size: 32rpx;
+    height: 98rpx;
+    color: #fff;
+    background: #027D58;
+    margin-top: 36rpx;
+    padding: 0;
+    line-height: 98rpx;
+    text-align: center;
+    border-radius:50rpx ;
+    font-weight:600;
+    position: absolute;
+    bottom: 100rpx;
+    left: 50%;
+    transform: translateX(-50%); 
+  }
+  /* 地址弹窗 */
+.citypicker{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+ background: rgba(0, 0, 0, 0.3);
+top: 0px;
+z-index: 99;
+  }
+  
+  .citybody {
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
+  }
+  
+  .cityheader {
+    position: absolute;
+    top:0px;
+    width: 100%;
+    z-index: 4;
+  }
+  
+  .city-cancel {
+    float: left;
+    margin: 20rpx;
+    color: #818181;
+  }
+  
+  .city-true {
+    float: right;
+    margin: 20rpx;
+    color: #2FB42E
+  }
+  
+  .section .picker {
+    background-color: #fff;
+    border-bottom: 1px #d9d9d9 solid;
+    border-top: 1px #d9d9d9 solid;
+    padding: 20rpx;
+  }
+  .verifiedlistWebInput{
+      text-align: right;
+  }

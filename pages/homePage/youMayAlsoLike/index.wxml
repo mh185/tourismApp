@@ -1,0 +1,63 @@
+<!--pages/homePage/youMayAlsoLike/index.wxml-->
+<view class="youMayAlsoLike">
+     <view class="businessRank clearfix">
+        <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='0'><text class="fl">商品</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+        <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='1'><text class="fl">商家</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+        <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='2'><text class="fl">最新</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+        <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='3'><text class="fl">人气</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+      </view>
+    <view wx:if="{{orderNum!=1}}">
+          <view class='content clearfix' wx:if="{{youLikeGoods!=null&&youLikeGoods.length>0}}"> 
+            <view class="contentList" wx:for="{{youLikeGoods}}" wx:for-index="index" bindtap='shopDetails' data-id='{{item.id}}'>
+                <view class="contentListShopListTu" >
+                        <image class="contentListShopListImg" src="{{imgUrl}}{{item.headImg.uploadfilepath}}{{item.headImg.uploadfilename}}" mode="widthFix"></image>
+                </view>                
+                    <view class="contentListShopName">{{item.name}}</view>
+                    <view class="contentListShopNumber">￥{{item.nowPrice}}<text class="fr">销量:{{item.sale||0}}</text></view>
+            </view>            
+        </view>
+        <view class="noData" wx:else>
+            <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+            <view class="noDataTxtx">暂无商品</view>
+        </view>
+    </view>
+    <view wx:else>
+         <!-- <view class='content clearfix' wx:if="{{youLikeShop!=null&&youLikeShop.length>0}}"> 
+            <view class="contentList" wx:for="{{youLikeShop}}" wx:for-index="index" bindtap='enterTheShop' data-sellerid='{{item.id}}'>
+                <view class="contentListShopListTu" >
+                        <image class="contentListShopListImg" src="{{item.headImg}}" mode="widthFix"></image>
+                </view>                
+                    <view class="contentListShopName">{{item.shopName}}</view>
+            </view>            
+        </view>
+        <view class="noData" wx:else>
+            <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+            <view class="noDataTxtx">暂无商家</view>
+        </view> -->
+        <view class="businessBox" wx:if='{{youLikeShop!=null&&youLikeShop.length>0}}'>
+            <view class="businessBoxList" wx:for='{{youLikeShop}}' wx:for-index="index">
+                <view class="businessBoxListInfor clearfix">
+                    <image class="businessBoxListInforImg fl" src="{{item.headImg}}" ></image>
+                    <view class="fl businessBoxListInforBox">
+                        <view class="businessBoxListInforBoxName">{{item.shopName}}</view>
+                    </view>
+                    <view class="fr businessBoxBtn" bindtap='enterTheShop' data-sellerid='{{item.id}}'>进店</view>
+                </view>
+                <view class="businessBoxListShop clearfix" wx:if="{{youLikeShopGoodsList[item.id].length>0}}">
+                    <view class="businessBoxListShopList fl" wx:for="{{youLikeShopGoodsList[item.id]}}" wx:for-item="goods" bindtap='shopDetails' data-id='{{goods.id}}'>
+                        <view class="businessBoxListShopListTu"><image class="businessBoxListShopListImg" mode="widthFix" src="{{imgUrl}}{{goods.headImg.uploadfilepath}}{{goods.headImg.uploadfilename}}"></image></view>
+                        <view class="businessBoxListShopListName">¥{{goods.nowPrice}}</view>
+                    </view>
+                </view>
+                <view class="noData" wx:else>
+                    <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+                    <view class="noDataTxtx">当前商家暂无商品</view>
+                </view>
+            </view>
+        </view>
+        <view class="noData" wx:else>
+            <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+            <view class="noDataTxtx">暂无商家</view>
+        </view>
+    </view>
+</view>

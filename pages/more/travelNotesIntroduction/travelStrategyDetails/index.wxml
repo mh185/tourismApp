@@ -1,0 +1,104 @@
+<!--pages/more/travelNotesIntroduction/travelStrategyDetails/index.wxml-->
+<import src="../../../../components/wxParse/wxParse.wxml"/> 
+
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">游记攻略详情</text>
+  </view>
+</van-nav-bar>
+<view class="attractionsDetail">
+  <!-- 轮播 -->
+  <view class="head">
+    <swiper bindchange="swiperBindchange">
+      <block wx:for="{{travelsRotation}}" wx:for-item="item" wx:key="item.id">
+        <swiper-item>
+          <video id="myVideo" src="{{host}}{{item.fileManageUrl}}" binderror="videoErrorCallback" enable-danmu
+            show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls picture-in-picture-mode="{{[]}} "
+            autoplay="{{false}}" wx:if="{{ item.fileTypeEnum == typeEnum }}"></video>
+          <image class="head_img" src="{{host}}{{item.fileManageUrl}}" wx:else />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <image class="head_img" src="{{imgUrl}}" /> -->
+    <view class="current_class">
+      {{current}}/{{travelsRotation.length}}
+    </view>
+  </view>
+  <view class="content">
+    <view class="content_box">
+      <view class="one">{{travelsContent.title}}</view>
+      <view class="two">
+        <image src="{{host}}{{travelsContent.officialUrl}}" />{{travelsContent.officialName}}</view>
+      <view class="three">
+        <van-row>
+          <van-col span="15">
+            <text class="three_one">旅游路线</text>
+            <!-- <text class="three_two">{{travelsContent.routes}}</text> -->
+            <text class="three_two">{{routes}}</text>
+          </van-col>
+          <van-col span="9">
+            <text class="three_five">出行天数</text>
+            <!-- <text class="three_six">{{travelsContent.travelDay}}</text> -->
+            <text class="three_six">{{travelDay}}</text>
+          </van-col>
+        </van-row>
+      </view>
+      <view class="four">
+        <van-row>
+          <van-col span="15">
+            <text class="four_one">出行工具</text>
+            <!-- <text class="four_two">{{travelsContent.travelTool}}</text> -->
+            <text class="four_two">{{travelTool}}</text>
+          </van-col>
+          <van-col span="9">
+            <text class="four_three">出发时间</text>
+            <!-- <text class="four_four">{{travelsContent.travelTime}}</text> -->
+            <text class="four_four">{{travelTime}}</text>
+          </van-col>
+        </van-row>
+
+      </view>
+      <view class="five">简介</view>
+      <view class="six">
+        <rich-text nodes="{{travelsContent.brief}}"></rich-text>
+      </view>
+      <view class="seven">出行方式</view>
+      <view class="eight">
+        <rich-text nodes="{{travelsContent.travelMode}}"></rich-text>
+      </view>
+
+
+      <view class="nine">出行景区</view>
+      <view class="ten" bindtap="toScenicDetails">
+        <image src="{{host}}{{travelsContent.scenicSpotUrl}}" />
+        <view class="ten_title">{{travelsContent.scenicSpotName}}</view>
+      </view>
+      <view class="eleven">游记详情</view>
+      <view class="twelve">
+        <view class="rich_box">
+          <!-- 解析图片base64的方法 -->
+          <template is="wxParse" data="{{wxParseData:courseDetail.nodes}}" />
+
+          <!-- <rich-text nodes="{{travelsContent.travelDetails}}"></rich-text> -->
+
+        </view>
+        <!-- <image class="thirteen" src="{{imgUrl}}" /> -->
+        <view class="fourteen">
+          <view class="fourteen_left">
+            <button class="but" data-id="{{id}}" open-type="share"><image src="{{iconUrl}}/share2.png" /></button>
+            {{travelsContent.shareNum}}
+          </view>
+          <view class="fourteen_right" bindtap="onthumbsUp">
+            <van-icon name="good-job-o" size="35rpx" color="{{travelsContent.isThumbsUp?'red':''}}" /><text>{{travelsContent.thumbsUp==null?'0':travelsContent.thumbsUp}}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

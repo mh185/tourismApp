@@ -1,0 +1,46 @@
+<view class="customCanvasComponent">
+	<!-- 建立画布坐标系 -->
+	<canvas style="width: {{options.style.width}}px;height: {{options.style.height}}px;" type="2d" id="{{customMapId}}" canvas-id="{{customMapId}}" bindtap="clickToCanvas" bindtouchstart="touchStartToCanvas" bindtouchmove="touchMoveToCanvas" bindtouchend="touchEndToCanvas">
+		<!-- 由于微信限制 暂时只支持这种写法 请不要秀其他方式 否则凉凉 -->
+		<!-- Marker点集合 -->
+		<!-- <blank v-for="poi in handlerMarkerList" :key="poi.id">
+         <cover-view
+           class="point"
+           @click="pointChange(poi)"
+           :style="{
+             position: 'absolute',
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center',
+             left: poi.x + 'px',
+             top: poi.y + 'px',
+             transform: `translate(-50%, -100%)`
+           }">
+           <cover-image :style="poi.stringStyle" :src="poi.icon"></cover-image>
+           <cover-view class="labelView" :style="poi.stringLabelStyle">
+             <cover-view class="labelTitle">{{poi.label}}</cover-view>
+           </cover-view>
+         </cover-view>
+       </blank> -->
+			<cover-view wx:if="{{checkPointMarker}}" class="windowInfoGroupBox" style="position:absolute;left: 375rpx;top: 430rpx;transform:translate(-50%, calc(-100% - 90rpx));">
+				<cover-view class="information">
+					<cover-view class="information_box">
+						<cover-view class="information_box_up">
+							<cover-view class="information_image" bindtap="toPanorama">
+								<cover-image src="{{host}}{{checkPointMarker.abbreviationFileUrl}}"></cover-image>
+							</cover-view>
+							<cover-view class="information_msg">
+								<cover-view class="information_name">{{checkPointMarker.name}}</cover-view>
+								<cover-view class="information_box_msg">{{checkPointMarker.description}}</cover-view>
+							</cover-view>
+						</cover-view>
+						<cover-view class="information_button">
+							<button class="box_buttom" bindtap="toLocation"> 去这里</button>
+							<!-- <button class="box_buttom" bindtap="toVoice"> 语音讲解</button> -->
+						</cover-view>
+					</cover-view>
+				</cover-view>
+			</cover-view>
+	</canvas>
+	<!-- 建立与画布对应的平面坐标系 -->
+</view>

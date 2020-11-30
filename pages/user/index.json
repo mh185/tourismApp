@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-popup":"/vant/popup/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的",
+  "navigationBarTextStyle": "black"
+}

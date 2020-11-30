@@ -1,0 +1,11 @@
+<!--pages/index/panorama/index.wxml-->
+<!-- <van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class'
+  bind:click-left="onClickLeft">
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text>更多</text>
+  </view>
+</van-nav-bar> -->
+<view>
+  <web-view src="{{mapUrl}}"></web-view>
+</view>

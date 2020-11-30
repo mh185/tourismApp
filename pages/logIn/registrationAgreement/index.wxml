@@ -1,0 +1,68 @@
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' bind:click-left="onClickLeft">
+    <view slot="left" class="nav_left">
+        <van-icon name="arrow-left" />
+        <text class="nav_left_text">用户注册协议</text>
+    </view>
+</van-nav-bar>
+<!-- <view class="main"> -->
+<view class="box">
+    <rich-text nodes="{{content}}"></rich-text>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    首行缩进
+<view class="indent">
+</view>
+
+ 加粗 + 首行缩进
+<view class="indent bold">
+</view>
+
+居中
+<view class="center">
+</view>
+
+ -->

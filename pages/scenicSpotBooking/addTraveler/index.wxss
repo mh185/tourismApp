@@ -1,0 +1,80 @@
+/* pages/scenicSpotBooking/addTraveler/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.top_padding {
+  padding-top: 20rpx;
+}
+.top {
+  display: flex;
+  align-items: center;
+  padding: 0 94rpx 0 82rpx;
+  height: 368rpx;
+  background: #ffffff;
+  box-shadow: 0px 10rpx 20rpx 0px rgba(130,130,130,0.16); 
+}
+.van-cell {
+  padding: 0 !important;
+  height: 108rpx;
+  /* line-height: 108rpx !important; */
+  align-items: center;
+}
+.van-field__page {
+  line-height: 108rpx !important;
+}
+.van-field__label {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #646464 !important;
+}
+.van-field__body {
+  font-size: 32rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: right;
+  color: #c8c8c8;
+}
+.middle {
+  margin: 44rpx 0 0 64rpx;
+}
+.van-checkbox__label {
+  font-size: 24rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #878787;
+}
+.bottom_box {
+  position: absolute;
+  bottom: 92rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom_left {
+  height: 80rpx;
+  border-radius: 40rpx;
+  box-shadow: 0px -20rpx 40rpx 0px rgba(184,184,184,0.1);
+  width: 560rpx;
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  line-height: 80rpx;
+  text-align: center;
+  color: #ffffff;
+}

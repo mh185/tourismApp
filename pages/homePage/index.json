@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tabbar": "/vant/tabbar/index",
+    "van-tabbar-item":"/vant/tabbar-item/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "柳州旅游",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,19 @@
+<!--pages/hotel/chooseLocation/index.wxml-->
+<view class="chooseLocation">
+  <view class="top">
+    <view class="hotelTop" bindtap="toHotelReservation">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">选择区域</text>
+    </view>
+  </view>
+  <view class="time">
+    <van-tree-select
+      items="{{ items }}"
+      height="100%"
+      main-active-index="{{ mainActiveIndex }}"
+      active-id="{{ activeId }}"
+      bind:click-nav="onClickNav"
+      bind:click-item="onClickItem"
+    />
+  </view>
+</view>

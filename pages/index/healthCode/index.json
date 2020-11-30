@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-field": "/vant/field/index",
+    "van-action-sheet": "/vant/action-sheet/index",
+    "van-picker": "/vant/picker/index"
+  }
+}

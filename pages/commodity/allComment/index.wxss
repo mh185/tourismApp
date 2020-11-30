@@ -1,0 +1,86 @@
+/* pages/commodity/allComment/index.wxss */
+.comment{
+    width: 100%;
+    background: #fff;
+}
+.commentTit{
+    padding: 20rpx;
+    font-size: 32rpx;
+    color: #515151;
+    box-sizing: border-box;
+}
+.commentBox{
+    width: 100%;    
+}
+.commentBoxList{
+    border-bottom: 1px solid #f5f5f5;
+    padding:20rpx;
+    box-sizing: border-box;
+}
+.commentBoxListHeadImg{
+    width: 80rpx;
+}
+.headImg{
+    width: 80rpx;
+    height: 80rpx;
+}
+.commentBoxListRight{
+    width: calc(100% - 100rpx);
+    margin-left: 20rpx;
+}
+.commentBoxListName{
+    font-size: 28rpx;
+    color: #515151;
+}
+.commentBoxListPentagram{
+    width: 100%;
+}
+.PentagramImg{
+    width: 20rpx;
+    height: 20rpx;
+    margin-right:10rpx ;
+}
+.commentBoxListContent{
+    font-size: 28rpx;
+    color: #515151;
+    margin-bottom:10rpx;
+}
+.commentBoxListContent text{
+margin-left: 20rpx;
+}
+.commentBoxListColor{
+    font-size: 20rpx;
+    color: #8a8a8a;
+}
+.commentBoxListImg{
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+.commentBoxListImg image{
+    width: 30%;
+    margin-right: 2%;
+    margin-bottom: 10rpx;
+    height: 180rpx;
+}
+.commentBoxMore{
+    width: 100%;
+    padding: 30rpx 0;
+}
+.commentBoxMoreBtn{
+    width:200rpx;
+    font-size: 30rpx;
+    background: #fff;
+    font-weight: normal;
+    border-radius: 50px;
+    border: 1px solid #dbdbdb;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0rpx 0rpx;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+}
+.ChildClass{
+    margin-top: 20rpx;
+    border-top: 1px solid #dbdbdb;
+}

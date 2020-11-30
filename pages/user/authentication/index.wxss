@@ -1,0 +1,58 @@
+/* pages/user/authentication/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+
+.authentication {
+  background: #FFFFFF;
+  box-shadow: 0px 10rpx 20rpx rgba(130, 130, 130, 0.16);
+  opacity: 1;
+  border-radius: 8rpx;
+  width: 690rpx;
+  height: 360rpx;
+  margin: 20rpx auto;
+  padding-top: 50rpx;
+}
+
+.authent_title {
+
+  font-size: 28rpx;
+  font-family: Source Han Serif CN;
+  font-weight: 800;
+  line-height: 38rpx;
+  color: #1D1D1D;
+  margin-left: 30rpx;
+  margin-bottom: 46rpx;
+}
+
+.line {
+  display: inline-block;
+  width: 6rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg, #F0D78D 0%, #E1CC8F 100%);
+  opacity: 1;
+  border-radius: 0px 20rpx 20rpx 0px;
+  margin-right: 26rpx;
+}
+
+.btn {
+
+  background: linear-gradient(180deg, #F0D78D 0%, #E1CC8F 100%);
+  box-shadow: 0px -20rpx 20rpx rgba(184, 184, 184, 0.1);
+  border-radius: 40rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  text-align: center;
+  width: 80%;
+  position: fixed;
+  bottom: 92rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  
+}

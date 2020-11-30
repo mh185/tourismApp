@@ -1,0 +1,143 @@
+/* pages/hotel/hotelList/index.wxss */
+page {
+  background: #FFFFFF;
+}
+
+.top {
+  position: relative;
+  height: 125rpx;
+}
+
+.hotelTop {
+  position: absolute;
+  left: 19.42rpx;
+  top: 60rpx;
+  right: 0;
+  /* margin: auto; */
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.hotelTopLeft {
+  width: 16rpx;
+  height: 32rpx;
+}
+
+.head_title {
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 400;
+}
+
+.search {
+  width: 345px;
+  height: 40px;
+}
+
+.threeColumns {
+  margin-top: 24rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.threeColumnsList {
+  /* width: 26px; */
+  height: 18px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.threeColumnsDown {
+  margin-left: 10rpx;
+}
+
+.fourColumns {
+  margin-top: 42rpx;
+}
+
+.fourColumnsList {
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+
+.fourColumnsList_image {
+  width: 260rpx;
+  height: 190rpx;
+  border-radius: 4rpx;
+}
+
+.hotelName {
+  /* width: 135px; */
+  height: 44rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 44rpx;
+  color: #333333;
+}
+
+.stars {
+  width: 24rpx;
+  height: 22rpx;
+}
+
+.hotelAddress {
+  /* width: 112px; */
+  height: 32rpx;
+  font-size: 22rpx;
+  font-weight: 800;
+  line-height: 32rpx;
+  color: #646464;
+}
+
+.money_box {
+  /* width: 56px; */
+  height: 44rpx;
+  font-size: 22rpx;
+  font-weight: 800;
+  line-height: 32rpx;
+  color: #FF5555;
+  display: block;
+}
+.money {
+  font-size: 36rpx;
+}
+
+.distance_box {
+  width: 100rpx;
+  height: 190rpx;
+  display: table;
+}
+
+.distance {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.distanceIcon {
+  width: 22rpx;
+  /* display: block; */
+  height: 26rpx;
+}
+
+.distance_text {
+  display: block;
+  color: #646464;
+  font-size: 22rpx;
+}
+.divider_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.divider {
+  width: 690rpx;
+  height: 0px;
+  border: 1px solid #E9E9E9;
+  margin: 21rpx 0;
+}

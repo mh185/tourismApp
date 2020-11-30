@@ -1,0 +1,278 @@
+/* pages/promotion/index.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.w {
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+}
+
+.top_line {
+  width: 702rpx;
+  height: 0rpx;
+  border: 1rpx solid rgba(240, 240, 240, 1);
+  opacity: 1;
+  margin-left: 26rpx;
+}
+
+.coupon_title {
+  width: 108rpx;
+  height: 48rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 48rpx;
+  color: rgba(33, 33, 33, 1);
+  opacity: 1;
+  margin-top: 48rpx;
+  margin-left: 24rpx;
+}
+
+.task {
+  margin-top: 26rpx;
+}
+
+.taskBox {
+  width: 100%;
+  height: 304rpx;
+  margin: 0 24rpx;
+}
+
+.taskBox_item {
+  float: left;
+  margin-right: 32rpx;
+  width: 182rpx;
+  height: 254rpx;
+  border: 1px solid rgba(245, 245, 245, 1);
+  opacity: 1;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.taskBox_item image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 40rpx;
+}
+
+.task_title {
+  height: 32rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 32rpx;
+  color: rgba(52, 52, 52, 1);
+  opacity: 1;
+  margin: auto;
+}
+
+.task_btn {
+  width: 108rpx;
+  height: 44rpx;
+  margin: 16rpx auto 0;
+  background: rgba(2, 125, 88, 1);
+  opacity: 1;
+  border-radius: 22rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 44rpx;
+  color: rgba(255, 255, 255, 1);
+  /* margin: auto; */
+}
+
+.task_integral {
+  margin-top: 12rpx;
+  height: 32rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 32rpx;
+  color: rgba(52, 52, 52, 1);
+  opacity: 1;
+}
+
+.task_integralunm {
+  color: #027d58;
+}
+
+/* 
+  抽奖
+ */
+
+.luckdrawbox {
+  margin-left: 24rpx;
+}
+
+.luckdraw {
+  width: 72rpx;
+  height: 48rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 48rpx;
+  color: rgba(33, 33, 33, 1);
+  opacity: 1;
+}
+
+.luckdrawimg {
+  margin-top: 32rpx;
+  width: 711rpx;
+  height: 158rpx;
+}
+
+.luckdrawimg image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+  限时秒杀
+ */
+
+.seckillbox {
+  margin-top: 58rpx;
+  overflow: hidden;
+}
+
+.seckill_title {
+  height: 48rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 48rpx;
+  color: rgba(33, 33, 33, 1);
+  opacity: 1;
+  margin-bottom: 26rpx;
+}
+
+.seckill_listitem {
+  width: 340rpx;
+  /* height: 220rpx; */
+  float: left;
+  border: 1px solid #ebebeb;
+  margin-bottom: 18rpx;
+  /* padding: 24rpx; */
+  box-sizing: border-box;
+}
+
+.seckill_lists {
+  overflow: hidden;
+}
+.seckill_lists view:nth-child(2n+1) {
+  margin-right: 20rpx;
+}
+
+.seckillitem_title {
+  height: 38rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  line-height: 38rpx;
+  color: rgba(33, 33, 33, 1);
+  opacity: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.seckillitem_details {
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  color: rgba(185, 185, 185, 1);
+  opacity: 1;
+}
+
+/* .seckillimg {
+  display: flex;
+  margin-top: 12rpx;
+  justify-content: space-around;
+} */
+
+.seckillimg image {
+  width: 100%;
+}
+
+/* 
+  拼团
+ */
+
+.groupbox {
+  margin-top: 20rpx;
+  margin-bottom: 200rpx;
+}
+
+.group_title {
+  height: 48rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 48rpx;
+  color: rgba(33, 33, 33, 1);
+  opacity: 1;
+}
+
+.group_lists {
+  margin-top: 36rpx;
+  overflow: hidden;
+}
+
+.group_items {
+  border: 1px solid #ccc;
+  width: 336rpx;
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: 28rpx;
+  overflow: hidden;
+}
+
+.group_lists view:nth-child(odd) {
+  margin-right: 30rpx;
+}
+
+.group_items image {
+  width: 336rpx;
+}
+
+.groupitem_title {
+  height: 40rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: rgba(49, 49, 49, 1);
+  opacity: 1;
+  margin: 20rpx 0 24rpx 22rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.group_price {
+  margin-bottom: 22rpx; 
+}
+.groupitem_numb {
+  height: 38rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  line-height: 38rpx;
+  color: rgba(33, 33, 33, 1);
+  opacity: 1;
+  margin-left:22rpx;
+  margin-right: 26rpx; 
+}
+
+.groupitem_num {
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  color: rgba(197, 197, 197, 1);
+  opacity: 1;
+}

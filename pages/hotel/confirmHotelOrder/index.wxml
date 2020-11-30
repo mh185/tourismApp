@@ -1,0 +1,114 @@
+<!-- pages/hotel/confirmHotelOrder/index.wxml -->
+<view>
+  <view class="top">
+    <view class="hotelTop" bindtap="back">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">确认订单</text>
+    </view>
+  </view>
+  <!-- 入住信息 -->
+  <view class="box_view">
+    <view class="one_box">
+      <view class="headPortrait_box">
+        <image class="headPortrait" src="../../../images/hotel/hotelDetails_top.png" />
+        <text class="hotelName">{{hotelName}}</text>
+      </view>
+      <!-- 已选房型 -->
+      <view class="box">
+        <view class="box_left" bindtap="hotelPhoto">
+          <image class="box_left_img" src="../../../images/index/headbg.png" />
+        </view>
+        <view class="box_center">
+          <view class="hotel_name">精品大床放（有窗）</view>
+          <view class="note_box">
+            <view class="note"><text>不可取消</text></view>
+            <view class="note note_right"><text>含早</text></view>
+          </view>
+          <view class="hotel_locaton">25㎡ <text>大床房</text></view>
+          <view class="hotel_prince"> <text class="prince">￥199.00</text></view>
+        </view>
+      </view>
+      <!-- 入离时间 -->
+      <view class="time">
+        <view class="time_box">
+          <text class="entryDeparture_time">入离时间</text>
+          <view class="week_left">
+            <text class="week">入</text>
+            <text class="data">{{checkInDate}}</text>
+            <!-- </view> -->
+            /
+            <!-- <view> -->
+            <text class="week">离</text>
+            <text class="data">{{checkOutDate}}</text>
+          </view>
+          <view class="total_box">
+            <!-- <view><text>共{{number}}晚</text></view> -->
+            <text>共{{number}}晚</text>
+          </view>
+        </view>
+      </view>
+      <!-- 房间数量 -->
+      <view class="number_rooms">
+        <text>房间数量</text>
+        <view class="number_rooms_view">
+          <van-stepper value="{{ 1 }}" button-size="18px" bind:change="numberRooms" />
+        </view>
+      </view>
+      <text class="man">入住人</text>
+      <!-- 名片 -->
+      <view class="business_card_box">
+        <view class="business_card">
+          <view><text>身份信息</text></view>
+          <text class="business_card_name">{{name}}</text>
+          <text class="business_card_telephone">{{telephone}}</text>
+          <text class="business_card_idNumber">{{idNumber}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 预约开票 -->
+  <view class="box_view_tow">
+    <view class="invoice_box">
+      <view class="one">
+        <text>预约开票（仅普票）</text>
+        <text class="red">开票须知</text>
+      </view>
+      <view class="tow">
+        <text>发票金额</text>
+        <text class="red">￥199.00</text>
+      </view>
+      <view class="three">
+        <text>抬头类型</text>
+        <van-radio-group class='radio_group' value="{{ radio }}" bind:change="headUpType">
+          <van-radio checked-color="#ff9f4d" name="1">单位</van-radio>
+          <van-radio checked-color="#ff9f4d" name="2">个人/非企业单位</van-radio>
+          <!-- <van-radio use-icon-slot value="{{ radio }}" name="1">
+            自定义图标
+            <image slot="icon" src="{{ radio === '1' ? icon.active : icon.normal }}" />
+          </van-radio>
+          <van-radio use-icon-slot value="{{ radio }}" name="2">
+            自定义图标
+            <image slot="icon" src="{{ radio === '2' ? icon.active : icon.normal }}" />
+          </van-radio> -->
+        </van-radio-group>
+      </view>
+      <view class="four">
+        <text class="red">*<text class="black">公司抬头</text></text>
+        <text class="ash">请输入公司抬头名称</text>
+      </view>
+      <view class="five">
+        <text class="red">*<text class="black">税号</text></text>
+        <text class="ash">请输入公司税号</text>
+      </view>
+    </view>
+  </view>
+  <!-- 立即付款 -->
+  <view class="box_view_three">
+    <text class="one">应付金额：</text>
+    <text class="tow red">￥<text class="three red">{{money}}</text></text>
+    <text class="four">预定后不可取消</text>
+    <view bindtap="reservationSuccessful">
+      <view class="food_button">立即付款</view>
+    </view>
+  </view>
+</view>

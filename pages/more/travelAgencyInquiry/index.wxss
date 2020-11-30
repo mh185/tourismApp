@@ -1,0 +1,91 @@
+/* pages/more/travelAgencyInquiry/index.wxss */
+page {
+  background-color: #fff;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.card_box {
+  height: 880rpx;
+  overflow: scroll;
+}
+.middle {
+  padding: 70rpx 30rpx 0 30rpx;
+}
+.middle_list {
+  margin-bottom: 40rpx;
+  display: flex;
+  align-items: center;
+  height: 170rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  box-shadow: 0px 10rpx 20rpx 0px rgba(130,130,130,0.16); 
+}
+.middle_list_lefe {
+  width: 8rpx;
+  height: 114rpx;
+  border-radius: 0px 8rpx 8rpx 0px;
+}
+.middle_list_trademark {
+  width: 92rpx;
+  height: 92rpx;
+  margin-left: 34rpx;
+  /* background: red; */
+  border-radius: 50%;
+}
+.middle_list_right {
+  margin-left: 48rpx;
+}
+.right_upper {
+  font-size: 32rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #000000;
+}
+.right_lower {
+  opacity: 0.84;
+  font-size: 26rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #000000;
+}
+.right_lower image {
+  width: 26rpx;
+  height: 26rpx;
+}
+.box {
+  position: absolute;
+  width: 100%;
+  bottom: 68rpx;
+  display: flex;
+  justify-content: center;
+}
+.box_title {
+  width: 560rpx;
+  height: 80rpx;
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+  border-radius: 40rpx;
+  box-shadow: 0px -20rpx 40rpx 0px rgba(184,184,184,0.1); 
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  line-height: 80rpx;
+  text-align: center;
+  color: #ffffff;
+}
+.loading{  
+  padding: 10rpx;  
+  font-size: 26rpx;
+  color:#666;
+  text-align: center;  
+  margin-top: 30rpx;
+}

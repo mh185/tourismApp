@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-icon": "/vant/icon/index",
+    "van-navbar": "/vant/nav-bar/index",
+    "van-nav-bar": "/vant/nav-bar/index",
+    "van-checkbox": "/vant/checkbox/index",
+    "van-checkbox-group": "/vant/checkbox-group/index"
+  }
+}

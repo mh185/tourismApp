@@ -1,0 +1,3 @@
+<!--pages/index/healthCodeUrl/index.wxml-->
+<web-view src="http://www.lzzhmp.com/weixin/lyj/login_jkm_index.jsp"></web-view>
+<!-- http://www.lzzhmp.com/weixin/lyj/login_jkm_index.jsp -->

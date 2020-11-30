@@ -1,0 +1,40 @@
+<!--pages/index/guide/index.wxml-->
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class'
+  bind:click-left="onClickLeft">
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text>导览</text>
+  </view>
+</van-nav-bar>
+<view class="attractions">
+  <view class="head">
+    <view bindtap="click_option" data-id="first" class="first  {{activeNum == 'first' ? 'active_color':''}}"> 
+      柳州市 
+      <text class=" {{activeNum == 'first' ? 'active':''}}"></text>
+    </view>
+    <view class="scroll_tab">
+      <view class="{{activeNum == index ? 'active_color':''}}" wx:for='{{7}}' bindtap="click_option" wx:key="index" data-id="{{index}}">
+        柳北
+        <text class=" {{activeNum == index ? 'active':''}}"></text>
+      </view>
+    </view>
+  </view>
+  <view class="content" wx:for="{{6}}" wx:key="unique">
+    <view class="list_item" bindtap="toDetails">
+      <image class="list_item_img" src="{{imgUrl}}" />
+      <view class="upper">
+        <view class="list_item_tag">4A</view>
+        <view class="title_box">
+          <view class="list_item_text">
+            <text class="name">白莲洞风景名胜区</text>
+            <text class="person_number">209981人</text>
+          </view>
+          <view class="list_item_text margin_two">
+            <text class="time">开放时间：9:00-19:00</text>
+            <text class="type">正在游玩</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

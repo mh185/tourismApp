@@ -1,0 +1,163 @@
+<van-nav-bar class="navbar" fixed>
+  <view slot="left" class="left"></view>
+</van-nav-bar>
+<!-- 搜索 -->
+<view class="head-search">
+  <van-search input-class='search_input' value="{{ value }}" shape="round" placeholder="搜索目的地/景点/路线" use-action-slot bind:search="onSearch" background="unset">
+    <view slot="action" class="weather" bindtap="toWeather">
+      <image src="{{weatherImg.max_img}}" />
+      <text>{{weather}}</text>
+    </view>
+  </van-search>
+</view>
+<!-- 轮播 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}" circular="{{circular}}" bindchange="swiperBindchange">
+  <block wx:for="{{bannerList}}" wx:key="index">
+    <swiper-item>
+      <view class="swiper_item" data-id='{{item.id}}' bindtap="toBannerDetails">
+        <image src="{{host}}{{item.url}}" class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}" />
+        <view class="swiper_item_text" wx:if='{{currentSwiperIndex == index}}'>
+          <view class="item_text_up">{{item.title}}</view>
+          <view>{{item.describes}}</view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 天气播报 -->
+<!-- <view class="weather_box" bindtap="onClick">
+  <view class="weather_box_left">
+    <image src="{{iconUrl}}/gonggao.png" />
+    {{weatherCity}}    空气质量：{{airQuality}}
+  </view>
+</view> -->
+<!-- 导航 -->
+<!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+  <view class="nav">
+    <view class="nav-item" wx:for="{{navList}}" wx:key="index" bindtap="tonav" data-id="{{item.name}}">
+      <image src="{{iconUrl}}/{{item.imgName}}.png" />
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</scroll-view> -->
+<view class="top_list">
+  <view wx:for="{{navList}}" wx:key='index' class="consultingService_item" bindtap="tonav" data-id="{{item.name}}">
+    <image class="navImg" src="{{iconUrl}}/{{item.imgName}}.png" />
+    <text class="navText">{{item.name}}</text>
+  </view>
+</view>
+<!-- 五区精选 -->
+<view class="selected">
+  <view class="selected-one" bindtap="gotoCultural">
+    <image src="{{iconUrl}}/modular1.png"></image>
+    <view class="selected-wb">
+      <view class="selected-title">广西文旅大会</view>
+      <view class="selected-text">广西文旅大会欢迎您</view>
+    </view>
+  </view>
+  <view class="selected-center">
+    <view class="selected-two" bindtap="toPanorama">
+      <image src="../../images/img/quanjin.jpg"></image>
+      <!-- <image src="{{iconUrl}}/quanjin.jpg"></image> -->
+      <view class="selected-wb">
+        <view class="selected-title">720全景推荐</view>
+        <view class="selected-text">精彩景区 身临其境</view>
+      </view>
+    </view>
+    <!-- <view class="selected-two" bindtap="toGourmetSpecialty">
+      <image src="{{iconUrl}}/modular3.png"></image>
+      <view class="selected-wb">
+        <view class="selected-title">美食特产</view>
+        <view class="selected-text">踏足柳州 五县畅游</view>
+      </view>
+    </view> -->
+    <view class="selected-two" bindtap="toDestination">
+    <image src="../../images/img/wuxian.jpg"></image>
+    <!-- <image src="{{iconUrl}}/wuxian.jpg"></image> -->
+    <view class="selected-wb">
+      <view class="selected-title">五县五区精选</view>
+      <view class="selected-text">精选景点 魅力柳州</view>
+    </view>
+  </view>
+  </view>
+  
+</view>
+<!-- 热门推荐 -->
+<view class="recommend">
+  <van-tabs bind:change='onTabChange' animated line-height="0" class="index-tabs">
+    <van-tab title="热门推荐" title-style="text-align: left;">
+      <view>
+        <view class="reco-item" wx:for="{{hotData}}" wx:key="index" bindtap="toAttractionsDetail" wx:for-item="item" data-id='{{item.id}}'>
+          <image src="{{host}}{{item.fileManage.url}}"></image>
+          <van-row>
+            <van-col span="12" class="rm-title">{{item.name}}</van-col>
+            <van-col span="12" class="rm-ren">{{item.currentTourism}}人</van-col>
+          </van-row>
+          <van-row>
+            <van-col span="12" class="rm-time">开放时间：{{item.openTime}}-{{item.closeTime}}</van-col>
+            <van-col span="12" class="rm-text">正在游玩</van-col>
+          </van-row>
+          <view class="aaaa">{{item.starLevel}}</view>
+        </view>
+      </view>
+      <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+      <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+    </van-tab>
+    <van-tab title="游记攻略" title-style="text-align: left;">
+      <view>
+        <view class="strategy" wx:for="{{hotList}}" wx:key="index" wx:for-item="item" data-index='{{item.id}}'>
+          <view class="strategy-tiem">
+            <view class="strategy-img">
+              <image src="{{host}}{{item.coverFileManageUrl}}" bindtap="toTravelStrategyDetails" data-index='{{item.id}}'></image>
+            </view>
+            <view class="line-right">
+              <view class="right-item strategy-title" bindtap="toTravelStrategyDetails" data-index='{{item.id}}'>{{item.title}}</view>
+              <view class="right-item strategy-name" bindtap="toTravelStrategyDetails" data-index='{{item.id}}'>
+                <van-image round width="60rpx" height="60rpx" src="{{host}}{{item.officialUrl}}" class="name-img" />
+                <text>{{item.officialName}}</text>
+              </view>
+              <view class="right-item strategy-more">
+                <van-icon name="{{iconUrl}}/see.png" size="20rpx" />
+                <text>{{item.seeNum}}</text>
+                <view class="lower_right">
+                  <button class="but" data-id="{{id}}" data-index='{{item.id}}' open-type="share">
+                    <image src="{{iconUrl}}/share.png" />
+                  </button>
+                  {{item.shareNum}}
+                </view>
+                <!-- <van-icon name="{{iconUrl}}/share.png" />
+                <text>{{item.shareNum}}</text> -->
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+      <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+    </van-tab>
+    <van-tab title="精品路线" title-style="text-align: left;">
+      <view>
+        <view class="strategy" wx:for="{{boutiqueRouteList}}" wx:key="index" bindtap="toRouterDetail" wx:for-item="item" data-index='{{item.id}}'>
+          <view class="strategy-tiem">
+            <view class="strategy-img">
+              <image src="{{host}}{{item.fileUrl}}"></image>
+            </view>
+            <view class="line-right">
+              <view class="right-item strategy-title">{{item.title}}</view>
+              <!-- <view class="right-item strategy-name">
+                <van-image round width="60rpx" height="60rpx" src="{{host}}{{item.travelAgentsLogo}}" class="name-img" />
+                <text>{{item.travelAgentsName}}</text>
+              </view> -->
+              <!-- <view class="right-item strategy-more">
+                <text>￥199.00</text>
+              </view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+      <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+    </van-tab>
+  </van-tabs>
+</view>
+<van-toast id="van-toast" />

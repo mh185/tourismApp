@@ -1,0 +1,17 @@
+<!--pages/index/guide/guideMaptwo/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  id='nav-bar'
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">导览</text>
+  </view>
+</van-nav-bar>
+<!-- <web-view src="https://ly.liaoin.com/meeting/index.html?id={{id}}"></web-view> -->
+<web-view src="https://lzzhly.wglj.liuzhou.gov.cn/handDrawingsMap/map.html?id={{id}}"></web-view>
+

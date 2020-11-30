@@ -1,0 +1,97 @@
+/* pages/scenicSpotBooking/subscribeList/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.box {
+  margin: 50rpx 30rpx 0 30rpx;
+}
+.list {
+  width: 100%;
+  height: 222rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.list image {
+  width: 6rpx;
+  height: 122rpx;
+}
+/* .right {
+  margin-left: 48rpx;
+} */
+.right_upper {
+  font-size: 28rpx;
+  color: #1d1d1d;
+}
+.right_middle {
+  font-size: 22rpx;
+  color: #c8c8c8;
+  margin-top: 6rpx;
+}
+.right_lower {
+  margin-top: 28rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.name {
+  margin-right: 20rpx;
+  width: 120rpx;
+  height: 50rpx;
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+  border: 2rpx solid #f0d78d;
+  border-radius: 26rpx;
+  font-size: 22rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #1d1d1d;
+}
+/* 分页 */
+.loading{  
+  padding: 10rpx;  
+  font-size: 26rpx;
+  color:#666;
+  text-align: center;  
+  margin-top: 30rpx;
+}
+.right_box {
+  margin-left: 48rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  }
+.appointmentsNumber {
+  font-size: 22rpx;
+}
+.stateName{
+  font-size: 22rpx;
+  font-family: Source Han Serif CN;
+  font-weight: 500;
+  line-height: 15px;
+  opacity: 1;
+  padding-top: 80rpx;
+  text-align: right;
+}
+.stateName_red{
+  color: #FF6B6B;
+}
+.stateName_yellow{
+  color: #E1CC8E;
+}
+.stateName_ash{
+  color: #C8C8C8;
+}

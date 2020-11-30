@@ -1,0 +1,59 @@
+<!--pages/index/search/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">搜索</text>
+  </view>
+</van-nav-bar>
+<view class="bj">
+  <van-search 
+    bind:search='onSearch' 
+    bind:change='onChange'
+    shape="round" 
+    placeholder="搜索目的地/景点/路线" 
+    value="{{keyWord}}" 
+  />
+  <view wx:if="{{showResuilt}}" class="history">
+    <view class="history_title">
+      <text>最近历史</text>
+      <image bindtap="deleteSearchAll" src="{{iconUrl}}/del.png" class="title_img"></image>
+    </view>
+    <view class="history_list">
+      <view 
+        wx:for="{{keyList}}" 
+        wx:key='index' 
+        data-keyWord="{{item.keyWord}}" 
+        bindtap="onUserHistory" 
+        class="history_list_item">{{item.keyWord}}
+      </view>
+    </view>
+    <view class="history_title">
+      <text>热门搜索</text>
+      <image class="title_img"></image>
+    </view>
+    <view class="history_list">
+      <view 
+        wx:for="{{hotKeyList}}" 
+        wx:key='index' 
+        data-keyWord="{{item.keyWord}}" 
+        bindtap="onHotHistory" 
+        class="history_list_item">{{item.keyWord}}
+      </view>
+    </view>
+  </view>
+  <view class="resuilt" wx:else>
+    <view class="resuilt_item" bindtap="toOther" data-index="{{item.index}}" data-id="{{item.id}}" wx:for="{{searchList}}" wx:key="key">
+      <view class="resuilt_item_left">
+        <image src="{{iconUrl}}/mudidi1.png" class="resuilt_img"></image>
+        <view class="name">{{item.name}}</view>
+      </view>
+      <!-- <view class="resuilt_item_right">1.2公里</view> -->
+    </view>
+  </view>
+</view>

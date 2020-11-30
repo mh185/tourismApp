@@ -1,0 +1,65 @@
+<!--pages/index/guide/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class'>
+  <view slot="left" class="nav_left">
+    <!-- <van-icon name="arrow-left" /> -->
+    <text>导览</text>
+  </view>
+</van-nav-bar>
+<view class="head">
+  <view data-id="first" data-index="0" bindtap="toMoredestination" class="first  {{activeNum == 'first' ? 'active_color':''}}">
+    柳州市
+    <text class=" {{activeNum == 'first' ? 'active':''}}"></text>
+  </view>
+  <view class="scroll_tab">
+    <view class="{{activeNum == item.code ? 'active_color':''}}" wx:for='{{cityList}}' bindtap="toMoredestination" wx:key="index" data-index="{{index+1}}" data-id="{{item.code}}">
+      {{item.name}}
+      <text class=" {{activeNum == item.code ? 'active':''}}"></text>
+    </view>
+  </view>
+</view>
+<!-- <view class="attractions"> -->
+  <!-- <view class="head">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="柳州市" class="nav_one"></van-tab>
+      <van-tab wx:for="{{navList}}" name="{{item.code}}" wx:key="index" wx:for-item="item" title="{{item.name}}">
+      </van-tab>
+    </van-tabs>
+  </view> -->
+
+  <view class="content_box">
+    <view class="content" wx:if='{{listData.length > 0}}'>
+      <view 
+        class="list_item" 
+        bindtap="toDetails" 
+        wx:for="{{listData}}" 
+        wx:key="idx" 
+        wx:for-item="item"
+        data-id='{{item.id}}'>
+        <image class="list_item_img" src="{{host}}{{item.fileManage.url}}" />
+        <view class="upper">
+          <view class="list_item_tag">{{item.starLevel}}</view>
+          <view class="title_box">
+            <view class="list_item_text">
+              <text class="name">{{item.name}}</text>
+              <text class="person_number">{{item.currentTourism}}人</text>
+            </view>
+            <view class="list_item_text margin_two">
+              <text class="time">开放时间：{{item.openTime}}-{{item.closeTime}}</text>
+              <text class="type">正在游玩</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+      <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+    </view>
+      <view wx:else class="_nothing_box">
+        <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+        <view>暂无内容</view>
+      </view>
+  </view>
+<!-- </view> -->

@@ -1,0 +1,51 @@
+<!--pages/more/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+>
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">更多</text>
+  </view>
+</van-nav-bar>
+<view class="bj">
+  <view class="top">
+    <view class="top_title">
+      <image src="{{iconUrl}}/item.png" />旅游指南
+    </view>
+    <view class="top_list">
+      <view wx:for="{{consultingService}}" wx:key='index' class="consultingService_item" bindtap="toPage"
+        data-id="{{item.name}}">
+        <image src="{{iconUrl}}/{{item.imgName}}.png" />
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="top" wx:if="{{false}}">
+    <view class="top_title">
+      <image src="{{iconUrl}}/item.png" />交通出行
+    </view>
+    <view class="top_list">
+      <view wx:for="{{transportation}}" wx:key='index' class="consultingService_item" bindtap="toTransportation"
+        data-id="{{item.name}}">
+        <image src="{{iconUrl}}/home-hover.png" />
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="top">
+    <view class="top_title">
+      <image src="{{iconUrl}}/item.png" />游玩助手
+    </view>
+    <view class="top_list">
+      <view wx:for="{{playAssistant}}" wx:key='index' class="consultingService_item" bindtap="clickPlayAssistant"
+        wx:for-item="item" data-id="{{item.name}}" data-item="{{item}}">
+        <image src="{{iconUrl}}/{{item.imgName}}.png" />
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

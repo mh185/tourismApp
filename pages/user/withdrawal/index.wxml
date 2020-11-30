@@ -1,0 +1,66 @@
+<view class="topNum-box">
+    <image class="background-image" src="../../../images/center_header_background.png"></image>
+    <view class="line-box">
+        <view class="text">当前佣金</view>
+        <view class="num">￥{{accountData.price}}</view>
+        <navigator open-type="navigate" class="button" url="/pages/user/withdrawalProtol/index">用户分销奖励规则 ></navigator>
+    </view>
+</view>
+
+<view class="list-box">
+    <view class="bigTitle">
+        <view bindtap="swhTab" data-index="1" class="{{tabIndex==1?'tabNameActive':'tabName'}}">分佣记录</view>
+        <view bindtap="swhTab" data-index="2" class="{{tabIndex==2?'tabNameActive':'tabName'}}">提现记录</view>
+    </view>
+
+    <!-- 分佣记录  wx:if="{{dataList.length&&tabIndex==1}} {{dataList}}" -->
+    <view class="ul" wx:if="{{dataList.length&&tabIndex==1}}">
+        <view class="panel" wx:for="{{dataList}}">
+            <view class="panel-head">
+                <view class="title">{{item.buyerNickName}}</view>
+                <view class="price">+{{item.commission}}</view>
+            </view>
+            <view class="panel-body">
+                <view class="line">
+                    <image class="line-imgSize" src="../../../images/meditor-time.png"></image>
+                    <view class="line-name">{{item.cdate}}</view>
+                </view>
+                <view class="line">
+                    <image class="line-imgSize" src="../../../images/shopName.png"></image>
+                    <view class="line-name">{{item.shopName}}</view>
+                </view>
+                <view class="line">
+                    <image class="line-imgSize" src="../../../images/shopIcon.png"></image>
+                    <view class="line-name"> {{item.goodsTitle}} {{item.goodsLabel}} </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 提現记录 -->
+    <view class="ul" wx:if="{{dataList.length&&tabIndex==2}}">
+        <view class="li" wx:for="{{dataList}}">
+            <view class="left">
+                <view class="title">提现到尾号“{{item.number}}”的银行卡</view>
+                <view class="time">{{item.createDate}}</view>
+            </view>
+            <view class="num">-{{item.price}}</view>
+        </view>
+    </view>
+
+    <!-- 暂无数据 -->
+
+    <view wx:if="{{noData}}" class="noData noDataTxtx">
+        {{tabIndex==1?'暂无分佣记录~':'暂无提现记录~'}}
+    </view>
+
+    <!-- 没有更多数据 -->
+
+    <view wx:if="{{noMoreData}}" class="noData">
+        没有更多数据了~
+    </view>
+</view>
+
+<view class="btn-box">
+    <view class="btn" bindtap="goSureWithdrawal">提现</view>
+</view>

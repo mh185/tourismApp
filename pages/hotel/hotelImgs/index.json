@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "/vant/icon",
+    "van-rate": "/vant/rate"
+  },
+  "navigationStyle": "custom"
+}

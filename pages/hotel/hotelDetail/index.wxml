@@ -1,0 +1,128 @@
+<!-- pages/hotel/hotelDetails/index.wxml -->
+<view>
+  <view class="top">
+    <view class="hotelTop" bindtap="toHotelList">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">酒店详情</text>
+    </view>
+  </view>
+  <!-- 酒店图片 -->
+  <view class="image_box" bindtap="toHotelImgs">
+    <image class="hotelDetails_top" src="../../../images/hotel/hotelDetails_top.png" />
+  </view>
+  <!--  -->
+  <view class="three_box">
+    <view class="address_box">
+      <text class="hotelName">{{hotelName}}</text>
+      <text class="hotelAddress">{{hotelAddress}}</text>
+    </view>
+    <view class="telephone_box">
+      <image class="telephone" src="../../../images/hotel/telephone.png"></image>
+    </view>
+  </view>
+  <!-- 入离时间 -->
+  <view class="time">
+    <view class="time_box" bindtap="toChooseTime">
+      <view>
+        <text class="data">{{checkInDate}}</text>
+        <text class="week">{{checkInWeek}}入住</text>
+      </view>
+      <view>
+        <text class="data">{{checkOutDate}}</text>
+        <text class="week">{{checkOutWeek}}退房</text>
+      </view>
+      <view class="total_box">
+        <!-- <view><text>共{{number}}晚</text></view> -->
+        <text>共{{number}}晚</text>
+        <van-icon class="total_box_arrow" name="arrow" />
+      </view>
+    </view>
+  </view>
+  <!-- 设施详情 -->
+  <view class="butten">
+    <view class="equipment_detail">
+      <view class="equipment_title">设施详情</view>
+      <view class="equipment_list">
+        <view wx:for="{{6}}" wx:key='index' class="equipment_item">
+          <image class="equipment_img" src="../../../images/equipment/equipment_{{index}}.png" />
+          <text class="equipment_name">免费wifi</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 房间列表 -->
+  <view class="butten">
+    <view class="list">
+      <view class="box">
+        <view class="box_left">
+          <image class="box_left_img" src="../../../images/index/headbg.png" />
+        </view>
+        <view class="box_center">
+          <view class="hotel_name">精品大床放（有窗）</view>
+          <view class="note_box">
+            <view class="note"><text>不可取消</text></view>
+            <view class="note note_right"><text>含早</text></view>
+          </view>
+          <view class="hotel_locaton">25㎡ <text>大床房</text></view>
+          <view class="hotel_prince"> <text class="prince">￥199</text> .00起</view>
+        </view>
+        <view class="box_right" bindtap='toConfirmHotelOrder'>
+          <view class="box_right_up"> 预订 </view>
+          <view class="box_right_text"> 剩余10 </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 评价 -->
+  <view class="evaluation">
+    <view class="evaluation_head">
+      <text>网友评价（20）</text>
+      <view class="evaluation_head_right">
+        <van-rate
+          value="{{star}}"
+          size="{{ 12 }}"
+          color="#f44"
+          void-color="#eee"
+          void-icon="star"
+          bind:change="onChange"
+        />
+        <text>4.9分</text>
+      </view>
+
+    </view>
+
+    <view class="evaluation_list">
+      <view class="evaluation_box">
+        <view class="box_head">
+          <view class="box_head_left">
+            <image class="box_head_img" src="../../../images/index/headbg.png" />
+            <view>
+              <view>李先生</view>
+              <van-rate
+                value="{{star}}"
+                size="{{ 12 }}"
+                color="#f44"
+                void-color="#eee"
+                void-icon="star"
+                bind:change="onChange"
+              />
+            </view>
+          </view>
+          <view class="box_head_right">
+            <view class="head_right_time">2020-01-01 12:11</view>
+            <view>精品大床房</view>
+          </view>
+        </view>
+        <view class="evaluation_box_text">
+        酒店环境整洁,房间布局堪称完美,优雅又不失情调,服务周到,让人无比舒心。给我营造了一种家的感觉,无论大处到小处都是那么无懈可击,价格也很合理。
+        </view>
+        <view class="img_list">
+          <image class="evaluation_box_img" src="../../../images/index/headbg.png" />
+          <image class="evaluation_box_img" src="../../../images/index/headbg.png" />
+          <image class="evaluation_box_img" src="../../../images/index/headbg.png" />
+          <image class="evaluation_box_img" src="../../../images/index/headbg.png" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,105 @@
+/* pages/index/gourmetSpecialty/foodDetails/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.head_img {
+  width: 100%;
+  height: 348rpx;
+}
+.head{
+  position: relative;
+}
+.content {
+  padding: 0 30rpx;
+
+}
+.content_box {
+  padding: 54rpx 34rpx 0 32rpx;
+  margin-top: -22rpx;
+  box-shadow: 0px 6rpx 12rpx 0px rgba(0, 0, 0, 0.04);
+  z-index: 100;
+  position: relative;
+  background: #ffffff;
+  border-radius: 8rpx;
+}
+.one {
+  margin-bottom: 32rpx;
+  display: flex;
+  justify-content: space-between;
+} 
+.one_left {
+  font-size: 36rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  /* margin-bottom: 32rpx; */
+  color: #1d1d1d;
+}
+.one_right {
+  font-size: 18rpx;
+  color: #ff5555;
+}
+.one_right text {
+  font-size: 28rpx;
+  color: #ff5555;
+  margin-left: 6rpx;
+}
+.two {
+  font-size: 24rpx;
+  color: #1d1d1d;
+  letter-spacing: 0px;
+  margin-bottom: 44rpx;
+  overflow: hidden;
+}
+.three {
+  height: 242rpx;
+  margin-bottom: 76rpx;
+}
+.four {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fourteen_left {
+  font-size: 24rpx;
+  color: #000000;
+  margin-right: 226rpx;
+  margin-left: 88rpx;
+  margin-bottom: 54rpx;
+}
+.fourteen_left image {
+  width: 36rpx;
+  height: 28rpx;
+  margin-right: 14rpx;
+}
+.four_right {
+  font-size: 24rpx;
+  margin-bottom: 54rpx;
+  color: #000000;
+  line-height: 28rpx;
+}
+.four_right image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 12rpx;
+}
+.but{
+  display: contents;
+}
+/* .but {
+  display: contents !important;
+  width: 36rpx !important;
+  background-color: transparent !important;
+} */

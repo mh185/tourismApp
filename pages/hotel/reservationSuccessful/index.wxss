@@ -1,0 +1,81 @@
+/* pages/hotel/confirmHotelOrder/index.wxss */
+page {
+  background: #FFFFFF;
+}
+.top {
+  position: relative;
+  height: 125rpx;
+}
+.hotelTop {
+  position: absolute;
+  left: 19.42rpx;
+  top: 60rpx;
+  right: 0;
+  /* margin: auto; */
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.hotelTopLeft {
+  width: 16rpx;
+  height: 32rpx;
+}
+.head_title {
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 400;
+}
+.box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.box image {
+  width: 104rpx;
+  height: 104rpx;
+  margin-top: 164rpx;
+}
+.one {
+  font-size: 26rpx;
+  color: #5f1515;
+  margin-top: 18rpx;
+}
+.two {
+  font-size: 30rpx;
+  color: #2c2c2c;
+  margin-top: 8rpx;
+}
+.three {
+  font-size: 20rpx;
+  color: #666666;
+  margin-top: 56rpx;
+}
+.four {
+  font-size: 20rpx;
+  color: #666666;
+  margin-top: 6rpx;
+}
+.five {
+  width: 608rpx;
+  height: 88rpx;
+  background: linear-gradient(180deg,#ff9f4d, #ffdc69);
+  border-radius: 44rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-top: 198rpx;
+}
+.six {
+  border: 1px solid #5f1515;
+  width: 608rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 24rpx;
+  color: #5F1515;
+  margin-top: 40rpx;
+}

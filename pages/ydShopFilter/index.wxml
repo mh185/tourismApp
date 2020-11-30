@@ -1,0 +1,68 @@
+<!--pages/shopFilter/index.wxml-->
+<view class='shopFilterTop'>
+	<image class="shopFilterTopImg" src='{{imgUrl}}{{firstImg}}' mode="widthFix" />
+	<swiper class="shopFilterTopInfor" circular='true' indicator-dots='true'>
+		<swiper-item class="shopFilterTopInforItem clearfix" wx:for="{{navMenu}}" wx:for-index="index">
+			<view class="fl shopFilterTopInforItemList" bindtap='shopList' wx:for="{{item}}" wx:for-item="itemList" data-id='{{itemList.id}}' data-name='{{itemList.displayValue}}'>
+				<view class="shopFilterTopInforItemListImg">
+					<image src="{{imgUrl}}{{itemList.icon}}"></image>
+				</view>
+				<view class="shopFilterTopInforItemListName">{{itemList.displayValue}}</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>
+<view class="selShop">
+	<view class="selShoptit">热卖商品</view>
+	<view class="selShopBox clearfix" wx:if="{{hotsGoodsList!=null&&hotsGoodsList.length>0}}">
+		<view class="selShopBoxList fl" wx:for="{{hotsGoodsList}}" wx:for-index="index" bindtap='shopDetails' data-id="{{item.id}}">
+			<!-- <view class="selShopBoxListName">{{item.name}}</view>
+            <view class="selShopBoxListTit">正品行货，每周三开奖</view>  -->
+			<view class="selShopBoxListTu">
+				<image class="selShopBoxListImg" mode="scaleToFill" src="{{imgUrl}}{{item.headImg.uploadfilepath}}{{item.headImg.uploadfilename}}"></image>
+			</view>
+		</view>
+	</view>
+	<view class="noData" wx:else>
+		<view class="noDataTu">
+			<image class="noDataTuImg" src="../../images/noData.png" mode="widthFix"></image>
+		</view>
+		<view class="noDataTxtx">暂无热卖商品</view>
+	</view>
+</view>
+<view class="recomProducts">
+	<view class="selShoptit">推荐商家</view>
+	<view class="businessBox" wx:if='{{sellerList!=null&&sellerList.length>0}}'>
+		<view class="businessBoxList" wx:for='{{sellerList}}' wx:for-index="index">
+			<view class="businessBoxListInfor clearfix">
+				<image class="businessBoxListInforImg fl" src="{{imgUrl}}{{item.shopImg}}"></image>
+				<view class="fl businessBoxListInforBox">
+					<view class="businessBoxListInforBoxName">{{item.shopName}}</view>
+				</view>
+				<view class="fr businessBoxBtn" bindtap='enterTheShop' data-sellerid='{{item.id}}'>进店</view>
+			</view>
+			<view class="businessBoxListShop clearfix" wx:if="{{item.minLabels.length>0}}">
+				<view class="businessBoxListShopList fl" wx:for="{{item.minLabels}}" wx:for-item="goods" bindtap='shopDetails' data-id='{{goods.id}}'>
+					<view class="businessBoxListShopListTu">
+						<!-- <image class="businessBoxListShopListImg" mode="widthFix" src="{{imgUrl}}{{goods.headImg.uploadfilepath}}{{goods.headImg.uploadfilename}}"></image> -->
+						<image class="businessBoxListShopListImg" mode="widthFix" src="{{imgUrl}}{{goods.labelImg}}"></image>
+
+					</view>
+					<view class="businessBoxListShopListName">¥{{goods.price}}</view>
+				</view>
+			</view>
+			<view class="noData" wx:else>
+				<view class="noDataTu">
+					<image class="noDataTuImg" src="../../images/noData.png" mode="widthFix"></image>
+				</view>
+				<view class="noDataTxtx">当前商家暂无商品</view>
+			</view>
+		</view>
+	</view>
+	<view class="noData" wx:else>
+		<view class="noDataTu">
+			<image class="noDataTuImg" src="../../images/noData.png" mode="widthFix"></image>
+		</view>
+		<view class="noDataTxtx">暂无商家</view>
+	</view>
+</view>

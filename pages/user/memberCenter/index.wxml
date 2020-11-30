@@ -1,0 +1,158 @@
+<!--pages/user/memberCenter/index.wxml-->
+<view class="white">
+	<!-- <view class="header">
+		<image class="background-image" src="../../../images/center_header_background.png"></image>
+		<view class="row-1">
+			<view class="left">
+				<view class="level">Lv{{ userInfo.level || 0 }}</view>
+				<navigator class="button" url="/pages/user/signIn/index">去提升</navigator>
+			</view>
+			<view class="right">规则说明</view>
+		</view>
+		<view class="row-2">
+			<text class="exp">经验值</text>
+			<text class="exp-value">0/800</text>
+		</view>
+		<view class="row-2" style="margin-top: 10rpx;">3大尊享特权持有中</view>
+	</view> -->
+	<view class="header1">
+		<image class="background-image" src="../../../images/center_header_background.png"></image>
+		<view class="integral-box">
+			<view class="text">会员积分</view>
+			<view class="num">{{integral}}</view>
+		</view>
+	</view>
+	<view class="section-1">
+		<view class="title">全部权益</view>
+		<view class="sub-title">获尊享权益 · 3项</view>
+		<view class="list">
+			<navigator class="list-item" url="/pages/user/memberCenter/integral/index" hover-class="none">
+				<image class="icon" src="../../../images/center_integral_icon.png"></image>
+				<view class="text">自助积分</view>
+				<view class="desc">自助积分兑换</view>
+			</navigator>
+			<navigator class="list-item" url="/pages/user/memberCenter/stop/index" hover-class="none">
+				<image class="icon" src="../../../images/center_stop_icon.png"></image>
+				<view class="text">停车缴费</view>
+				<view class="desc">停车优惠不断</view>
+			</navigator>
+			<navigator class="list-item" url="/pages/integral/index" hover-class="none">
+				<image class="icon" src="../../../images/integral_icon.png"></image>
+				<view class="text">积分兑换</view>
+				<view class="desc">0积分抢先换</view>
+			</navigator>
+			<navigator class="list-item" url="" hover-class="none">
+				<image class="icon" src="../../../images/members_icon.png"></image>
+				<view class="text">会员活动</view>
+				<view class="desc">会员专属活动</view>
+			</navigator>
+		</view>
+		<view class="list">
+			<navigator class="list-item" url="" hover-class="none">
+				<image class="icon" src="../../../images/discount_icon.png"></image>
+				<view class="text">会员折扣</view>
+				<view class="desc">9折商品优惠</view>
+			</navigator>
+			<navigator class="list-item" url="" hover-class="none">
+				<image class="icon" src="../../../images/birthday_icon.png"></image>
+				<view class="text">生日礼包</view>
+				<view class="desc">生日礼包开心拿</view>
+			</navigator>
+			<navigator class="list-item" url="/pages/user/withdrawal/index" hover-class="none">
+				<image class="icon" src="../../../images/welfare_icon.png"></image>
+				<view class="text">福利中心</view>
+				<view class="desc">分佣提现</view>
+			</navigator>
+			<navigator class="list-item" url="/pages/user/signIn/index">
+				<image class="icon" src="../../../images/centerMore_icon.png"></image>
+				<view class="text">活动签到</view>
+				<view class="desc">签到赢积分</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="section-2">
+		<view class="title">会员说明</view>
+		<!-- <view class="row">
+			<view class="row-title">·经验值与等级的关系</view>
+			<view class="row-desc">从注册至今累计的经验值之和，决定会员等级。经验值实时更新，若当前经验值达到升级条件，即实时升级。</view>
+		</view>
+		<view class="row">
+			<view class="row-title">·购物获得经验值</view>
+			<view class="row-desc">我买了499元的商品，用了100元优惠券，实付399元，最终可获得多少经验值？399，经验值=实付金额，取整（实付金额大于20元）。</view>
+		</view>
+		<view class="row">
+			<view class="row-title">·扣减经验值</view>
+			<view class="row-desc">订单发生退款，将扣除对应发放的经验值。若连续3个月没有使用APP，将扣除300经验值。</view>
+		</view> -->
+
+		<view class="row">
+			<view class="row-title">尊敬的 VIP 顾客：</view>
+			<view class="row-desc">感谢您成为我们小程序平台会员</view>
+			<view class="row-desc">希望您在这里，开始精彩的会员生活！</view>
+		</view> 
+
+		<view class="row">
+			<view class="row-title">会员资格:</view>
+			<view class="row-desc">
+				1、顾客注册成为小程序用户，即可成为柳州旅游线上商城会员，第一次
+				购物即可享受积分奖励。</view>
+			<view class="row-desc">
+				2、注册成功后会员需填写完成基本信息：姓名、性别、生日、身份证号、地区</view>
+				<view class="row-title">*（柳州旅游小程序会员采用实名认证）</view>
+		</view> 
+		<view class="row">
+			<view class="row-title">关于积分：</view>
+			<view class="row-desc">
+				1. 会员于柳州旅游内每消费 1 元，即可积 1 分。
+				</view>
+			<view class="row-desc">
+				2. 顾客在小程序上产生消费，系统将自动积分。
+			</view>
+			<view class="row-desc">
+				3. 会员在办理退货时，我们将对卡内积分进行相应调整，若相应积分已被兑换
+或参与其它优惠活动，则会员需退还或照价支付积分礼品和赠品。
+			</view>
+			<view class="row-desc">
+				4. 积分周期：每年 1 月 1 日至 12 月 31 日
+			</view>
+			<view class="row-desc">
+				5. 积分清零：每年 12 月 31 日 22:00，积分清零重置。
+			</view>
+		</view> 
+
+		<view class="row">
+			<view class="row-title">专享服务:</view>
+			<view class="row-desc">
+				1、不定期推出会员积分礼 /秒杀活动/拼团活动/抽奖活动/会员专享日等专属活
+动，每次的礼品数量有限，先到先得，换完即止。（仅限小程序使用）
+				</view>
+			<view class="row-desc">
+				2、不定期派发优惠劵。（不可与其它优惠折扣一并使用）
+			</view>
+			<view class="row-desc">
+				3、二级分销，会员可自愿参与小程序分销来赚取佣金，并可在小程序福利中心
+				查看佣金数额并可提现。（参与小程序分销即视为您遵守【用户分销奖励规则】
+				相关条款）
+			</view>
+	
+		</view> 
+
+		<view class="row">
+			<view class="row-title">使用细则：</view>
+			<view class="row-desc">
+				1、小程序线上平台会员积分与线下实体店会员积分不可通用，线上平台会员积
+				分仅限在小程序上进行使用。
+				</view>
+			<view class="row-desc">
+				2、 成为柳州旅游小程序会员，即视为您承认并遵守本手册中的相关条款。
+			</view>
+			<view class="row-desc">
+				3、柳州旅游有权制定、修改并公布会员使用规则，且保留法律允许范围
+				内的解释权
+			</view>
+	
+		</view> 
+
+
+	</view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/user/myOrder/afterSalesRefund/index.wxml-->
+<view class="afterSalesRefund">
+    <view class="commodityBoxList clearfix" wx:for="{{orderdetails.goods}}" wx:for-item="item" wx:for-index="index" wx:key='index'>
+        <image class="commodityImg fl" src="{{imgUrl}}{{item.goodsHeadImg.uploadfilepath}}{{item.goodsHeadImg.uploadfilename}}"  />
+        <view class="fl commodityBoxListLeft">
+            <view class="commodityName">{{item.goodsTitle}}</view>
+        </view>
+    </view>
+    
+    <view class="reasonReturnDetails">
+        <view class="reasonReturnDetailsTit">评价内容</view>
+        <view class="reasonReturnDetailsContent">
+            <textarea value="{{comment}}" bindinput="getComment"  placeholder="请填写详细评价"></textarea>
+        </view>
+    </view>
+    <view class="reasonReturnStar">
+        <view class="reasonReturnDetailsTit">综合评价</view>
+        <view class="reasonReturnStars">
+            <image class="start" 
+                    wx:for="{{5}}" 
+                    wx:for-index="index"
+                    data-index="{{index}}"
+                    bindtap='selectIndexNum' 
+                    wx:key="index"
+                    src="{{score > index ? '../../../../images/icon-pentag-Yes.png' : '../../../../images/icon-pentag-no.png'}}"
+            />
+        </view>
+    </view>
+</view>
+<view class="operatingBtnBox">
+    <view class="referBtn" bind:tap="btnEvaluation">提交</view>
+</view>

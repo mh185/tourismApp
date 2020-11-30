@@ -1,0 +1,138 @@
+/* pages/commodity/invoice/index.wxss */
+.invoiceBox{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.invoiceCenter{
+    width: 100%;
+    padding:0 20rpx;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 20rpx;
+    border-radius: 10rpx;
+}
+.invoiceCenterList{
+    padding: 20rpx 0;
+}
+.invoiceCenterListLeft{
+    font-size: 24rpx;
+    color:#212121;
+}
+.invoiceCenterListRight{
+    font-size: 24rpx;
+    color:#8a8a8a;
+}
+.radio{
+    font-size: 24rpx;
+    color:#212121;
+    margin-left: 20rpx;
+}
+/* * 未选中的 背景样式 */
+radio .wx-radio-input{ 
+    height: 30rpx; 
+    width: 30rpx;
+    border-radius: 50%;
+    background: transparent;
+ }
+
+/* 选中后的 对勾样式 */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   height: 30rpx; 
+    width: 30rpx;
+   line-height: 30rpx;
+   text-align: center;
+   font-size:30rpx; 
+   color:#fff;
+}
+.invoiceCenterListTXT{
+    text-align: right;
+    font-size: 24rpx;
+    color:#212121;
+}
+.tisImg{
+    width: 35rpx;
+    margin-left:20rpx;
+}
+.popup{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+.popupCenter{
+    width: 100%;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    height:50%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+}
+.popupCenterTu{
+    width: 100%;
+    padding: 40rpx 20rpx 0;
+    box-sizing: border-box;
+}
+.popupCenterImg{
+    width: 40rpx;
+    height: 40rpx;
+}
+.popupCenterTit{
+ width: 100%;
+text-align: center;
+font-size: 32rpx;
+color:#212121;
+font-weight: 600;
+}
+.popupCenterWeb{
+width: 100%;
+padding: 0 20rpx;
+box-sizing: border-box;
+margin-top: 40rpx;
+}
+.popupCenterTxt{
+    margin-bottom: 20rpx;
+    font-size: 24rpx;
+    color:#8a8a8a;
+}
+.popupCenterTxt text{
+    display: block;
+}
+.popupCenterTxtLeft{
+    width: 20rpx;
+}
+.popupCenterTxtRight{
+    width: calc(100% - 20rpx);
+}
+
+.invoiceBtn{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: 40rpx 20rpx;
+    box-sizing: border-box;
+}
+.invoiceBtnList{
+    width: 100%;
+    text-align: center;
+    line-height:70rpx;
+    font-size: 28rpx;
+    border-radius: 60rpx;
+}
+.confirm{
+    margin-bottom: 40rpx;
+    background:rgba(2,125,88,1);
+    color: #fff;
+}
+.notInvoice{
+    background: #fff;
+    color: rgba(2,125,88,1);
+}

@@ -1,0 +1,30 @@
+/* pages/homePage/mation/index.wxss */
+.mation{
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.mationList{
+    width: 100%;
+    padding: 30rpx 0;
+    border-bottom:1px solid rgba(226,226,226,1);
+}
+.mationListTit{
+    font-size: 30rpx;
+    color:#212121;
+}
+.mationLisTime{
+    font-size: 24rpx;
+    color:#dbdbdb;
+}
+.mationListTxt{
+    width: 100%;
+    font-size: 28rpx;
+    margin-top: 20rpx;
+    color: rgba(33,33,33,1);
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

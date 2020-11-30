@@ -1,0 +1,239 @@
+/* pages/hotel/hotelDetails/index.wxss */
+page {
+  background: #FFFFFF;
+}
+.top {
+  position: relative;
+  height: 125rpx;
+}
+.hotelTop {
+  position: absolute;
+  left: 19.42rpx;
+  top: 60rpx;
+  right: 0;
+  /* margin: auto; */
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.hotelTopLeft {
+  width: 16rpx;
+  height: 32rpx;
+}
+.head_title {
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 400;
+}
+.image_box {
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+}
+.hotelDetails_top {
+  width: 690rpx;
+  height: 380rpx;
+  border-radius: 12rpx 12rpx 0 0;
+}
+.three_box {
+  width: 100%;
+  /* float: left; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26rpx;
+}
+.address_box {
+  width: 500rpx;
+  margin-left: 48rpx;
+}
+.hotelName {
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #313131;
+  display: block;
+}
+.hotelAddress {
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 34rpx;
+  color: #373736;
+}
+.telephone_box {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 92rpx;
+}
+.telephone {
+  width: 42rpx;
+  height: 42rpx;
+}
+.time {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 26rpx;
+}
+.time_box {
+  width: 690rpx;
+  height: 114rpx;
+  background-color:rgba(255, 215, 208, 0.1);
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.data {
+  height: 42rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  color: #000000;
+}
+.week {
+  height: 32rpx;
+  font-size: 22rpx;
+  font-weight: 400;
+  line-height: 32rpx;
+  color: #9D9D9D;
+  margin-left: 6rpx;
+}
+.total_box {
+  display: flex;
+  align-items: center;
+  /* width: 68rpx;
+  height: 36rpx; */
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #FF5555;
+}
+.total_box_arrow {
+  margin-left: 13rpx;
+}
+.butten {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.equipment_title{
+  font-size: 32rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #434343;
+}
+.equipment_detail{
+  width: 692rpx;
+  /* height: 230rpx; */
+  /* padding: 20rpx; */
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.05); 
+}
+.equipment_list{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.equipment_img{
+  width: 26rpx;
+  height: 26rpx;
+
+}
+.equipment_item{
+  width: 30%;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  align-items: center;
+  color: #646464;
+  font-size: 22rpx;
+}
+.equipment_name{
+  margin-left: 15rpx;
+}
+.list {
+  width: 692rpx;
+}
+.box{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  position: relative;
+}
+.box_left{
+  width: 200rpx;
+  height: 200rpx;
+}
+.box_left_img{
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 8rpx;
+}
+.box_center{
+  margin-left: 20rpx;
+}
+.hotel_name{
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.note_box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.note {
+  width: 90rpx;
+  height: 36rpx;
+  background: linear-gradient(180deg, #FF9F4D 0%, #FFDC69 100%);
+  opacity: 0.2;  
+  /* background-color:rgba(255, 215, 208, 0.1); */
+}
+.note_right {
+  margin-left: 12rpx;
+}
+.note text {
+  font-size: 16rpx;
+  font-weight: 400;
+  line-height: 22rpx;
+  color: #FEB557;
+}
+.hotel_locaton{
+  color: #646464;
+  font-size: 24rpx;
+  /* font-weight: 600; */
+}
+.hotel_prince{
+  color: #ff5555;
+  font-size: 22rpx;
+}
+.prince{
+  font-size: 28rpx;
+}
+.box_right{
+  text-align: center;
+  position: absolute;
+  right: 20rpx;
+  width: 36px;
+  /* height: 24px; */
+  /* background: #ff5555; */
+  border: 1px solid #ff5555;
+  border-radius: 2px 2px 0px 0px;
+}
+.box_right_up{
+  /* width: 22rpx; */
+  height: 46rpx;
+  line-height: 46rpx;
+  background: #ff5555;
+  font-size: 22rpx;
+  color: #FFF;
+}
+.box_right_text{
+  color: #FF5555;
+  font-size: 16rpx;
+}

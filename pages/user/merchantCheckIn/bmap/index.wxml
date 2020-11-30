@@ -1,0 +1,7 @@
+<!--pages/user/merchantCheckIn/bmap/index.wxml-->
+<view class="map_container"> 
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14"  markers="{{markers}}" bindtap="addMarker"></map> 
+</view> 
+<view class="footer">
+  <button class="operate-btn" bindtap="submit">保存</button>
+</view> 

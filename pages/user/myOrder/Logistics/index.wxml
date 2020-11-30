@@ -1,0 +1,82 @@
+<!--pages/user/myOrder/Logistics/index.wxml-->
+ <view class="myorderList">
+    <view class="shopName clearfix"  bindtap='details'>
+        <image class="shopImg fl" src="../../../../images/tu.png" />商家名称商家名称
+    </view>
+    <view class="commodityBox"  bindtap='details'>
+        <view class="commodityBoxList clearfix">
+            <image class="commodityImg fl" src="../../../../images/tu.png" />
+            <view class="fl commodityBoxListLeft">
+                <view class="commodityName">产品名称产品名称产品名称</view>
+                <view class="commodityProduct">产品规格</view>
+                <view class="commodityMoney">￥120.00<text class="fr">x1</text></view>
+            </view>
+        </view>
+            <view class="commodityBoxList clearfix">
+            <image class="commodityImg fl" src="../../../../images/tu.png" />
+            <view class="fl commodityBoxListLeft">
+                <view class="commodityName">产品名称产品名称产品名称</view>
+                <view class="commodityProduct">产品规格</view>
+                <view class="commodityMoney">￥120.00<text class="fr">x1</text></view>
+            </view>
+        </view>
+    </view>
+    <view class="myorderListWeb">
+        <view class="myorderListWebTxt">共2件商品 实付款240.00￥</view>
+         <view class="myorderListWebTxt">订单编号<text class="numebr">1002898920942</text></view>
+    </view>
+</view>
+
+<view class="LogisticsInfor">
+    <view class="LogisticsInforBox">
+        <view class="LogisticsInforBoxList">
+            <image class="carryOut" src="../../../../images/carryOut.png"></image>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName on">订单交易成功</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+         <view class="LogisticsInforBoxList">
+             <text class="point"></text>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName">【四川省】已签收，胯间已送达新都区熊猫大道175号，期待再次为您服务！</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+         <view class="LogisticsInforBoxList">
+             <text class="point"></text>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName">【四川省】已签收，胯间已送达新都区熊猫大道175号，期待再次为您服务！</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+         <view class="LogisticsInforBoxList">
+             <text class="point"></text>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName">【四川省】已签收，胯间已送达新都区熊猫大道175号，期待再次为您服务！</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+         <view class="LogisticsInforBoxList">
+             <text class="point"></text>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName">【四川省】已签收，胯间已送达新都区熊猫大道175号，期待再次为您服务！</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+         <view class="LogisticsInforBoxList">
+             <text class="point"></text>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName">【四川省】已签收，胯间已送达新都区熊猫大道175号，期待再次为您服务！</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+         <view class="LogisticsInforBoxList">
+             <text class="point"></text>
+            <view class="LogisticsInforBoxListright">
+                <view class="LogisticsInforBoxListrightName">【四川省】已签收，胯间已送达新都区熊猫大道175号，期待再次为您服务！</view>
+                <view class="LogisticsInforBoxListrightTime">2019-03-28 11:48:00</view>
+            </view>
+        </view>
+    </view>
+</view>

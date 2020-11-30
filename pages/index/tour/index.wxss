@@ -1,0 +1,140 @@
+/* pages/index/tour/index.wxss */
+/* page {
+  position: absolute;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.map_box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.map_size {
+  height: 100%;
+  width: 100%;
+}
+
+.food_msg {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  bottom: 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+  z-index: 99;
+
+} */
+/* pages/index/findToilet/index.wxss */
+page{
+  position: absolute;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.map_box{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.map_size{
+  height: 100%;
+  width: 100%;
+}
+.food_msg{
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  bottom: 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+  z-index: 11111111
+}
+.name{
+  font-size: 38rpx;
+  font-weight: 800;
+  color: #1d1d1d;
+}
+.food_button{
+  margin: 40rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.box_buttom{
+  margin: 0  !important;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  width: 160rpx !important;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0;
+  min-height: 40rpx !important ;
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+  box-shadow: 0px -10px 20px 0px rgba(184,184,184,0.1); 
+}
+.food_button text{
+  font-size: 24rpx;
+  color: #c8c8c8;
+}
+
+.name {
+  font-size: 38rpx;
+  font-weight: 800;
+  color: #1d1d1d;
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 40rpx;
+  width: 58rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg, #f0d78d, #e1cc8f);
+  border-radius: 8px 0px 8px 0px;
+  font-size: 20rpx;
+  color: #552f09;
+  text-align: center
+}
+
+.food_button {
+  margin: 40rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box_buttom {
+  margin: 0 !important;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  width: 160rpx !important;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0;
+  min-height: 40rpx !important;
+  background: linear-gradient(180deg, #f0d78d, #e1cc8f);
+  box-shadow: 0px -10px 20px 0px rgba(184, 184, 184, 0.1);
+}
+
+.food_buttom_text {
+  font-size: 24rpx;
+  color: #c8c8c8;
+}

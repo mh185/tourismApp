@@ -1,0 +1,21 @@
+<!--pages/cultural/index.wxml-->
+<view>
+    <van-search placeholder="搜索大会直播"  value="{{ value }}" bind:change="onSearch" background="#FAFAFA" />
+    <view class="cultural-body">
+        <view class="cul-item" wx:for="{{culDateList}}">
+        <view class="cul-image">
+          <image src="../../../images/index/live1.png"/>
+          <view class="cul-time">46：35</view>
+        </view>
+        <view class="cul-title">广西电视台大会大直播...</view>
+        <view class="cul-more">
+          <!-- 必须是线上链接   -->
+          <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png"></van-icon>
+          9527
+        </view>
+      </view>
+     </view>
+     <view class="clickMore">
+        点击加载更多
+     </view>
+</view>

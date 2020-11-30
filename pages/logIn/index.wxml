@@ -1,0 +1,14 @@
+<!--pages/logIn/index.wxml-->
+<view class="login">
+    <image class="loginIMg" src="{{iconUrl}}/login_logo.png"></image>
+    <view class="loginRTis">畅游柳州</view>
+    <button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" disabled="{{disabled}}">微信登录</button>
+    <!-- <view class="otherLogin" bindtap='otherLogin'>手机号登录/注册</view> -->
+    <view class="choose">
+        <checkbox bindtap="checkboxChange" checked="{{checked}}"></checkbox>
+        <view class="choose_text">阅读并接受<text bindtap="handleAgreement">《用户注册协议》</text></view>
+    </view>
+
+
+
+</view>

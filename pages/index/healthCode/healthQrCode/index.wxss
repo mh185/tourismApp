@@ -1,0 +1,73 @@
+/* pages/index/healthCode/healthQrCode/index.wxss */
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.card_box {
+  background: #ffffff;
+  padding: 50rpx 0 42rpx 46rpx;
+}
+.jianju {
+  margin: 14rpx 0;
+}
+.title {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  color: #646464;
+}
+.title text {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #1d1d1d;
+}
+.botton_box {
+  width: 100%;
+  margin-top: 56rpx;
+}
+.Qr_code_box {
+  /* width: 362rpx;
+  height: 362rpx; */
+  /* background: red; */
+  /* margin-bottom: 16rpx; */
+  background:#fff;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.health {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #39ca34;
+  margin: 0 auto;
+
+}
+
+.prompt {
+  width: 542rpx;
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #646464;
+  margin: 0 auto;
+}
+.jianju_bottom {
+  margin-top: 88rpx;
+}

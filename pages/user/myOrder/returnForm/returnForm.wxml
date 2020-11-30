@@ -1,0 +1,30 @@
+<!--pages/user/myOrder/returnForm/returnForm.wxml-->
+<!--pages/user/myOrder/afterSalesRefund/index.wxml-->
+<view class="afterSalesRefund">
+
+
+    <view class="reasonReturnTit">
+        <text>快递公司<text class="reasonReturnTitRTis">(必填)</text></text>
+        <view class="fr reasonReturnRight">
+            <input maxlength="11" style="padding-right: 20rpx;" bindinput="fillForm" data-type="company" placeholder-style="text-align:right" placeholder="请填写" />
+        </view>
+        <!-- <view class="fr reasonReturnRight">请选择<image class="fr" src="../../../../images/right.png"></image></view> -->
+    </view>
+    <view class="reasonReturnTit">
+        <text>快递单号<text class="reasonReturnTitRTis">(必填)</text></text>
+        <view class="fr reasonReturnRight">
+            <input maxlength="11" style="padding-right: 20rpx;" bindinput="fillForm" data-type="number" placeholder-style="text-align:right" placeholder="请填写" />
+        </view>
+    </view>
+
+    <view class="reasonReturnTit">
+        <text>联系方式<text class="reasonReturnTitRTis">(必填)</text></text>
+        <view class="fr reasonReturnRight">
+            <input maxlength="11" style="padding-right: 20rpx;" bindinput="fillForm" data-type="phone" placeholder-style="text-align:right" placeholder="请填写" />
+        </view>
+    </view>
+
+</view>
+<view class="operatingBtnBox">
+    <view class="referBtn" bind:tap="fillOrderNumber">确认提交</view>
+</view>

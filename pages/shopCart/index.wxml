@@ -1,0 +1,69 @@
+<!--pages/shopCart/index.wxml-->
+<view class="shopCartEdit clearfix" wx:if="{{savaCartList!=null&&savaCartList.length>0}}">
+    <text class="EditBtn fr" wx:if="{{isEdit}}"  bindtap='EditBtn'>完成</text>
+    <text class="EditBtn fr" wx:else  bindtap='EditBtn'>编辑</text>
+</view>
+<view class="shopCartBox" wx:if="{{savaCartList!=null&&savaCartList.length>0}}">
+     <checkbox-group bindchange="groupChange">
+        <view class="shopCartBoxList" wx:for="{{savaCartList}}" wx:for-index="index" wx:for-item="item">
+                <view class="shopName clearfix" bindtap='enterTheShop' data-sellerid='{{item.sellerId}}'>
+                    <image class="shopIcon fl" src="../../images/dp-icon.png" />
+                    {{item.shopName}}
+                    <image class="right fr" src="../../images/right.png" />
+                </view>
+                <view class="shoppingBox" wx:if="{{item.goods!=null&&item.goods.length>0}}">                 
+                    <view class="shoppingBoxlist clearfix"  wx:for="{{item.goods}}" wx:for-index="i" wx:for-item="goodList">
+                        <view class="shoppingBoxlistCheckbox fl">
+                                <checkbox class="fl" checked="{{goodList.checked}}" value='{{goodList.cartId}}'></checkbox> 
+                        </view>
+                        <view class="shoppingBoxlistCheckboxright fl clearfix" bindtap='details' data-goodsid='{{goodList.goodsId}}'>
+                            <image class="fl shopImg" src="{{imgUrl}}{{goodList.headImg.uploadfilepath}}{{goodList.headImg.uploadfilename}}"></image>
+                            <view class="fl shopInfor">
+                                <view class="shopInforName">{{goodList.name}}</view>
+                                <view class="shopInforSpecification clearfix"><text class="shopInforSpecificationList fl">{{goodList.cartLabel}}</text></view>
+                                <view class="shopInforMoney clearfix">
+                                    <text class="fl shopInforMoneyLeft">￥{{goodList.cartPrice}}</text>
+                                    <view class="fr shopInforNumber">
+                                        <text class="less fl" catchtap='less' data-cartid='{{goodList.cartId}}'>-</text>
+                                        <text class="numebr fl">{{goodList.cartNum}}</text>
+                                        <text class="plus fl" catchtap='plus' data-cartid='{{goodList.cartId}}'>+</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>                        
+                    </view>              
+                </view>
+        </view>
+    </checkbox-group>
+</view>
+<view class="NoCartData" wx:else>
+    <image class="NoCartDataImg" src="../../images/zwsp-icon.png" mode="widthFix"></image>
+    <view class="NoCartDataTis">购物车空空如也</view>
+    <view class="goShopping" bindtap='goShopping'>去购物</view>
+</view>
+<!-- 结算 -->
+<block  wx:if="{{savaCartList!=null&&savaCartList.length>0}}">
+    <view class="Settlement clearfix" wx:if="{{!isEdit}}">
+        <view class="SettlementLeft fl">
+            <checkbox-group bindchange="selectAll">
+                <checkbox  class="fl selectAll" value='selectAll' checked="{{iSelectAll}}">全选</checkbox>
+            </checkbox-group>
+        </view>
+        <view class="SettlementRight fr clearfix">
+            <view class="totalMoney fl">合计：<text >￥{{totalMoney}}</text></view>
+            <view class="SettlementBtn fr" bindtap='goSettlement'>结算</view>
+        </view>
+    </view>
+
+    <!-- 删除 -->
+    <view class="Settlement clearfix" wx:else>
+        <view class="SettlementLeft fl">
+            <checkbox-group bindchange="selectAll">
+                <checkbox  class="fl selectAll" value='selectAll' checked="{{iSelectAll}}">全选</checkbox>
+            </checkbox-group>
+        </view>
+        <view class="SettlementRight fr clearfix">
+            <view class="deleteBtn fr" bindtap='deleteBtn'>删除</view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-icon": "/vant/icon",
+    "van-stepper": "/vant/stepper",
+    "van-radio": "/vant/radio",
+    "van-radio-group": "/vant/radio-group/"
+  },
+  "navigationStyle": "custom"
+}

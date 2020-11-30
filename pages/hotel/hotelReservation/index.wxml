@@ -1,0 +1,45 @@
+<!-- pages/hotel/hotelReservation/index.wxml -->
+<view>
+  <view class="top">
+    <image class="head_img" src="../../../images/index/headbg.png" />
+    <view class="hotelTop" bindtap="toIndex">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">酒店</text>
+    </view>
+  </view>
+  <view class="ditu">
+    <view class="content">
+      <view class="line">
+        <view class="location_city" bindtap="toChooseCity">
+          <text>{{city}}</text>
+          <van-icon name="arrow" color="#A5A5A5"/>
+        </view>
+        <view class="location_positioning">
+          <image class="location_img" src="../../../images/hotel/location.png" />
+          <text class="location_text">当前位置</text>
+        </view>
+      </view>
+      <view class="line">
+        <view class="location_city border_right">
+          <text>3月14 日<text class="day">今天</text></text>
+          <text class="text_center">-</text>
+          <text>3月14 日<text class="day">周五</text></text>
+        </view>
+        <view class="right">
+        <text>共1晚</text>
+        </view>
+      </view>
+      <view class="line">
+        <text class="star_price">星级/价格</text>
+        <van-icon name="arrow" color="#A5A5A5"/>
+      </view>
+      <view class="food">
+        <view class="food_button" bindtap="toHotelList">开始搜索</view>
+        <!-- <van-button class="food_button" color="linear-gradient(to right, #80ff8e, #35d9ba)" round plain>
+        开始搜索       
+        </van-button> -->
+      </view>
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+.information{
+  width: 690rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.information_box{
+  background: #ffffff;
+  padding: 30rpx;
+}
+.information_box_up{
+  display: flex;
+  align-items: center;
+}
+.information_image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 4px;
+}
+.information_image cover-image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 4px;
+}
+.information_msg{
+  flex: 1;
+  margin-left: 25rpx;
+}
+.information_name{
+  font-size: 28rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #1d1d1d;
+  line-height: 40rpx;
+}
+.information_box_msg{
+  height: 100rpx;
+  overflow: scroll;
+  font-size: 22rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #646464;
+  line-height: 20px;
+}
+.information_button{
+  display: flex;
+  margin-left: 170rpx;
+  margin-top: 20rpx;
+}
+.box_buttom{
+  /* width: 150rpx; */
+  margin: 0 0 0 20rpx  !important;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  width: 160rpx !important;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0;
+  min-height: 40rpx !important ;
+  /* background: linear-gradient(180deg,#f0d78d, #e1cc8f); */
+  background: #f0d78d;
+  box-shadow: 0px -10px 20px 0px rgba(184,184,184,0.1); 
+}

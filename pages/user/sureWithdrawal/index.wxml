@@ -1,0 +1,46 @@
+<!--pages/user/sureWithdrawal/index.wxml-->
+<!-- <text>pages/user/确认提现/index.wxml</text> -->
+<view class="wrap">
+    <view class="w_money">
+        <view class="w_money_txt">提现金额</view>
+        <view class="w_money_v">
+            <!-- <input type="text" placeholder="{{tps}}" placeholder-style="font-weight:300; font-size:24rpx" /> -->
+            ¥{{accountData.price}}
+        </view>
+    </view>
+
+    <view class="form-line-name">
+        <view>姓名</view>
+        <view class="right">
+            <input type="text" maxlength="6" disabled="{{isdisabled}}" bindinput="fillBankInfo" data-type="name" value="{{bankInfo.name}}" placeholder="请输入姓名" placeholder-class="placeholder-class" />
+        </view>
+    </view>
+
+    <view class="form-line-bank">
+        <view class="form-line-bank-item">
+            <view>银行卡号</view>
+            <view class="right">
+                <input type="text" maxlength="25" disabled="{{isdisabled}}" bindinput="fillBankInfo" data-type="bankCard" value="{{bankInfo.number}}" placeholder="请输银行卡号" placeholder-class="placeholder-class" />
+            </view>
+        </view>
+        <view class="form-line-bank-item border-t">
+            <view>开户行</view>
+            <view class="right">
+                <input type="text" maxlength="30" disabled="{{isdisabled}}" bindinput="fillBankInfo" data-type="bankName" value="{{bankInfo.bankName}}" placeholder="请输银行开户行" placeholder-class="placeholder-class" />
+            </view>
+        </view>
+
+    </view>
+
+    <view class="form-tps">
+        <view class="form-tps-mark">
+            *
+        </view>
+        <view class="inline">
+            首次输入银行信息以后，无法再次修改此信息，请务必核对信息 的正确性，避免无法收取提现款项。
+        </view>
+    </view>
+</view>
+<view class="btn-box">
+    <view class="btn" bindtap="commitInfo">确认提现</view>
+</view>

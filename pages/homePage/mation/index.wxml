@@ -1,0 +1,7 @@
+<!--pages/homePage/mation/index.wxml-->
+<view class="mation" wx:if="{{informationList!=null&&informationList.length>0}}">
+    <view class="mationList" wx:for="{{informationList}}" wx:for-index="index" bindtap='mationDetails' data-mationtxt='{{item}}'>
+        <view class="mationListTit">{{item.name}}<text class="fr mationLisTime">{{item.createDate}}</text></view>
+         <view class="mationListTxt">{{item.conent}}</view>
+    </view>
+</view>

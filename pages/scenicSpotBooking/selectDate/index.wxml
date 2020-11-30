@@ -1,0 +1,34 @@
+<!--pages/scenicSpotBooking/selectDate/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+>
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">选择日期</text>
+  </view>
+</van-nav-bar>
+<view class="bj">
+  <view class="box">
+    <!-- <van-calendar 
+    show="{{ show }}" 
+    bind:close="onClose" 
+    bind:confirm="onConfirm" 
+    /> -->
+    <van-calendar
+      id="selecCalendar"
+      show-title="{{ false }}"
+      show-subtitle="{{ false }}"
+      poppable="{{ false }}"
+      show-confirm="{{ true }}"
+      class="calendar"
+      dateList='{{dateList}}'
+      bind:confirm="onConfirm"
+    />
+    <!-- formatter="{{ formatter }}" -->
+
+  </view>
+</view>

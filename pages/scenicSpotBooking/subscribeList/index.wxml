@@ -1,0 +1,40 @@
+<!--pages/scenicSpotBooking/subscribeList/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+>
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">我的预约</text>
+  </view>
+</van-nav-bar>
+<view class="box">
+  <view class="list" wx:for="{{cardList}}" wx:key="key" data-id="{{item.id}}" bindtap="toMyAppointment">
+    <image src="{{iconUrl}}/item-2.png"/>
+    <view class="right_box">
+      <view class="right">
+        <view class="right_upper">{{item.areaName}}</view>
+        <view class="right_middle">预约时间：{{item.appointment}}</view>
+        <view class="right_lower">
+        <view class="name">
+            {{item.name}}
+        </view>
+
+          <!-- <view class="name" wx:for="{{item.travelerIndexDTOS}}" wx:key="key" wx:for-item="it">
+            {{item.name}}
+          </view> -->
+        </view>
+      </view>
+      <view class="">
+        <view class="appointmentsNumber">共计{{item.number}}人预约</view>
+        <view class="stateName {{item.stateName_colour}}">{{item.stateName}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 分页 -->
+  <!-- <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+  <view class="loading" hidden="{{!searchLoading}}">已加载全部</view> -->
+</view>

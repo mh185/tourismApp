@@ -1,0 +1,260 @@
+/* pages/more/travelNotesIntroduction/travelStrategyDetails/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+#myVideo{
+  width: 100%;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.head_img {
+  width: 100%;
+  height: 340rpx;
+}
+.head{
+  position: relative;
+}
+/* .head swiper {
+  height: 415rpx;
+} */
+.current_class{
+  position: absolute;
+  width: 68rpx;
+  height: 40rpx;
+  opacity: 0.7;
+  background: #050505;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+  bottom: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.content {
+  padding: 0 30rpx;
+  
+}
+
+.content_box {
+  padding: 54rpx 34rpx 0 32rpx;
+  margin-top: -22rpx;
+  box-shadow: 0px 6rpx 12rpx 0px rgba(0, 0, 0, 0.04);
+ 
+  z-index: 100;
+  position: relative;
+  background: #ffffff;
+  border-radius: 8rpx;
+}
+.one {
+  font-size: 36rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  text-align: left;
+  color: #1d1d1d;
+}
+.two {
+  font-size: 24rpx;
+  color: #262323;
+  margin-top: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.two image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 14rpx;
+}
+.three {
+  margin-top: 26rpx;
+  /* display: flex; */
+  justify-content: flex-start;
+  align-items: center;
+}
+.three_one {
+  font-size: 22rpx;
+  color: #c8c8c8;
+  margin-right: 10rpx;
+}
+.three_two {
+  font-size: 26rpx;
+  color: #e7d08e;
+  margin-right: 20rpx;
+}
+.three image {
+  width: 26rpx;
+  height: 6rpx;
+  margin-right: 22rpx;
+}
+.three_four {
+  font-size: 26rpx;
+  color: #e7d08e;
+  margin-right: 86rpx;
+}
+.three_five {
+  font-size: 22rpx;
+  color: #c8c8c8;
+  margin-right: 10rpx;
+}
+.three_six {
+  font-size: 26rpx;
+  color: #e7d08e;
+  overflow: hidden;
+}
+.four {
+  margin-top: 12rpx;
+  /* display: flex; */
+  justify-content: flex-start;
+  align-items: center;
+}
+.van-col--15 {
+  width: 57% !important;
+}
+.van-col--9 {
+  width: 43% !important;
+}
+.four_one {
+  font-size: 22rpx;
+  color: #c8c8c8;
+  margin-right: 8rpx;
+}
+.four_two {
+  font-size: 26rpx;
+  color: #e7d08e;
+  margin-right: 154rpx;
+}
+.four_three {
+  font-size: 22rpx;
+  color: #c8c8c8;
+  margin-right: 10rpx;
+}
+.four_four {
+  font-size: 26rpx;
+  color: #e7d08e;
+}
+.five {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 56rpx;
+}
+.six {
+  font-size: 24rpx;
+  color: #1d1d1d;
+  letter-spacing: 0px;
+  margin-top: 28rpx;
+}
+.seven {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 52rpx;
+  overflow: hidden;
+}
+.eight {
+  font-size: 24rpx;
+  color: #1d1d1d;
+  letter-spacing: 0px;
+  margin-top: 28rpx;
+}
+.nine {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 78rpx;
+}
+.ten {
+  margin-top: 18rpx;
+  width: 100%;
+  height: 270rpx;
+  position: relative;
+}
+.ten image {
+  height: 270rpx;
+  width: 100%;
+}
+.ten_title {
+  font-size: 36rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  color: #ffffff;
+  position: absolute;
+  bottom: 34rpx;
+  left: 26rpx;
+}
+.eleven {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 70rpx;
+}
+.twelve {
+  font-size: 24rpx;
+  color: #1d1d1d;
+  letter-spacing: 0px;
+  margin-top: 28rpx;
+}
+.thirteen {
+  height: 262rpx;
+  margin-top: 38rpx;
+}
+.fourteen {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 80rpx;
+}
+.fourteen_left {
+  font-size: 24rpx;
+  color: #000000;
+  margin-right: 226rpx;
+  margin-left: 88rpx;
+  margin-bottom: 54rpx;
+}
+.fourteen_left image {
+  width: 36rpx;
+  height: 28rpx;
+  margin-right: 14rpx;
+}
+.fourteen_right {
+  /* font-size: 24rpx; */
+  margin-bottom: 54rpx;
+  display: flex;
+  align-items: flex-end;
+  /* color: #000000; */
+}
+.fourteen_right text {
+  font-size: 24rpx;
+  /* margin-bottom: 54rpx; */
+  color: #000000;
+  margin-left: 14rpx;
+}
+.fourteen_right image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 12rpx;
+}
+.but{
+  display: contents;
+}
+.rich_box{
+  /* overflow: scroll; */
+  overflow: hidden;
+}

@@ -1,0 +1,87 @@
+/* pages/enterTheShop/index.wxss */
+.store{
+    width: 100%;
+    padding:40rpx 20rpx;
+    background: #001911;
+    box-sizing: border-box;
+}
+.storeImg{
+    width: 80rpx;
+    height: 80rpx;
+}
+.storeBox{
+    margin-left: 20rpx;
+}
+.storeBoxName{
+    font-size: 32rpx;
+    color: #bfbfbf;
+    line-height: 80rpx;
+}
+.storeBoxXin{
+    margin-top: 10rpx;
+}
+.storeBoxXinImg{
+width:20rpx;
+height:20rpx;
+margin-right:5rpx;
+}
+.businessBoxBtn{
+    padding: 10rpx 30rpx;
+    border-radius: 50rpx;
+    background: #027D58;
+    font-size: 28rpx;
+    color: #fff;
+    margin-top: 10rpx;
+}
+.filter{
+   width: 100%;
+   padding: 40rpx 20rpx;
+   box-sizing: border-box;
+   background: #fff; 
+}
+.filter text{
+font-size: 30rpx;
+margin-right:50rpx;
+}
+.filter text.on{
+    font-size: 36rpx;
+}
+.content{
+    column-count:2;
+    column-gap:20rpx;
+    padding: 20rpx;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  
+  .contentList{
+    break-inside: avoid;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #f5f5f5;
+    margin-bottom:20rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+  }
+  .contentListShopListImg{
+      width: 100%;
+  }
+  .contentListShopName{
+      padding: 20rpx 10rpx;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 28rpx;
+      color: #2c2c2c;
+  }
+  .contentListShopNumber{
+    padding: 10rpx 10rpx 20rpx;
+    width: 100%;
+      box-sizing: border-box;
+      font-size: 28rpx;
+      color: #2c2c2c;
+  }
+  .contentListShopNumber text{
+    font-size: 24rpx;
+    color: #dbdbdb;
+  }

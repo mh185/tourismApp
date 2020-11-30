@@ -1,0 +1,39 @@
+<!--pages/more/deliciousFood/foodDetails/index.wxml-->
+<import src="../../../../components/wxParse/wxParse.wxml"/> 
+<van-nav-bar 
+	fixed='{{true}}' 
+	placeholder='{{true}}' 
+	border='{{false}}' 
+	custom-class='back_class' 
+	bind:click-left="onClickLeft"
+>
+	<view slot="left" class="nav_left">
+		<van-icon name="arrow-left" />
+		<text class="nav_left_text">美食详情</text>
+	</view>
+</van-nav-bar>
+<view class="attractionsDetail">
+  <image class="head_img" src="{{host}}{{imgUrl}}" />
+  <view class="content">
+    <view class="content_box">
+      <!-- <view class="one"> -->
+        <view class="one_left">{{name}}</view>
+        <!-- <view class="one_right">人均<text>10元</text></view> -->
+      <!-- </view> -->
+      <!-- <view class="two">{{introduce}}</view> -->
+      <view class="two">
+        <!-- <rich-text nodes="{{introduce}}"  space="emsp"></rich-text> -->
+             <!-- 解析图片base64的方法 -->
+         <template is="wxParse" data="{{wxParseData:courseDetail.nodes}}" />
+    
+      </view>
+      <!-- <image class="three" src="{{imgUrl}}" /> -->
+      <!-- <view class="four">
+        <view class="four_left">
+          <image src="{{iconUrl}}/share2.png" />19092</view>
+        <view class="four_right">
+          <image src="{{iconUrl}}/praise.png" />19092</view>
+      </view> -->
+    </view>
+  </view>
+</view>

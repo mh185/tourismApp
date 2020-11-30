@@ -1,0 +1,56 @@
+/* pages/user/setUp/index.wxss */
+.operating{
+    width: 100%;
+    background: #fff;
+    font-weight: bold;
+    padding: 0 20rpx 0rpx;
+    box-sizing: border-box;
+}
+.operatlist{
+    width: 100%;
+    padding: 40rpx 0;
+    max-height: 132rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f5f5f5;
+}
+.operatlist:last-child{
+    border-bottom:none;
+}
+.operatlistImg{
+    width: 50rpx;  
+    height: 50rpx;
+    margin-right:15rpx;  
+}
+.operatlistrigth{
+    line-height: 50rpx;
+    font-size: 30rpx;
+    color: #212121;
+}
+.rightImg{
+    width: 30rpx;
+    margin-top: 20rpx;
+}
+.operatingBtnBox{
+    height:216rpx;
+    width: 100%;
+    background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 100%);
+    box-shadow:0px -3px 20px rgba(143,143,143,0.16);
+    position: fixed;
+    bottom: 0rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+}
+.operatingBtn{
+    width: 90%;
+    font-size: 30rpx;
+    height: 98rpx;
+    color: #fff;
+    background: #027D58;
+    margin-top: 36rpx;
+    line-height: 98rpx;
+    text-align: center;
+    border-radius:50rpx ;
+    font-weight:600;
+}

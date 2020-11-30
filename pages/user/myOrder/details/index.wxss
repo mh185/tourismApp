@@ -1,0 +1,281 @@
+/* pages/user/myOrder/details/index.wxss */
+
+.orderInfor {
+    width: 100%;
+    padding: 0 20rpx;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+
+.orderInforList {
+    padding: 40rpx 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.orderInforList:last-child {
+    border-bottom: none
+}
+
+.pendPaymentName {
+    font-size: 32rpx;
+    color: #000000;
+    font-weight: 600;
+}
+
+.pendPaymentTime {
+    font-size: 24rpx;
+    color: #919191;
+    margin-top: 15rpx;
+}
+
+.userInfor {
+    font-size: 28rpx;
+    color: #000000;
+    font-weight: 600;
+}
+
+.userInfor text {
+    margin-left: 20rpx;
+}
+
+.userInforAddress {
+    font-size: 28rpx;
+    color: #919191;
+    margin-top: 15rpx;
+    font-weight: 400;
+}
+
+.myorderList {
+    width: 100%;
+    padding: 40rpx 20rpx;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+
+.shopName {
+    width: 100%;
+    font-size: 30rpx;
+    color: #333333;
+    margin-bottom: 20rpx;
+}
+
+.shopImg {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.commodityBox {
+    width: 100%;
+}
+
+.commodityBoxList {
+    width: 100%;
+    padding: 20rpx 0;
+    border-bottom: 1px dashed #f6f6f6;
+}
+
+.commodityBoxList:first-child {
+    border-top: 1px dashed #DFDFDF;
+}
+
+.commodityImg {
+    width: 160rpx;
+    height: 160rpx;
+    display: block;
+}
+
+.commodityBoxListLeft {
+    width: calc(100% - 180rpx);
+    margin-left: 20rpx;
+    padding: 15rpx 0;
+}
+
+.commodityName {
+    font-size: 24rpx;
+    color: #2A2A2A;
+    font-weight: 400;
+}
+
+.commodityProduct {
+    font-size: 24rpx;
+    color: #919191;
+    margin: 26rpx 0 38rpx 0;
+}
+
+.commodityProductName {
+    padding: 10rpx 14rpx;
+    background: rgba(244, 244, 244, 1);
+    border-radius: 3px;
+}
+
+.commodityMoney {
+    font-size: 30rpx;
+    color: #027D58;
+    font-weight: 600;
+}
+
+.commodityNum {
+    color: #212121;
+    font-weight: 400;
+}
+
+.myorderListWebTxt {
+    padding-top: 22rpx;
+    text-align: right;
+    font-size: 24rpx;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 46rpx;
+}
+
+.myorderListWebList {
+    font-size: 28rpx;
+    color: #000000;
+    font-weight: 400;
+    padding: 40rpx 20rpx;
+    border-bottom: 1px solid rgba(245, 245, 245, 1);
+}
+
+.myorderListWebList text {
+    color: #919191;
+    font-weight: 400;
+    font-size: 24rpx;
+}
+
+.myorderListWebList .myorderListWebListYhM {
+    border-radius: 2px;
+    font-size: 20rpx;
+    color: #fff;
+    padding: 3rpx 6rpx;
+    background: rgba(2, 125, 88, 1);
+    margin-left: 80rpx;
+}
+
+.myorderListWebList .myorderListWebListYhMj {
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(42, 42, 42, 1);
+    margin-left: 20rpx;
+}
+
+.myorderBottom {
+    width: 100%;
+    padding: 30rpx 20rpx;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 216rpx;
+}
+
+.myorderBottomList {
+    padding: 42rpx 18rpx;
+    font-size: 28rpx;
+    color: #000000;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(245, 245, 245, 1);
+}
+
+.myorderBottomList:last-child {
+    border-bottom: none;
+}
+
+.myorderBottomList text {
+    margin-left: 20rpx;
+    color: #919191;
+    font-weight: 500;
+}
+
+.myorderBottomList .copyWl {
+    color: #0464D5;
+}
+
+.operatingBtnBox {
+    /* height:216rpx; */
+    padding: 40rpx 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0px -3px 20px rgba(143, 143, 143, 0.16);
+    position: fixed;
+    bottom: 0rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+
+/* .myorderBottomBtn{
+    margin-top: 64rpx;
+} */
+
+.orderButton {
+    width: 198rpx;
+    height: 68rpx;
+    text-align: center;
+    line-height: 68rpx;
+    border: 1px solid rgba(185, 185, 185, 1);
+    border-radius: 54rpx;
+    color: #B9B9B9;
+    font-size: 30rpx;
+    font-weight: 500;
+    margin-right: 18rpx;
+}
+
+.orderPayButton {
+    background: rgba(2, 125, 88, 1);
+    color: #fff;
+    border: 1px solid rgba(2, 125, 88, 1);
+}
+
+.orderRefundButton {
+    border: 1px solid rgba(33, 33, 33, 1);
+    color: #212121;
+}
+
+.ordertxt {
+    width: 198rpx;
+    height: 68rpx;
+    text-align: center;
+    line-height: 68rpx;
+    border: none;
+    border-radius: 54rpx;
+    color: rgba(2, 125, 88, 1);
+    font-size: 30rpx;
+    font-weight: 500;
+    margin-right: 18rpx;
+}
+
+.refund-btn {
+    width: 130rpx;
+    height: 54rpx;
+    border: 2rpx solid rgba(185, 185, 185, 1);
+    border-radius: 28rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    color: rgba(185, 185, 185, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    float: right;
+    margin-top: 30rpx;
+}
+
+.color_lv {
+    color: rgba(2, 125, 88, 1);
+    font-size: 28rpx;
+    margin-top: 15rpx;
+}
+
+.erweima {
+    width: 100%;
+    height: 390rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 320rpx;
+    height: 320rpx;
+}

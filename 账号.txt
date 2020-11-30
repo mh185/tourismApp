@@ -1,0 +1,5 @@
+Appid：wx6d092b71cdd219d8
+AppSecret：22d470c36cbdd0c09d68c0de6b6fc28e
+商户号：1593268551
+密钥：8c336a8d2a0ff22f866661e4f22c80bf
+公众号密码：Zq123456

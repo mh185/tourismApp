@@ -1,0 +1,24 @@
+<!--pages/user/help/index.wxml-->
+<van-nav-bar
+    fixed='{{true}}'
+    placeholder='{{true}}'
+    border='{{false}}'
+    custom-class='back_class'
+    bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">{{name}}</text>
+  </view>
+</van-nav-bar>
+<view class="bj">
+  <!-- <view class="help-title" wx:if="{{title!=null && title!=''}}">
+    {{title}}
+  </view> -->
+  <view class="help-center" wx:if="{{content!=null&&content!=''}}">
+        <rich-text nodes="{{content}}"></rich-text>
+  </view>
+  <!-- <view class="help-center">
+    “畅游柳州”小程序为您提供线上景区介绍、景区实景、旅游攻略、美食等文旅资讯。
+  </view> -->
+</view>

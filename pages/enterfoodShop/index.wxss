@@ -1,0 +1,330 @@
+/* pages/enterfoodShop/index.wxss */
+page {
+    background-color: #fff;
+    padding-bottom: 80rpx;
+}
+.shop {
+    padding: 40rpx 24rpx;
+    display: flex;
+    border-top: 1px solid #EFEFEF;
+    border-bottom: 1px solid #EFEFEF;
+}
+.shop .shop_head {
+    width: 202rpx;
+    height: 202rpx;
+    display: flex;
+    align-items: center;
+}
+.shop .shop_head image {
+    width: 100%;
+}
+.shop .shop_detail {
+    padding-left: 22rpx;
+    width: 500rpx;
+    color: #2A2A2A;
+    font-size: 32rpx;
+    font-weight: 500;
+    font-family:PingFang SC;
+}
+.shop_detail .shop_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50rpx;
+}
+.shop_title .shop_collection {
+    width: 32rpx;
+}
+.shop_title .shop_collection image {
+    width: 100%;
+}
+.shop_detail .carry_mode {
+    display: flex;
+    flex-wrap: wrap;
+    color: #FF7F00;
+    font-size: 22rpx;
+}
+.carry_mode .carry_modetxt {
+    background-color: #FFF2E4;
+    padding: 6rpx 14rpx;
+    margin : 10rpx 12rpx 10rpx 0;
+}
+.shop_detail .give{
+    font-size: 26rpx;
+}
+.shop_detail .give text {
+    color: #B8B8B8;
+}
+/* tabs */
+.tabs {
+    margin: 20rpx 0;
+    border-bottom: 1px solid #EFEFEF;
+}
+.tabs_title {
+    width: 100%;
+    line-height: 80rpx;
+    height: 80rpx;
+    background:rgba(255,255,255,1);
+    opacity:1;
+}
+.tabs_title .title_item {
+    font-size: 28rpx;
+    display: inline-block;
+    width: 15%;
+    color: #212121;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:#B9B9B9;
+    opacity:1;
+    text-align: center;
+}
+.tabs_title .active{
+    font-size:32rpx;
+    font-family:PingFang SC;
+    color:#333333;
+    opacity:1;
+}
+.menu_container {
+    width: 100%;
+    height: 66vh;
+    display: flex;
+    justify-content: space-between;
+}
+.menu_container scroll-view {
+    height: 100%;
+}
+.menu_container .menu_left {
+    width: 25%;
+    background-color: #FAF7F8;
+}
+.menu_container .menu_right {
+    width: 70%;
+}
+.menu_left .menu_leftitem {
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+}
+.item_active {
+    background-color: #fff;
+}
+.goods_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    border-bottom: 1px solid #EFEFEF;
+}
+.goods_list .goodsImg {
+    width: 114rpx;
+    height: 116rpx;
+    background-color: darkviolet;
+}
+.goods_list .goodsImg image {
+    width: 100%;
+}
+.goods_list .goods_detail {
+    width: 352rpx;
+    /* padding: 0 20rpx; */
+}
+.menu_right .goods_detail .goods_info {
+    font-size: 24rpx;
+    color: #D5D5D5;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    padding: 6rpx 0;
+}
+.menu_right .goodsMoney {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_right .goodsMoney .goods_price{
+    color: #FF2B2B;
+    font-size: 30rpx;
+    font-weight: 500;
+}
+.menu_right .goodsMoney .goods_num {
+    width: 42rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    text-align: center;
+    color: #fff;
+    background: #027D58;
+    border-radius: 50%;
+}
+/* 套餐 */
+.seatmeal_container {
+    padding: 26rpx;
+}
+.seatmeal_name {
+    color: #333333;
+    font-size: 36rpx;
+    font-weight: 600;
+    font-family:PingFang SC;
+}
+.searmeal_list {
+    position: relative;
+    width: 100%;
+    height: 540rpx;
+}
+.noset {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #B8B8B8;
+    font-size: 28rpx;
+}
+.searmeal_list .searmeal_item {
+    width: 100%;
+    height: 172rpx;
+    display: flex;
+    align-items: center;
+}
+.searmeal_item .searmeal_headImg {
+    width: 114rpx;
+    height: 116rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.searmeal_headImg image {
+    width: 100%;
+}
+.searmeal_item .searmeal_buyBtn {
+    width: 116rpx;
+    height: 52rpx;
+    margin-left: 120rpx;
+    line-height: 52rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #027D58;
+    border-radius: 26rpx;
+}
+.searmeal_item .searmeal_datail {
+    width: 328rpx;
+    margin-left: 20rpx;
+}
+.searmeal_datail .searmeal_info {
+    color: #D5D5D5;
+    font-size: 24rpx;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.searmeal_datail .searmeal_name {
+    font-size: 28rpx;
+}
+.searmeal_datail .searmeal_price {
+    font-size: 26rpx;
+    color: #FF2B2B;
+}
+.greyColor {
+    color: #B8B8B8;
+    font-size: 24rpx;
+}
+/* 评价 */
+.comment {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.commentTit {
+    padding: 20rpx;
+    font-size: 32rpx;
+    color: #515151;
+    box-sizing: border-box;
+}
+
+.commentBox {
+    width: 100%;
+}
+
+.commentBoxList {
+    border-bottom: 1px solid #f5f5f5;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.commentBoxListHeadImg {
+    width: 80rpx;
+}
+
+.headImg {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.commentBoxListRight {
+    width: calc(100% - 100rpx);
+    margin-left: 20rpx;
+}
+
+.commentBoxListName {
+    font-size: 28rpx;
+    color: #212121;
+}
+
+.commentBoxListPentagram {
+    width: 100%;
+}
+
+.PentagramImg {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 10rpx;
+}
+
+.commentBoxListContent {
+    font-size: 28rpx;
+    color: #202020;
+    margin-bottom: 10rpx;
+}
+
+.commentBoxListContent text {
+    margin-left: 20rpx;
+}
+
+.commentBoxListColor {
+    font-size: 24rpx;
+    color: #B9B9B9;
+}
+
+.commentBoxListImg {
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+.commentBoxListImg image {
+    width: 30%;
+    margin-right: 2%;
+    margin-bottom: 10rpx;
+    height: 180rpx;
+}
+
+.commentBoxMore {
+    width: 100%;
+    padding: 30rpx 0;
+}
+
+.commentBoxMoreBtn {
+    width: 200rpx;
+    font-size: 30rpx;
+    background: #fff;
+    font-weight: normal;
+    border-radius: 50px;
+    border: 1px solid #dbdbdb;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0rpx 0rpx;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+}
+.noComment {
+    width: 100%;
+    padding: 40rpx 0;
+    text-align: center;
+}

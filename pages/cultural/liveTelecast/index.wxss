@@ -1,0 +1,54 @@
+/* pages/cultural/index.wxss */
+.cultural-body{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  padding:0 20rpx 20rpx 20rpx;
+}
+.cultural-body .cul-item{
+  width: 330rpx;  
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+}
+.cultural-body .cul-item .cul-image{
+  overflow: hidden;
+}
+.cultural-body .cul-item .cul-image image{
+  width: 100%;
+  height: 200rpx;
+}
+.cultural-body .cul-item .cul-image .cul-time{
+  position: relative;
+    right: 10px;
+    bottom: 52rpx;
+    color: #fff;
+    font-size: 20rpx;
+    text-align: right;
+    font-weight: 500;
+}
+.cultural-body .cul-item  .cul-title{
+font-size: 28rpx;
+font-family: PingFang SC;
+font-weight: 500;
+line-height: 40rpx;
+color: #313431;
+}
+.cultural-body .cul-item .cul-more{
+  
+font-size: 20rpx;
+font-family: PingFang SC;
+font-weight: 400;
+line-height: 28rpx;
+color: #999999;
+opacity: 0.8;
+}
+.clickMore{
+  text-align: center;
+  
+font-size: 24rpx;
+font-family: PingFang SC;
+font-weight: 400;
+line-height: 34rpx;
+color: #666666;
+margin-top: 52rpx;
+}

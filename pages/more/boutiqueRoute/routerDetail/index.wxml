@@ -1,0 +1,62 @@
+<!-- pages/boutiqueRoute/routerDetail/index.wxml -->
+<import src="../../../../components/wxParse/wxParse.wxml"/> 
+
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">路线详情</text>
+  </view>
+</van-nav-bar>
+<view class=""></view>
+<view class="routerDetail">
+  <!-- 轮播 -->
+  <view class="head">
+    <swiper bindchange="swiperBindchange">
+      <block wx:for="{{banner}}" wx:for-item="item" wx:key="index">
+        <swiper-item>
+          <image class="head_img" src="{{host}}{{item.fileManageUrl}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="current_class">
+      {{current}}/{{banner.length}}
+    </view>
+  </view>
+  <view class="content">
+    <view class="content_box">
+      <view class="content_box_head">
+        <text class="box_title">{{text.title}}</text>
+        <view class="box_head_right" bindtap="generatePoster">
+          <text class="box_title_right">生成海报</text>
+          <image class="box_title_img" src="{{iconUrl}}/share.png" />
+        </view>
+      </view>
+      <!-- <view class="box_prince">￥<text class="prince_num">123</text>.00 </view> -->
+      <!-- <view class="box_name" bindtap="toTravelAgencyDetails">
+        <image src="{{host}}{{travelAgents.backFileManageUrl}}" />
+        <view class="box_name_left">
+          <image src="{{host}}{{travelAgents.logoFileManageUrl}}" />
+        </view>
+        <view class="box_name_right">
+          <view>{{travelAgents.name}}</view>
+          <view class="box_name_botton">
+            <image src="{{iconUrl}}/dianhua.png" />
+            <view class="box_name_botton_title">{{travelAgents.phone}}</view>
+          </view>
+        </view>
+      </view> -->
+      <view class="box_text">
+        <!-- 解析图片base64的方法 -->
+        <template is="wxParse" data="{{wxParseData:courseDetail.nodes}}" />
+        <!-- <rich-text nodes="{{text.content}}"></rich-text> -->
+        <!-- <image src="{{host}}{{banner[1].fileManageUrl}}" /> -->
+      </view>
+    </view>
+  </view>
+</view>

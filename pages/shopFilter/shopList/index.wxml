@@ -1,0 +1,21 @@
+<!--pages/shopFilter/shopList/index.wxml-->
+<view class="shopList">
+    <view class="businessRank clearfix">
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='4'><text class="fl">销量</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='0'><text class="fl">距离</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='3'><text class="fl">最新</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='5'><text class="fl">人气</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+    </view>
+     <view class='content' wx:if="{{shopList!=null&&shopList.length>0}}">  
+          <view class="contentList" wx:for="{{shopList}}" wx:for-index="index" bindtap='shopDetails' data-id="{{item.id}}">
+                 <image class="contentListShopListImg" src="{{imgUrl}}{{item.headImg.uploadfilepath}}{{item.headImg.uploadfilename}}" mode="widthFix"></image>
+                 <view class="contentListShopName">{{item.name}}</view>
+                 <view class="contentListShopNumber"><text>价格:</text>￥{{item.nowPrice}}<text class="fr">销量:{{item.sale||0}}</text></view>
+          </view>        
+    </view>
+     <view class="noData" wx:else>
+        <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+        <view class="noDataTxtx">暂无商品</view>
+    </view>  
+</view>
+  

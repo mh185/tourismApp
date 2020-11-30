@@ -1,0 +1,28 @@
+/* pages/scenicSpotTickets/details/index.wxss */
+.bj{
+  background: url("http://47.108.86.202/tourism/bj.png");
+  background-size: 50%;
+  min-height: 1206rpx;
+} 
+.head{
+  padding: 18rpx 30rpx;
+}
+.head .swiper{
+  width: 100%;
+  height: 312rpx;
+}
+.haed .swiper-item{width: 100%; height: 312rpx;}
+.head image{width: 100%; height: 312rpx; font-size: 0;}
+.introduce{
+  padding: 30rpx;
+  color: #676767;
+  font-size: 20rpx;
+}
+.col-right{
+  text-align: right;
+}
+.introduce-title{
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #1d1d1d;
+}

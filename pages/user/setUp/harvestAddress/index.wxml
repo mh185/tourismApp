@@ -1,0 +1,24 @@
+<!--pages/user/setUp/harvestAddress/index.wxml-->
+<radio-group class="radio-group" bindchange="radioChange" wx:if="{{addresslist!=null&&addresslist.length>0}}">
+<view class="address" wx:for="{{addresslist}}" wx:for-index="index" wx:for-item="item">
+    <!-- <view class="userInfor">
+        <view class="userInforName">{{item.name}}<text class="tel fr">{{item.phone}}</text></view>
+        <view class="userInfoAddress">{{item.pro}}{{item.city}}{{item.area}}{{item.address}}</view>
+    </view> -->
+    <view class="userInfor" bindtap='selectAddress' data-content='{{item}}'>
+        <view class="userInforName">{{item.name}}<text class="tel fr">{{item.phone}}</text></view>
+        <view class="userInfoAddress">{{item.pro}}{{item.city}}{{item.area}}{{item.address}}</view>
+    </view>
+     <view class="userInforSet clearfix">
+         <view class="userInforSetleft fl"><radio checked="{{item.status==1?true:false}}" class="userInforRadio" value="{{item.id}}" />默认地址</view>
+         <view class="fr">
+             <view class="edit fl" bindtap='addressEdit' data-content='{{item}}'><image class="fl editImg" src="../../../../images/edit.png" ></image>编辑</view>
+             <view class="detele fr" bindtap='deteleAddress' data-id='{{item.id}}'><image class="fl deteleImg" src="../../../../images/detele.png"></image>删除</view>
+         </view>         
+     </view>
+</view>
+
+</radio-group>
+<view class="operatingBtnBox">
+    <view class="operatingBtn" bindtap='operatingBtn'>新增</view>
+</view>

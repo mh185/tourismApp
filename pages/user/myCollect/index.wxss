@@ -1,0 +1,169 @@
+/* pages/user/myCollect/index.wxss */
+.swiper-tab{
+    width: 100%;
+    line-height: 80rpx;
+    background: #fff;
+    height: 80rpx;
+    padding: 0 32rpx;
+    box-sizing:border-box ;
+}
+
+.swiper-tab-list{  
+    font-size: 32rpx;
+    display: inline-block;
+    width:20%;
+    color: #A5A5A5;
+    font-weight: 500;
+}
+.swiper-box{ 
+    display: block; 
+    height:calc(100vh - 80rpx); 
+    width: 100%; 
+    overflow: hidden; 
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 22rpx;
+}
+.on{ 
+    font-size: 32rpx;
+    color: #212121;
+}
+.scroll-view{
+    height:calc(100vh - 100rpx) !important; 
+    padding-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.commodityBoxList{
+    height:224rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 12rpx rgba(43,5,5,0.07);
+    border-radius:16px;
+    margin-top: 46rpx;
+    padding: 30rpx 25rpx 15rpx 28rpx;
+}
+.imgBox{
+    width: 156rpx;
+    height: 156rpx;
+    border: 1px dashed #EBEBEB;
+    padding: 20rpx;
+}
+.commodityImg{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 1px dashed #EBEBEB;
+}
+.commodityBoxListLeft{
+    width: calc(100% - 230rpx);
+    margin-left: 30rpx;
+    /* padding: 15rpx 0; */
+}
+.commodityName{
+    font-size: 24rpx;
+    color: #2A2A2A;
+    font-weight: 400;
+    height: 140rpx;
+    line-height: 34rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.commodityMoney{
+    font-size: 30rpx;
+    color: #027D58;
+    font-weight: 600;
+    margin-top: 10rpx;
+}
+.collectIcon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: -10rpx;
+    margin-right: -14rpx;
+    line-height: 60rpx;
+    text-align: center;
+}
+.collectIcon image{
+    width: 32rpx;
+    height: 30rpx;
+    margin-top: -2.5px;
+    vertical-align: middle;
+}
+
+.businessBoxList{
+    width: 100%;
+    padding: 20rpx;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(232,232,232,1);
+    border-radius: 10rpx;
+    box-sizing: border-box;
+    margin-bottom: 40rpx;
+}
+/* .businessBoxList:first-child{
+    margin-top: 28rpx;
+} */
+.businessBoxListInforImg{
+    width: 80rpx;
+    height: 80rpx;
+}
+.businessBoxListInforBox{
+    margin-left: 20rpx;
+}
+.businessBoxListInforBoxName{
+    font-size: 30rpx;
+    color: #212121;
+    line-height: 80rpx;
+}
+.businessBoxListInforBoxXin{
+    margin-top: 10rpx;
+}
+.businessBoxListInforBoxXinImg{
+    width:20rpx;
+    height:20rpx;
+    margin-right:5rpx;
+}
+.businessBoxBtn{
+    padding: 10rpx 30rpx;
+    border-radius: 50rpx;
+    background: #027D58;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    margin-top: 10rpx;
+}
+.businessBoxListShop{
+    width: 100%;
+    margin-top: 20rpx;
+   
+}
+.businessBoxListShopList{
+    width:210rpx;
+    height: 340rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    margin-right: 16rpx;
+}
+.businessBoxListShopList:last-child{
+    margin-right: 0rpx;
+}
+.goods-icon{
+    width:210rpx;
+    height: 272rpx;
+    line-height: 272rpx;
+}
+.businessBoxListShopListImg{
+    width: 210rpx;
+    max-height: 272rpx;
+    vertical-align: middle;
+    margin-top: -4.5px;
+}
+.businessBoxListShopListName{
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    color:#313131;
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+    padding: 0 10rpx;
+    font-weight:600;
+}

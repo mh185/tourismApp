@@ -1,0 +1,51 @@
+<!--pages/scenicSpotBooking/addTraveler/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">添加出行人</text>
+  </view>
+</van-nav-bar>
+<view class="bj">
+  <view class="top_padding">
+    <view class="top">
+      <van-cell-group>
+        <van-field
+          label="姓名"
+          value="{{ name }}"
+          placeholder="请填写真实姓名"
+          border="{{ true }}"
+          bind:change="onName"
+          input-align="right"
+        />
+        <van-field
+          label="手机号"
+          value="{{ phone }}"
+          placeholder="请填写手机号码"
+          border="{{ true }}"
+          bind:change="onPhone"
+          input-align="right"
+          maxlength="11"
+        /><van-field
+          label="身份证"
+          value="{{ idCard }}"
+          placeholder="请填写有效身份证"
+          border="{{ false }}"
+          bind:change="onIdCard"
+          input-align="right"
+        />
+      </van-cell-group>
+    </view>
+    <view class="middle">
+      <van-checkbox value="{{ checked }}" checked-color="#EBD38D" icon-size="34rpx" bind:change="defaultYraveler">设为默认出行人</van-checkbox>
+    </view>
+    <view class="bottom_box">
+      <view class="bottom_left bottom_title" bindtap="toInUrl">保存</view>
+    </view>
+  </view>
+</view>

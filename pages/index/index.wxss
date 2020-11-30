@@ -1,0 +1,365 @@
+page {
+  min-height: 100vh;
+  background: url("https://lzzhly.wglj.liuzhou.gov.cn/icon/background.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+/*分享 */
+.lower_right {
+  font-size: 20rpx;
+  color: #676767;
+  /* margin-left: 40rpx; */
+}
+.but{
+  display: contents;
+}
+.lower_right image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 4rpx;
+}
+.navbar .van-nav-bar {
+  background-color: unset;
+}
+
+.navbar .van-hairline--bottom:after {
+  border-bottom-width: 0px;
+}
+.navbar .left {
+  color: #fff;
+}
+
+.navbar .left {
+  display: flex;
+  justify-content: center;
+  font-size: 26rpx;
+}
+
+.head-search {
+  margin-top:194rpx ;
+}
+.head-search .van-search__content--round{
+  /* border-radius: 0 30rpx 30rpx 30rpx; */
+  /* height: 80rpx;
+  line-height: 80rpx; */
+  background-color: #fff;
+}
+.weather{
+  width: 150rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #552f09;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.weather image{
+   width: 30rpx;
+   height: 30rpx;
+ margin-top: 5rpx;
+   margin-right: 10rpx;
+}
+swiper{
+  margin-top: 44rpx;
+  height: 674rpx;
+}
+ 
+.slide-image {
+  width: 510rpx;
+  height: 674rpx;
+  border-radius: 8rpx;
+}
+ 
+.zoom-out {
+  transform: scale(0.8);
+  transition: all 0.7s ease-out 0s;
+}
+ 
+.zoom-in {
+  transform: scale(1);
+  transition: all 0.7s ease-in 0s;
+}
+.scroll-view_H{
+  /* margin-top: 52rpx; */
+  /* padding: 0 30rpx; */
+  padding: 26px 17px 0;
+  overflow: scroll;
+  box-sizing: Border-box;
+}
+.swiper-item {
+  overflow-x: hidden;
+}
+.swiper_item{
+  position: relative;
+}
+.swiper_item_text{
+  position: absolute;
+  width: 100%;
+  height: 170rpx;
+  bottom: 0;
+  color: #fff;
+  padding-left: 40rpx;
+  font-size: 24rpx;
+}
+.item_text_up{
+  font-size: 52rpx;
+}
+.nav{
+  display: flex;
+  /* margin-left: 34rpx; */
+}
+.nav-item{
+  width: 90rpx;
+  text-align: center;
+  font-size: 22rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  color: #222222;
+  margin-right: 64rpx;
+}
+.nav-item text{
+  white-space: nowrap;
+}
+.nav-item image{
+  width: 84rpx;
+  height: 84rpx;
+}
+.weather_box {
+  /* width: 345px; */
+  height: 64rpx;
+  background: #ffffff;
+  border-radius: 32rpx;
+  box-shadow: 0px 4rpx 6rpx 0px rgba(44,7,0,0.06); 
+  margin: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.weather_box_left {
+  font-size: 24rpx;
+  color: #552f09;
+  margin-left: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.weather_box_left image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 24rpx;
+}
+.weather_box_right {
+  font-size: 24rpx;
+  color: #552f09;
+  margin-left: 38rpx;
+  display: flex;
+  align-items: center;
+}
+.weather_box_right image {
+  width: 30rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+/* 功能按钮 */
+.top_list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60rpx;
+}
+.consultingService_item {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  /* justify-content: flex-start; */
+  align-items: center;
+  margin-bottom: 52rpx;
+}
+.navImg {
+  width: 84rpx;
+  height: 84rpx;
+}
+.navText {
+  font-size: 22rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #222222;
+  margin-top: 12rpx;
+}
+.selected{
+  margin-top: 32rpx;
+  padding: 0 30rpx;
+}
+.selected image {
+  width: 100%;
+  height: 100%;
+}
+.selected-one{
+  position: relative;
+  height: 290rpx;
+}
+.selected-two{
+  position: relative;
+  height: 170rpx;
+  width: 49%;
+
+}
+.selected-three{
+  position: relative;
+  height: 180rpx;
+}
+.selected-wb{
+  position: absolute;
+  bottom: 10rpx;
+  left: 12rpx;
+  color: #ffffff;
+}
+.selected-title{
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.selected-text{
+  opacity: 0.7;
+  font-size:18rpx;
+  line-height: 40rpx;
+}
+.selected-center{
+   display: flex;
+   height: 170rpx;
+   margin: 14rpx 0;
+   justify-content: space-between;
+}
+.remtitle{
+  font-size: 24rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #c8c8c8;
+}
+.recommend{
+  margin-top: 30rpx;
+  padding: 30rpx;
+}
+.index-tabs .van-tab--active .van-ellipsis{
+  font-size: 32rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  /* text-align: left; */
+  color: #1d1d1d;
+  background: url(http://47.108.86.202:8081/icon/hill.png) no-repeat;
+  background-position: -10rpx 2rpx;
+  background-size: contain;
+}
+.reco-item{
+  position: relative;
+  margin-top: 40rpx;
+}
+.reco-item image{
+  height: 240rpx;
+  width: 100%;
+}
+.rm-title{
+  font-size: 26rpx;
+font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+font-weight: 500;
+text-align: left;
+color: #1d1d1d;
+line-height: 18px;
+}
+.rm-ren{
+  font-size: 28rpx;
+font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+font-weight: 500;
+text-align: right;
+color: #e7d08e;
+}
+.rm-time{
+  font-size:22rpx;
+font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+font-weight: 500;
+text-align: left;
+color: #c8c8c8;
+}
+.rm-text{
+  font-size: 11px;
+font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+font-weight: 500;
+text-align: right;
+color: #c8c8c8;
+}
+.aaaa{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("http://47.108.86.202:8081/icon/item-3.png") no-repeat;
+  background-size: 100%;
+  width: 120rpx;
+  height: 44rpx;
+  border-radius: 8rpx 0 16rpx 0;
+  text-align: center;
+  line-height: 44rpx;
+  color: #552f09;
+  font-size: 28rpx;
+}
+.strategy {
+  margin-top: 40rpx;
+}
+.strategy-img image{
+  width: 260rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+}
+.strategy-title{
+  font-size: 28rpx;
+  font-weight: 800;
+  text-align: left;
+  color: #1d1d1d;
+}
+.strategy-name{
+  font-size: 24rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #262323;
+  line-height: 60rpx;
+  /* margin-bottom:14rpx ;
+  margin-top: 10rpx; */
+  overflow: hidden;
+}
+.strategy-more{
+  font-size: 20rpx;
+  font-weight: 500;
+  /* text-align: right; */
+  color: #676767;
+}
+.strategy text{
+  margin-right: 40rpx;
+  margin-left: 10rpx;
+}
+.name-img{
+  float: left;
+}
+.line-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 40rpx;
+}
+.right-item {
+width: 100%;
+display: flex;
+}
+.strategy-tiem{
+  display: flex;
+  justify-content: start;
+}
+.loading{  
+  padding: 10rpx;  
+  font-size: 26rpx;
+  color:#666;
+  text-align: center;  
+  margin-top: 30rpx;
+}
+.kongqi{
+  font-size: 24rpx;
+  color: #552f09;
+  margin-left: 28rpx;
+}

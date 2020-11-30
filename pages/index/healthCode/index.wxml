@@ -1,0 +1,64 @@
+<!--pages/index/healthCode/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">健康码</text>
+  </view>
+</van-nav-bar>
+<view class="card_box">
+  <view class="top_box">
+    <!-- <view class="pop_head"></view> -->
+    <image class="pop_head" src="{{iconUrl}}/item-2.png" />
+    实名认证
+  </view>
+  <van-cell-group border="{{false}}">
+    <van-field
+      value="{{ documentType }}"
+      input-align='right'
+      label="证件类型"
+      label-class='left_title'
+      right-icon-class="right_arrow"
+      icon="arrow"
+      disabled='true'
+      placeholder="请输入用户名"
+      input-class='input-class'
+      bind:click-icon="onClickIcon"
+      bind:input="onDocumentType"
+    />
+    <van-field
+      value="{{ name }}"
+      input-align='right'
+      label="姓名"
+      label-class='left_title'
+      right-icon-class="right_arrow"
+      icon="arrow"
+      placeholder="请填写真实姓名"
+      input-class='input-class'
+      bind:input="onName"
+    />  
+    <van-field
+      value="{{ idNo }}"
+      input-align='right'
+      label="证件号"
+      label-class='left_title'
+      right-icon-class="right_arrow"
+      icon="arrow"
+      border="{{false}}"
+      placeholder="请填写证件号"
+      input-class='input-class'
+      bind:input="onIdNo"
+    />
+  </van-cell-group>
+</view>
+<view class="button" bindtap="onSubmit">提交</view>
+
+<van-action-sheet bind:close="onClose" bind:cancel='cancelPicker' show="{{ showPicker }}" title="选择">
+  <van-picker columns="{{ columns }}" bind:change="onChange" />
+</van-action-sheet>
+

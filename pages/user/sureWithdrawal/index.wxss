@@ -1,0 +1,111 @@
+/* pages/user/sureWithdrawal/index.wxss */
+
+.wrap {
+    padding: 24rpx 0;
+}
+
+.w_money {
+    padding: 46rpx;
+    background-color: #ffffff;
+}
+
+.w_money_txt {
+    width: 112rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: rgba(185, 185, 185, 1);
+    opacity: 0.8;
+}
+
+.w_money_v {
+    height: 66rpx;
+    font-size: 48rpx;
+    font-weight: 600;
+    line-height: 66rpx;
+    color: rgba(33, 33, 33, 1);
+    margin-top: 20rpx;
+}
+
+.form-line-name {
+    background-color: #ffffff;
+    margin-top: 24rpx;
+    padding: 40rpx 32rpx;
+    font-size: 30rpx;
+    line-height: 1;
+    color: rgba(33, 33, 33, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-line-bank {
+    background-color: #ffffff;
+    margin-top: 24rpx;
+    padding: 0 32rpx;
+    font-size: 30rpx;
+    line-height: 1;
+    color: rgba(33, 33, 33, 1);
+}
+
+.form-line-bank-item {
+    padding: 40rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.border-t {
+    border-top: 2px solid rgba(245, 245, 245, 1);
+}
+
+.form-tps {
+    padding: 36rpx 30rpx;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: rgba(33, 33, 33, 1);
+}
+
+.form-tps-mark {
+    color: #FF2B2B;
+    display: inline;
+}
+
+.inline {
+    display: inline;
+}
+
+.placeholder-class {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: rgba(185, 185, 185, 1);
+    text-align: right;
+}
+
+.btn-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 52rpx);
+    height: 150rpx;
+    background-color: #fff;
+    box-shadow: 0 -6rpx 40rpx rgba(143, 143, 143, .16);
+    border-radius: 50rpx 50rpx 0 0;
+    padding: 36rpx 26rpx;
+}
+
+.btn-box .btn {
+    background-color: #027D58;
+    width: 100%;
+    height: 98rpx;
+    border-radius: 50rpx;
+    color: #fff;
+    font-size: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    text-align: right;
+}

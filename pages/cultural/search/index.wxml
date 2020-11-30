@@ -1,0 +1,6 @@
+<!--pages/cultural/search/index.wxml-->
+<van-search placeholder="搜索大会直播" value="{{ value }}" bind:change="onSearch" background="#FAFAFA" useActionSlot>
+    <view slot="action">
+       图标 
+    </view>
+  </van-search>

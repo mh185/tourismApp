@@ -1,0 +1,33 @@
+/* pages/user/withdrawalProtol/index.wxss */
+
+.wrap {
+    padding: 30rpx;
+    background: #ffffff;
+    font-size: 24rpx;
+    line-height: 40rpx;
+}
+
+.title {
+    color: #212121;
+    text-align: justify;
+}
+
+.paragraph {
+    font-size: 24rpx;
+    color: #9A9A9A;
+    line-height: 40rpx;
+    text-align: justify;
+    text-indent: 10rpx;
+}
+
+.mgn-t-50 {
+    margin-top: 50rpx;
+}
+
+.color_4E4E4E {
+    color: #4E4E4E;
+}
+
+.bold {
+    font-weight: 600;
+}

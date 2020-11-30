@@ -1,0 +1,18 @@
+/* pages/start/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/qidongpage.png") no-repeat;
+  background-size: 100%;
+  /* background-position-y: -47rpx; */
+}
+.footer{
+  /* display: flex; */
+  position: fixed;
+  bottom: 8%;
+  text-align: center;
+  width: 100%;
+}
+.footer text{
+  font-size: 24rpx;
+  font-weight: bold;
+}

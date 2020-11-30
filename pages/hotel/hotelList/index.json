@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-icon": "/vant/icon",
+    "van-cell": "/vant/cell",
+    "van-button": "/vant/button",
+    "van-search": "/vant/search"
+  },
+  "navigationStyle": "custom"
+}

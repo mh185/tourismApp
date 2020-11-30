@@ -1,0 +1,4 @@
+<!--pages/start/index.wxml-->
+<view class="footer">
+  <text>柳州市文化广电和旅游局</text>
+</view>

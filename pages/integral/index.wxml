@@ -1,0 +1,67 @@
+<!--pages/integral/index.wxml-->
+<view class="integralNum">
+    <view class="integralNumTIT">我的积分</view>
+    <view class="integralNuWeb">{{integral}}</view>
+    <view class="integralSwerrp">
+          <swiper class="swiperBox" autoplay='true' indicator-dots='true' interval='5000' duration='1000' circular='true'>           
+                    <swiper-item class="swiperBoxitem" bindtap='shopDetails' data-id='2c90808472d721f00172d76a3c950017'>
+                        <image src='../../images/tu.png'  class='swiperBoxImg'></image>
+                    </swiper-item>
+                     <swiper-item class="swiperBoxitem">
+                        <image src='../../images/tu.png'  class='swiperBoxImg'></image>
+                    </swiper-item>             
+            </swiper>
+    </view>
+</view>
+<view class="goodsExchangeBox">
+    <view class="goodsExchangeBoxTit">好物兑换</view>
+    <view class="goodsExchangeBoxCenter clearfix">
+        <view class="goodsExchangeBoxCenterLeft fl">
+            <image src='../../images/tu.png'  class='goodsExchangeBoxCenterLeftImg'></image>
+        </view>
+        <view class="goodsExchangeBoxCenterRight fr">
+            <view class="goodsExchangeBoxCenterRightTOP">  
+                <image src='../../images/tu.png'  class='goodsExchangeBoxCenterRightTOPImg'></image>
+            </view>
+            <view class="goodsExchangeBoxCenterRightBOTTOM">  
+                <image src='../../images/tu.png'  class='goodsExchangeBoxCenterRightBOTTOMImg'></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="recomProducts">
+     <view class="goodsExchangeBoxTit">推荐商品</view>
+     <view class='content'>  
+          <view class="contentList">
+                 <image class="contentListShopListImg" src="../../images/tu.png" mode="widthFix"></image>
+                 <view class="contentListShopName">百威（Budweiser）…</view>
+                 <view class="contentListShopNumber">2430积分<text class="fr">月销:12324</text></view>
+          </view> 
+           <view class="contentList">
+                 <image class="contentListShopListImg" src="../../images/tu2.png" mode="widthFix"></image>
+                 <view class="contentListShopName">百威（Budweiser）…</view>
+                 <view class="contentListShopNumber">2430积分<text class="fr">月销:12324</text></view>
+          </view>  
+           <view class="contentList">
+                 <image class="contentListShopListImg" src="../../images/tu3.png" mode="widthFix"></image>
+                 <view class="contentListShopName">百威（Budweiser）…</view>
+                 <view class="contentListShopNumber">2430积分<text class="fr">月销:12324</text></view>
+          </view> 
+           <view class="contentList">
+                 <image class="contentListShopListImg" src="../../images/tu.png" mode="widthFix"></image>
+                 <view class="contentListShopName">百威（Budweiser）…</view>
+                 <view class="contentListShopNumber">2430积分<text class="fr">月销:12324</text></view>
+          </view>       
+    </view>
+     <!-- <view class='content' wx:if="{{shopList!=null&&shopList.length>0}}">  
+          <view class="contentList" wx:for="{{shopList}}" wx:for-index="index" bindtap='shopDetails' data-id="{{item.id}}">
+                 <image class="contentListShopListImg" src="{{imgUrl}}{{item.headImg.uploadfilepath}}{{item.headImg.uploadfilename}}" mode="widthFix"></image>
+                 <view class="contentListShopName">{{item.name}}</view>
+                 <view class="contentListShopNumber"><text>价格:</text>￥{{item.nowPrice}}<text class="fr">销量:{{item.sale||0}}</text></view>
+          </view>        
+    </view>
+     <view class="noData" wx:else>
+        <view class="noDataTu"><image class="noDataTuImg" src="../../images/noData.png" mode="widthFix"></image></view>
+        <view class="noDataTxtx">暂无商品</view>
+    </view>   -->
+</view>

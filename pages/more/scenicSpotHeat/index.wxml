@@ -1,0 +1,82 @@
+<!--pages/more/scenicSpotHeat/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">景区热度</text>
+  </view>
+</van-nav-bar>
+<view class="attractions">
+  <view class="head">
+    <!-- 筛选 -->
+    <view class="screening">
+      <view>
+        <view class="screening_box" bindtap="showScreening">
+          <view class="screening_right">筛选</view>
+          <!-- <view class="options action">城中</view> -->
+          <view wx:if='{{selectItemId}}' class="options action">{{selectItemId}}</view>
+        </view>
+        <view class="wxif" wx:if='{{screeningBool}}'>
+          <view class="one">当前定位</view>
+          <view class="two">
+            <view class="two_left">
+              <image src="{{iconUrl}}/location.png"></image>
+              <text>{{location}}</text>
+            </view>
+            <!-- <button bindtap="getCenterLocation" class="two_left" type="primary">
+              <image src="{{iconUrl}}/location.png" />{{location}}
+            </button> -->
+            <view class="two_right" bindtap="toLocation">
+              <image src="{{iconUrl}}/location2.png"></image>
+              <text>重新定位</text>
+            </view>
+          </view>
+          <view class="one">选择</view>
+          <view class="three">
+            <view bindtap="onSelectCity" data-item="{{item}}" class="city {{ selectItemId == item.name ? 'action':'' }}" wx:for="{{cityList}}" wx:key="key">
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+          <view class="bottom_box">
+            <view class="bottom">
+              <view class="bottom_left bottom_title" bindtap="reset">重置</view>
+              <view class="bottom_right bottom_title" bindtap="confirm">确认</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view bindtap="showScreening">
+        <van-icon wx:if='{{!screeningBool}}' name="arrow-down" />
+        <van-icon wx:else name="arrow-up" />
+      </view>
+    </view>
+  </view>
+  <view class="content" wx:if="{{scenicListData.length > 0}}">
+    <view wx:for="{{scenicListData}}" data-id="{{item.id}}" class="list_item" bindtap="toDetails">
+      <image class="list_item_img" src="{{host}}{{item.fileManage.url}}" />
+      <view class="list_item_text">
+        <text class="name">{{item.name}}</text>
+        <text class="person_number">{{item.currentTourism}}人</text>
+      </view>
+      <view class="list_item_text"> 
+        <text class="time">开放时间：{{item.openTime}}-{{item.closeTime}}</text>
+        <text class="type">正在游玩</text>
+      </view>
+      <view class="list_item_text">
+        <text class="time">最佳容量：{{item.capacity}}</text>
+        <text class="type">最大容量：{{item.dailyMaxLoadCapacity}}</text>
+      </view>
+    </view>
+    <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+    <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <view wx:else class="_nothing_box">
+    <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+    <view>暂无内容</view>
+  </view>
+</view>

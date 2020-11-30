@@ -1,0 +1,92 @@
+/* pages/index/search/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+/* .bj{ */
+  /* padding: 30rpx; */
+  /* height: 90%; */
+/* } */
+/* .history{
+    height: 90%;
+    background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+    background-size: 100%;
+    background-position-y: -47rpx;
+} */
+.history_title{
+  font-size: 32rpx;
+  color: #333333;
+  display: flex;
+  margin: 0 0 25rpx;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 30rpx 30rpx 15rpx; */
+  padding: 40rpx 30rpx 0;
+
+
+}
+.title_img{
+  width: 24rpx;
+  height: 24rpx;
+
+}
+.history_list{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15rpx;
+
+}
+.history_list_item{
+  margin: 15rpx;
+  padding: 0 10rpx;
+  line-height: 54rpx;
+  height: 54rpx;
+  background: #fafafa;
+  border-radius: 4px;
+  font-size: 24rpx;
+  text-align: center;
+  color: #999999;
+}
+
+.resuilt_item{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+.resuilt_img{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}
+.name{
+  font-size: 26rpx;
+  color: #333333;
+}
+.resuilt_item_left{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+}
+.resuilt_item_right{
+  font-size: 24rpx;
+  color: #999999;
+}
+.resuilt{
+  height: 100%;
+  /* opacity: 0.2; */
+  background: linear-gradient(180deg,rgba(255,195,33,0.2), rgba(255,243,150,0));
+}

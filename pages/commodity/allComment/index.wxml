@@ -1,0 +1,48 @@
+<!--pages/commodity/allComment/index.wxml-->
+<view class='comment'>
+    <view class="commentBox" wx:if="{{ThemeComment.length>0}}">
+        <view class='commentBoxList clearfix' wx:for="{{ThemeComment}}" wx:for-index="index">
+            <view class="commentBoxListHeadImg fl"><image class="headImg" src="{{item.headImg}}"></image></view>
+            <view class="fr commentBoxListRight">
+                <view class="FirstClass">
+                    <view class="commentBoxListName">{{item.nickName}}</view> 
+                    <view class="commentBoxListPentagram ">
+                        <block wx:for="{{commentPoint}}" wx:for-item="commentPointList" wx:for-index="key">
+                            <image class="PentagramImg" wx:if="{{item.describeScore>key}}" src="{{commentPointList.bright}}"></image>
+                            <image class="PentagramImg" wx:else src="{{commentPointList.dark}}"></image>
+                        </block>
+                        
+                    </view> 
+                    <view class="commentBoxListContent">评价内容:<text>{{item.comment}}</text></view> 
+                    <view class="commentBoxListImg clearfix">
+                        <image class="fl" wx:for="{{item.file}}" wx:for-index="i" wx:for-item="fileImg" src='{{imgUrl}}{{fileImg.uploadfilepath}}{{fileImg.uploadfilename}}' ></image>
+                    </view>
+                    <view class="commentBoxListColor">{{item.label||'暂无'}}</view>
+                </view>
+                <view class="ChildClass" wx:if="{{item.object!=null&&item.object.length>0}}">
+                          <view class='commentBoxList clearfix' wx:for="{{item.object}}" wx:for-index="index" wx:for-item="obj">
+                            <view class="commentBoxListHeadImg fl"><image class="headImg" src="{{obj.headImg}}"></image></view>
+                            <view class="fr commentBoxListRight">
+                                <view class="FirstClass">
+                                    <view class="commentBoxListName">{{obj.nickName}}</view> 
+                                    <view class="commentBoxListPentagram ">
+                                        <block wx:for="{{commentPoint}}" wx:for-item="commentPointList" wx:for-index="i">
+                                            <image class="PentagramImg" wx:if="{{obj.describeScore>i}}" src="{{commentPointList.bright}}"></image>
+                                            <image class="PentagramImg" wx:else src="{{commentPointList.dark}}"></image>
+                                        </block>                                        
+                                    </view> 
+                                    <view class="commentBoxListContent">评价内容:<text>{{obj.comment}}</text></view> 
+                                    <view class="commentBoxListImg clearfix">
+                                        <image class="fl" wx:for="{{obj.file}}" wx:for-index="i" wx:for-item="objfileImg" src='{{imgUrl}}{{objfileImg.uploadfilepath}}{{objfileImg.uploadfilename}}' ></image>
+                                    </view>
+                                    <!-- <view class="commentBoxListColor">{{obj.label||'暂无'}}</view> -->
+                                </view>                        
+                            </view>
+                        </view>
+                </view>
+               
+            </view>
+        </view>
+    </view>
+    <view class="noComment" wx:else>暂无评论</view>
+</view>

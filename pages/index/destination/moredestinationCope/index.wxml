@@ -1,0 +1,60 @@
+<!--pages/destination/moredestination/index.wxml-->
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class' bind:click-left="onClickLeft">
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">五县五区精选</text>
+  </view>
+</van-nav-bar>
+<!-- 筛选 -->
+<view class="screening">
+  <view class="waiBox">
+    <view class="screening_box">
+      <view bindtap="showScreening" class="content_box_head">
+        <view class="screening_right">柳州市</view>
+        <view class="content_box_head">
+          <van-icon wx:if='{{!screeningBool}}' name="arrow-down" />
+          <van-icon wx:else name="arrow-up" />
+        </view>
+        <view wx:if='{{selectItemId}}' class="options action">{{selectItemId}}</view>
+      </view>
+      <view class="content_box_head" bindtap="toWeather">
+        <image class="box_head_img" src="{{iconUrl}}/tianqi.png" />
+        <text class="temperature">{{weathers.wendu}}</text>
+      </view>
+    </view>
+    <view class="wxif" wx:if='{{screeningBool}}'>
+      <view class="one">选择</view>
+      <view class="three">
+        <view bindtap="onSelectCity" data-item="{{item}}" class="city {{ selectItemId == item.name ? 'action':'' }}" wx:for="{{cityList}}" wx:key="key">
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+      <view class="bottom_box">
+        <view class="bottom">
+          <view class="bottom_left bottom_title" bindtap="reset">重置</view>
+          <view class="bottom_right bottom_title" bindtap="confirm">确认</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="listBox" wx:if="{{hotData.length >0}}">
+  <view class="reco-item" wx:for="{{hotData}}" data-id="{{item.id}}" wx:key="index" bindtap="toAttractionsDetail">
+    <image src="{{host}}{{item.fileManage.url}}"></image>
+    <view class="aaaa">{{item.starLevel}}</view>
+    <view class="left_box">
+      <view class="left_box_One">{{item.name}}</view>
+      <view class="left_box_Two">开放时间：{{item.openTime}}-{{item.closeTime}}</view>
+      <!-- <view class="left_box_Three">209981人</view>
+      <view class="left_box_Four">正在游玩</view> -->
+    </view>
+    <!-- <view class="button">在线导览</view> -->
+
+  </view>
+  <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+  <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+</view>
+<view wx:else class="_nothing_box">
+  <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+  <view>暂无内容</view>
+</view>

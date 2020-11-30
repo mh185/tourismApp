@@ -1,0 +1,14 @@
+<!--pages/payStatus/paysuccess/index.wxml-->
+<view class="paysuccess">
+<image class="paysuccess-icon" src="../../../images/success.png" />
+<view class="paysuccessTxt">
+    支付成功
+</view>
+<view class="paysuccesstis">
+    恭喜支付成功将在{{snsMsgWait}}s跳转到首页
+</view>
+<view class="paysuccessBtn clearfix">
+    <view class="paysuccessBtnLeft fl" bindtap='goShopping'>继续购物</view>
+    <view class="paysuccessBtnRight fr" bindtap='goOrder'>查看订单</view>
+</view>
+</view>

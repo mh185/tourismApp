@@ -1,0 +1,41 @@
+<!--pages/index/guide/guideMap/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  id='nav-bar'
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">导览</text>
+  </view>
+</van-nav-bar>
+<view class="attractions">
+	<view class="upper">
+		<view class="head">
+			<van-tabs id="page-tab" active="{{ currentTab }}" bind:change="tabChange">
+				<van-tab wx:for="{{tabList}}" wx:key="index" title="{{item.name}}"></van-tab>
+			</van-tabs>
+		</view>
+		<view class="map-box">
+      <custom-map bindinitedMap="initedMap" options="{{options}}" navBarHeight="{{navBarHeight}}"></custom-map>
+		</view>
+	</view>
+	
+</view>
+<view class="lower">
+	<view class="list_item_text">
+		<text class="name">{{scenicDetail.name}} <text class="tag">{{scenicDetail.starLevel}}</text> </text>
+		<text class=""></text>
+	</view>
+	<view class="list_item_text">
+		<text class="time">开放时间：{{scenicDetail.openTime}}-{{scenicDetail.closeTime}}</text>
+		<text class="person_number">{{scenicDetail.currentTourism}}人</text>
+	</view>
+	<view class="list_item_text">
+		<text class="time">景区地址：{{scenicDetail.position}}</text>
+		<text class="type">正在游玩</text>
+	</view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/scenicSpotTickets/index.wxml-->
+<van-nav-bar
+    fixed='{{true}}'
+    placeholder='{{true}}'
+    border='{{false}}'
+    custom-class='back_class'
+    bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text>门票</text>
+  </view>
+</van-nav-bar>
+<view class="bj">
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option3 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option4 }}" />
+  </van-dropdown-menu>
+  <view class="listItem" wx:for="{{listDate}}" bindtap="toDetails">
+      <view class="list-img">
+          <image src="{{iconUrl}}/jingxuanluxian5.png"></image>
+          <view class="more">4A</view>
+      </view>
+      <view class="list-rignt">
+        <view class="list-title">白莲洞景区溶洞</view>
+        <view class="list-center">白莲洞风景区白莲洞风景区白莲洞风景区
+洞风景区白莲洞风景区...</view>
+        <view class="list-more">
+          <view class="list-more-left">已售票：24566</view>
+          <view class="list-more-right">距您1.5KM</view>
+        </view>
+      </view>
+  </view>
+</view>

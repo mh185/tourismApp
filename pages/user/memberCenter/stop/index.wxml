@@ -1,0 +1,2 @@
+<!--pages/user/memberCenter/stop/index.wxml-->
+<web-view src="https://wechat.metro-orientalplaza.cn/daduhui_ui/#/stop"></web-view>

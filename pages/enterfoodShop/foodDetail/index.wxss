@@ -1,0 +1,84 @@
+/* pages/enterfoodShop/foodDetail/index.wxss */
+page {
+    background:#fff;
+    width: 100%;
+    height: 100%;
+}
+.food_container {
+    border: 1px solid #EFEFEF;
+    width: 100%;
+    height: 100%;
+    padding-top: 32rpx;
+    padding-bottom: 198rpx;
+}
+.p_left {
+    padding-left: 26rpx;
+}
+.meal_name {
+    font-size:36rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    line-height:36rpx;
+    color:rgba(42,42,42,1);
+}
+.sales_num {
+    padding: 14rpx 0;
+    color: #B8B8B8;
+    font-size: 24rpx;
+}
+.imgs {
+    width: 100%;
+    height: 184rpx;
+    margin-bottom: 38rpx;
+}
+swiper-item {
+    width: 184rpx !important;
+    height: 184rpx !important;
+    /* margin-right: 26rpx !important; */
+    padding-right: 26rpx;
+}
+swiper-item image {
+    width: 184rpx;
+    height: 184rpx;
+}
+.menuDetail {
+    color: #D5D5D5;
+    font-size: 28rpx;
+    padding: 30rpx 20rpx;
+}
+.level {
+    width: 100%;
+    height: 20rpx;
+    background-color:#F5F5F5 ;
+}
+.bottom_tool {
+    position: fixed;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 198rpx;
+    background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 100%);
+    box-shadow:0px -6px 40px rgba(143,143,143,0.16);
+    opacity:1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 62rpx;
+    padding-right: 26rpx;
+    border-radius: 20rpx 20rpx 0 0;
+}
+.total_price {
+    flex: 1;
+    font-size: 34rpx;
+    color: #FF2B2B;
+}
+.buyBtn {
+    width: 198rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #027D58;
+    border-radius: 54rpx;
+}

@@ -1,0 +1,28 @@
+<!--pages/user/setUp/index.wxml-->
+<view class="operating">
+    <view class="operatlist clearfix" bindtap='harvestAddress'>
+        <image class="operatlistImg fl" src="../../../images/shipAddress.png" ></image>
+        <view class="operatlistrigth clearfix">
+            收货地址
+            <image class="rightImg fr" src="../../../images/right.png"  mode="widthFix"></image>
+        </view>
+    </view>
+     <!-- <view class="operatlist clearfix">
+        <image class="operatlistImg fl" src="../../../images/feedback.png" ></image>
+        <view class="operatlistrigth clearfix">
+            问题反馈
+            <image class="rightImg fr" src="../../../images/right.png"  mode="widthFix"></image>
+        </view>
+    </view>
+     <view class="operatlist clearfix">
+        <image class="operatlistImg fl" src="../../../images/userAgreement.png" ></image>
+        <view class="operatlistrigth clearfix">
+            用户协议
+            <image class="rightImg fr" src="../../../images/right.png"  mode="widthFix"></image>
+        </view>
+    </view> -->
+</view>
+
+<view class="operatingBtnBox" wx:if="{{userId!=null&&userId!=''}}">
+    <view class="operatingBtn" bindtap='dropOut'>退出当前账号</view>
+</view>

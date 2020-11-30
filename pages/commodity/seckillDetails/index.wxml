@@ -1,0 +1,238 @@
+<!-- 秒杀商品详情 -->
+<wxs module="filters" src="../../../utils/filters.wxs"></wxs>
+<view class="productDetailstop">
+    <view bindtap='positionBtn' data-index='1' class="{{lineIndex==1?'on':''}}">
+        商品
+        <text class="line"></text>
+    </view>
+    <view bindtap='positionBtn' data-index='2' class="{{lineIndex==2?'on':''}}">
+        评价
+        <text class="line"></text>
+    </view>
+</view>
+<view class="productDetailsCenter" wx:if="{{detailInfor!=null&&detailInfor!=''}}">
+    <view class="productDetailstopZw"></view>
+    <swiper class="swiper" autoplay='{{autoplay}}' interval='5000' duration='1000' circular='false' bindchange="bindchange">
+        <swiper-item wx:if="{{detailInfor.voiceAddress!=null&&detailInfor.voiceAddress!=''}}">
+            <video id="myVideo" class="myVideo" loop="false" src="{{detailInfor.voiceAddress}}" bindplay="videoPlay" bindpause='videoPause' bindended='videoEnded'></video>
+        </swiper-item>
+        <block wx:for="{{detailInfor.imgs}}" wx:for-index="index">
+            <swiper-item>
+                <image src='{{imgUrl}}{{item.uploadfilepath}}{{item.uploadfilename}}' data-id='{{index}}' class='swiperImg'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="productInfor">
+        <view class="productInforName">{{detailInfor.name}}</view>
+        <view class="productInforMoney clearfix">
+            <view class="fl productInforMoneyLeft">
+
+                <text class="rawPrice">￥{{detailInfor.rawPrice}}</text>
+            </view>
+            <view class="fr">
+                <image class="CollectImg" wx:if='{{detailInfor.collection}}' src="../../../images/icon-scY.png"></image>
+                <image class="CollectImg" wx:else bindtap='collect' src="../../../images/icon-sc.png"></image>
+
+            </view>
+        </view>
+        <view class="productInforMoney clearfix">
+            <view class="fl productInforMoneyLeft">
+
+                <text class="productInforMoneyLeftNum">￥{{selectsLabel.activityObj.seckillPrice}}</text>
+            </view>
+            <view class="fr flex_c">
+                <text class="font_22">距离结束 <text class="spec">:</text></text>
+                <text class="m_time_btn" wx:if="{{time_d}}">{{time_d}}</text><text wx:if="{{time_d}}" class="spec">天</text>
+                <text class="m_time_btn">{{time_h}}</text><text class="spec">:</text>
+                <text class="m_time_btn">{{time_m}}</text><text class="spec">:</text>
+                <text class="m_time_btn">{{time_s}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="discountInfor">
+        <view class="discountInforList clearfix">
+            <view class="fl discountInforListTit">优惠</view>
+            <view class="fl discountInforListTxt activities">
+                <view class="activitiesMan">
+                    <image mode="widthFix" src="../../../images/xian.png"></image>
+                </view>
+                <view>限时秒杀</view>
+
+            </view>
+            <view class="fr discountInforListImg">
+                <image class="discountImg" src="../../../images/other.png"></image>
+            </view>
+        </view>
+        <view class="discountInforList clearfix">
+            <view class="fl discountInforListTit">活动</view>
+            <view class="fl discountInforListTxt"><text>无</text></view>
+            <view class="fr discountInforListImg">
+                <image class="discountImg" src="../../../images/other.png"></image>
+            </view>
+        </view>
+        <view class="discountInforList clearfix">
+            <view class="fl discountInforListTit">已选</view>
+            <view class="fl discountInforListTxt"><text wx:if="{{selectsLabel!=null}}">{{selectsLabel.labelName}}</text></view>
+            <view class="fr discountInforListImg">
+                <image bindtap='openPecificaBtn' data-type='1' class="discountImg" src="../../../images/other.png"></image>
+            </view>
+        </view>
+        <view class="discountInforList clearfix">
+            <view class="fl discountInforListTit">配送至</view>
+            <view class="fl discountInforListTxt" wx:if="{{addressData!=null&&addressData!=''}}">{{addressData.address}}</view>
+            <view class="fr discountInforListImg" bindtap='getAddress'>
+                <image class="discountImg" src="../../../images/other.png"></image>
+            </view>
+        </view>
+        <view class="discountInforList clearfix">
+            <view class="fl discountInforListTit">运费</view>
+            <view class="fl discountInforListTxt" wx:if="{{detailInfor!=null&&detailInfor!=''&&detailInfor.seller!=null&&detailInfor.seller!=''}}">{{detailInfor.seller.freightPrice!=0?'￥'+detailInfor.seller.freightPrice:'包邮'}}</view>
+            <view class="fl discountInforListTxt" wx:else>包邮</view>
+            <view class="fr discountInforListImg">
+                <image class="discountImg" src="../../../images/other.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='comment'>
+    <view class="commentTit">评价</view>
+    <view class="commentBox" wx:if="{{ThemeComment.length>0}}">
+        <view class='commentBoxList clearfix' wx:for="{{ThemeComment}}" wx:for-index="index">
+            <view class="commentBoxListHeadImg fl">
+                <image class="headImg" src="{{item.headImg}}"></image>
+            </view>
+            <view class="fr commentBoxListRight">
+                <view class="commentBoxListName">{{item.nickName}}</view>
+                <view class="commentBoxListPentagram ">
+                    <block wx:for="{{commentPoint}}" wx:for-item="commentPointList" wx:for-index="key">
+                        <image class="PentagramImg" wx:if="{{item.describeScore>key}}" src="{{commentPointList.bright}}"></image>
+                        <image class="PentagramImg" wx:else src="{{commentPointList.dark}}"></image>
+                    </block>
+                </view>
+                <view class="commentBoxListContent">评价内容:<text>{{item.comment}}</text></view>
+                <view class="commentBoxListImg clearfix">
+                    <image class="fl" wx:for="{{item.file}}" wx:for-index="i" wx:for-item="fileImg" src='{{imgUrl}}{{fileImg.uploadfilepath}}{{fileImg.uploadfilename}}'></image>
+                </view>
+                <view class="commentBoxListColor">{{item.label||'暂无'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="noComment" wx:else>暂无评论</view>
+    <view class="commentBoxMore" wx:if="{{ThemeComment.length>0}}">
+        <view class="commentBoxMoreBtn" bindtap='allcomment'>全部评论</view>
+    </view>
+</view>
+
+<view class="Shop clearfix" wx:if="{{detailInfor!=null&&detailInfor!=''}}">
+    <view class="fl clearfix" wx:if="{{detailInfor.seller!=null&&detailInfor.seller!=''}}">
+        <image class="ShopImg fl" src="{{detailInfor.seller.headImg}}"></image>
+        <view class="ShopInfor fl">
+            <view class="ShopInforName">{{detailInfor.seller.shopName}}</view>
+            <view class="Shopscore">评分:0</view>
+        </view>
+    </view>
+    <view class="fr goShop" bindtap='enterTheShop' data-sellerid='{{detailInfor.seller.id}}'>进店逛逛</view>
+</view>
+
+<view class="details">
+    <view class="detailsTitle">商品详情</view>
+    <view wx:if="{{detailInfor!=null&&detailInfor!=''}}">
+        <rich-text class="richText" nodes="{{detailInfor.body}}"></rich-text>
+    </view>
+</view>
+
+<view class="bottom fl">
+    <view class="fl bottomLeft" bindtap='freeTell' data-phone='{{detailInfor.seller.phone||detailInfor.seller.landPhone}}'>
+        <image class="bottomImg " src="../../../images/icon-zx.png"></image>
+        <text>咨询</text>
+    </view>
+    <view class="fl bottomLeft">
+        <button open-type="share" class='weixinShare'>
+            <image class="bottomImg " src="../../../images/icon-fx.png"></image>
+            <text>分享</text>
+        </button>
+    </view>
+    <view class="fl bottomLeft" bindtap='goCart'>
+        <image class="bottomImg " src="../../../images/cart.png"></image>
+        <text>购物车</text>
+        <text class='cartNUm' wx:if="{{cartNumber>0}}">{{cartNumber}}</text>
+    </view>
+    <view class='fr'>
+        <!-- <view class="fl addShopCart" bindtap='addShopcart' data-type='2'>加入购物车</view> -->
+        <view class="fr BuyNow" bindtap='orderBuy' data-type='1'>立即购买</view>
+    </view>
+</view>
+<view class="specificaPopup" wx:if="{{ISpecifica}}" bindtap='ISpecificaBtn'></view>
+<view class="specificaPopupcBox" wx:if="{{ISpecifica}}">
+    <view class="specificaShop clearfix">
+        <block wx:if="{{selectsLabel!=null}}">
+            <image wx:if="{{selectsLabel.img!=null}}" class="specificaShopImg fl" src="{{imgUrl}}{{selectsLabel.img.uploadfilepath}}{{selectsLabel.img.uploadfilename}}"></image>
+            <image wx:else class="specificaShopImg fl" src="{{imgUrl}}{{detailInfor.headImg.uploadfilepath}}{{detailInfor.headImg.uploadfilename}}"></image>
+        </block>
+        <block wx:else>
+            <image class="specificaShopImg fl" src="{{imgUrl}}{{detailInfor.headImg.uploadfilepath}}{{detailInfor.headImg.uploadfilename}}"></image>
+        </block>
+        <view class="fl specificaShopInfor">
+            <view wx:if="{{selectsLabel!=null}}" class="specificaShopInforMoney">￥{{filters.toFix(selectsLabel.activityObj.seckillPrice*number||0)}}</view>
+            <view wx:else class="specificaShopInforMoney">￥{{filters.toFix(selectsLabel.activityObj.seckillPrice*number||0)}}</view>
+            <view wx:if="{{selectsLabel!=null}}" class="specificaShopInforTxt">已选 {{selectsLabel.labelName}} {{number}}个</view>
+        </view>
+    </view>
+    <view class="specificaShopBox">
+        <view class="specificaShopBoxTit">属性</view>
+        <view class="specificaShopBoxCenter clearfix">
+            <text wx:for="{{goodsLabel}}" wx:for-index="index" data-index='{{index}}' bindtap='sectcLabel' class="{{sectcLabelIndex===index?'specificaShopBoxCenterList on':'specificaShopBoxCenterList'}}">{{item.labelName}}</text>
+        </view>
+    </view>
+    <view class="specificaShopNum clearfix">
+        <view class="fl specificaShopNumTis">数量</view>
+        <view class="fr specificaShopNuminput clearfix">
+            <text class="less fl" bindtap='less'>-</text>
+            <text class="numebr fl">{{number}}</text>
+            <text class="plus fl" bindtap='plus'>+</text>
+        </view>
+    </view>
+    <view class="specificaPopupcBoxBtn" bindtap='ISpecificaBtn'>确定</view>
+</view>
+
+<view class="loginPrompt" wx:if="{{isloginPrompt}}">
+    <view class='loginPromptBox'>
+        <view class="loginPromptBoxTit">您还未登录，请先登录</view>
+        <view class='loginPromptBoxBtn clearfix'>
+            <button class="loginPromptBoxBtnLeft fl" bindtap='hide'>取消</button>
+            <button class="loginPromptBoxBtnRight fl" open-type="getUserInfo" bindgetuserinfo="getPerson">去登陆</button>
+        </view>
+    </view>
+</view>
+<!-- 优惠券弹窗 -->
+<view class="specificaPopupcBox" wx:if="{{couponModel}}" style="padding-top:10rpx;">
+    <view class="couponTitle">
+        <view class="couponTitlefl">领取优惠券</view>
+        <view class="couponTitlefr" bindtap='couponModelBtn'>
+            <image mode="widthFix" src="../../../images/close.png"></image>
+        </view>
+    </view>
+    <view class="couponcontent">
+        <scroll-view scroll-y style="height: 100%;">
+            <block wx:for="{{cardList}}">
+                <view class="card_roll">
+                    <view class="card_l">
+                        <view class="money">{{item.discount}}</view>
+                        <view class="full_money">满{{item.full}}元可用</view>
+                    </view>
+                    <view class="card_r">
+                        <view style="font-size: 28rpx;">{{item.discountName}}</view>
+                        <view>使用期限: {{item.discountDate.endDate}}到期</view>
+                    </view>
+                    <view class="receiveBtn" data-id="{{item.id}}" bindtap="claimCard">
+                        <image mode="widthFix" src="../../../images/receive.png">
+
+                        </image>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="specificaPopupcBoxBtn" bindtap='couponModelBtn'>确定</view>
+</view>

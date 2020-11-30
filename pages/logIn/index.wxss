@@ -1,0 +1,61 @@
+/* pages/logIn/index.wxss */
+.login{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+.loginIMg{
+    width: 140rpx;
+    height: 140rpx;
+    display: block; 
+    margin: 0 auto 20rpx;
+    border: 2rpx solid #eeeeee;
+    border-radius: 150rpx;
+}
+.loginRTis{
+    text-align: center;
+    font-size:32rpx;
+    font-weight: 600;
+    color: #515151;
+}
+.loginBtn{
+    width: 90% !important;
+    height:100rpx !important;
+    min-height:100rpx !important;
+    margin-top: 120rpx;
+    color: #fff;
+    background:rgba(223,205,150,1);
+    font-size:32rpx;
+    line-height:100rpx !important;
+    border-radius:50rpx;
+    padding: 0 !important;
+}
+.otherLogin{
+    width: 90% !important;
+    height:100rpx !important;
+    min-height:100rpx !important;
+    margin-top:40rpx;
+    color: #B9B9B9;
+    border:1px solid rgba(185,185,185,1);
+    font-size:32rpx;
+    line-height:100rpx !important;
+    border-radius:50rpx;
+    padding: 0 !important;
+    margin-left: 5%;
+    text-align: center;
+}
+.choose {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 80rpx;
+    padding-left: 44rpx;
+}
+.choose .choose_text {
+    margin-left: 10rpx;
+}
+.choose text {
+    color: rgba(223,205,150,1);
+}

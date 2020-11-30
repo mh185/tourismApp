@@ -1,0 +1,71 @@
+<!--pages/user/cardRoll/index.wxml-->
+<!-- 我的卡卷 -->
+<!-- <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-state="0" bindtap="swichNav">
+        全部
+    </view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-state="1" bindtap="swichNav">优惠券</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-state="5" bindtap="swichNav">红包</view>
+</view> -->
+<!-- <scroll-view> -->
+<block wx:for="{{cardList}}">
+    <view>
+        <view class="card_roll">
+            <view class="card_l">
+                <view class="money">{{item.discount}}</view>
+                <view class="full_money">满{{item.full}}元可用</view>
+            </view>
+            <view class="card_r">
+                <view style="font-size: 32rpx;">{{item.discountName}}</view>
+                <view>{{item.endDate}}到期</view>
+                <view>{{item.useDesc}}</view>
+            </view>
+        </view>
+
+    </view>
+
+</block>
+<!-- <view class="nocard_title" wx:if="{{cardList.length==0}}">没有更多的优惠券了</view> -->
+<view class="no_card" wx:if="{{cardList.length==0}}">
+    暂时没有优惠券!
+</view>
+<!-- <block >
+        <view >
+            <view class="card_roll" >
+                <view class="card_l">
+                    <view class="money">7</view>
+                    <view class="full_money">满15元可用</view>
+                </view>
+                <view class="card_r">
+                    <view style="font-size: 32rpx;">大都会购物商品抵扣红包2</view>
+                    <view>2020-04-06到期</view>
+                    <view>限大都会线上线下购物使用</view>
+                </view>
+            </view>
+            <view class="nocard_title">没有更多的优惠券了~</view>
+        </view>
+        <view wx:else class="no_card">
+            暂时没有优惠券!
+        </view>
+    </block>
+
+    <block ">
+        <view  >
+            <view class="card_roll">
+                <view class="card_l">
+                    <view class="money">7</view>
+                    <view class="full_money">满15元可用</view>
+                </view>
+                <view class="card_r">
+                    <view style="font-size: 32rpx;">大都会购物商品抵扣红包3</view>
+                    <view>2020-04-06到期</view>
+                    <view>限大都会线上线下购物使用</view>
+                </view>
+            </view>
+            <view class="nocard_title">没有更多的红包了~</view>
+        </view>
+        <view wx:else class="no_card">
+            暂时没有红包!
+        </view>
+    </block> -->
+<!-- </scroll-view> -->

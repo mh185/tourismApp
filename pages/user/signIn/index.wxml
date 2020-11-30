@@ -1,0 +1,53 @@
+<view class="topNum-box">
+	<image class="background-image" src="../../../images/signIn-top.png"></image>
+	<view class="line-box">
+		<view class="row-box">
+			<view class="num">{{continuitieDay}}</view>
+			<view class="day">天</view>
+		</view>
+		<view class="text">已连续签到</view>
+	</view>
+</view>
+
+<navigator class="toStore" url="/pages/integral/index">
+	<text class="text">您已有{{Integral}}积分，前往积分商城兑换商品 ></text>
+</navigator>
+
+<view class="part-box">
+	<view class="title-line">
+		<image class="icon" src="../../../images/signIn-icon1.png"></image>
+		<text class="title">连续签到奖励</text>
+	</view>
+	<view class="tips">再坚持2天可以获得超多经验值</view>
+	<view class="row-box">
+		<view class="signIn-day" wx:for="{{signInDay}}">
+			<image wx:if="{{nowDay === item}}" class="background-image" src="../../../images/signIn-day.png"></image>
+			<view class="line-box">
+				<view class="row-box">
+					<view class="num">{{item}}</view>
+					<view class="day">天</view>
+				</view>
+				<view class="text">经验+5</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="part-box">
+	<view class="title-line">
+		<image class="icon" src="../../../images/signIn-icon2.png"></image>
+		<text class="title">签到规则</text>
+	</view>
+	<view class="rule-box">
+		<view class="ul">
+			<view class="title">·活动玩法</view>
+            <text class="content">1.签到1天可获得5点经验值；</text>
+            <text class="content">2.连续签到7天，第7天可获得20点经验值；（超过7天，经验值奖励进入下一个循环，你的签到天数我们会持续记录）；</text>
+            <text class="content">3.经验值（原积分）可用于提高当前大都会会员的等级，等级提升后，后续 会有各种福利；</text>
+		</view>
+        <view class="ul">
+			<view class="title">·奖励说明</view>
+            <text class="content">经验值：即原来的积分，可用于提高当前大都会会员的等级，等级提升后，后续会有各种福利；</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,122 @@
+/* pages/user/myOrder/afterSalesRefund/index.wxss */
+.afterSalesRefund{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.reasonReturnTit{
+    font-size: 32rpx;
+    color: #222222;
+    padding: 34rpx 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 32rpx;
+    font-weight: 400;
+}
+.reasonReturnTitRTis{
+    font-size: 24rpx;
+    color: #E44F4A;
+    margin-left:10rpx;
+}
+.reasonReturnDetails{
+    color:#000000;
+    font-size: 30rpx;
+    /* padding: 0rpx 20rpx; */
+}
+.reasonReturnDetailsTit{
+    padding: 38rpx 0 22rpx 0;
+}
+
+.reasonReturnDetailsContent{
+    background:rgba(248,248,248,1);
+    border-radius:14rpx;
+    padding: 26rpx;
+}
+.reasonReturnDetailsContent textarea{
+    width: 100%;
+}
+.reasonReturn{
+    padding: 30rpx 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.reasonReturnTxt{
+    font-size: 28rpx;
+    color:#dbdbdb ;
+}
+.reasonReturnRight{
+    font-size: 24rpx;
+    color: #6A6A6A;
+}
+.reasonReturnRight image{
+width:30rpx;
+height: 30rpx;
+margin-left: 10rpx;
+opacity: 0.5;
+}
+
+.commodityBoxList{
+    width: 100%;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #F5F5F5;
+}
+.commodityBoxList:first-child{
+    border-top: 1px solid #F5F5F5;
+}
+.commodityImg{
+    width: 160rpx;
+    height: 160rpx;
+    display: block;
+}
+.commodityBoxListLeft{
+    width: calc(100% - 180rpx);
+    margin-left: 20rpx;
+    padding: 15rpx 0;
+}
+.commodityName{
+    font-size: 24rpx;
+    color: #2A2A2A;
+    font-weight: 400;
+}
+.commodityProduct{
+    font-size: 24rpx;
+    color: #919191;
+    margin: 26rpx 0 38rpx 0;
+}
+.commodityProductName{
+    padding: 10rpx 14rpx;
+    background:rgba(244,244,244,1);
+    border-radius:3px;
+}
+.commodityMoney{
+    font-size: 30rpx;
+    color: #027D58;
+    font-weight: 600;
+}
+.commodityNum{
+    color: #212121;
+    font-weight: 400;
+}
+.operatingBtnBox{
+    height:216rpx;
+    width: 100%;
+    background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 100%);
+    box-shadow:0px -3px 20px rgba(143,143,143,0.16);
+    position: fixed;
+    bottom: 0rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    display: flex;
+   justify-content: center;
+}
+.referBtn{
+    width: 90%;
+    height:98rpx;
+    background:rgba(2,125,88,1);
+    border-radius:50rpx;
+    text-align: center;
+    line-height: 98rpx;
+    color: #fff;
+    margin-top: 36rpx;
+    font-size: 30rpx;
+}

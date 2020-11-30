@@ -1,0 +1,246 @@
+<!--pages/user/myOrder/index.wxml-->
+<wxs module="filters" src="../../../utils/filters.wxs"></wxs>
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待付款
+        <text wx:if="{{currentTab==1&&total>0}}" class="{{total==0 ? 'point' : 'pointNum'}}">{{total!=0?total:''}}</text>
+    </view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待发货/使用
+        <text wx:if="{{currentTab==2&&total>0}}" class="{{total==0 ? 'point' : 'pointNum'}}">{{total!=0?total:''}}</text>
+    </view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">待收货
+        <text wx:if="{{currentTab==3&&total>0}}" class="{{total==0 ? 'point' : 'pointNum'}}">{{total!=0?total:''}}</text>
+    </view>
+    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">已完成
+        <text wx:if="{{currentTab==4&&total>0}}" class="point"></text>
+    </view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange">
+
+    <!-- 全部 -->
+    <swiper-item catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:if="{{list.length!=0}}">
+                <view class="myorderList" wx:for="{{list}}" wx:for-item="item1" wx:for-index="index1" wx:key='index1'>
+                    <view class="shopName clearfix" data-orderid='{{item1.id}}' bindtap='details'>
+                        <image class="shopImg fl" src="{{item1.seller.headImg}}" />{{item1.seller.shopName}}
+                    </view>
+                    <view class="commodityBox" data-orderid='{{item1.id}}' bindtap='details'>
+                        <view class="commodityBoxList clearfix" wx:for="{{item1.goods}}" wx:for-item="item2" wx:for-index="index2" wx:key='index2'>
+                            <image class="commodityImg fl" src="{{imgUrl}}{{item2.goodsHeadImg.uploadfilepath}}{{item2.goodsHeadImg.uploadfilename}}" />
+                            <view class="fl commodityBoxListLeft">
+                                <view class="commodityName">{{item2.goodsTitle}}</view>
+                                <view class="commodityProduct">
+                                    <text class='commodityProductName'>{{item2.goodsLabel}}</text>
+                                </view>
+                                <view class="commodityMoney">￥{{item2.goodsNowPrice}}<text class="commodityNum fr">x{{item2.goodsNum}}</text></view>
+                                <view catchtap="returnMoeny" data-type="Single" data-skuid="{{item2.id}}" data-status="{{item1.status}}" wx:if="{{ item2.state == 1 ||item2.state == 2||item2.state == 3 }}" class="refund-btn">申请退款</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" catchtap="returnMoeny" data-type="Single" data-skuid="{{item2.id}}" data-status="{{item2.state}}" wx:if="{{item2.state==7}}">退款中</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item2.state==8}}">已退款</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item2.state==9}}">退款失败</view>
+                                <view class="fr myorderListBtn myorderListPaytxt " wx:if="{{item2.state==10}}">等待审核</view>
+                                <view class="refund-btn" catchtap="goOverInfo" data-skuid="{{item2.id}}" wx:if="{{item2.state==11}}">填写单号</view>
+
+                            </view>
+                        </view>
+
+                    </view>
+
+                    <view class="myorderListWeb">
+                        <view class="myorderListWebTxt">共{{item1.totalGoodsNum}}件商品 实付款￥{{filters.toFix(item1.payMoney)}}</view>
+
+
+                        <view class="myorderListWebBtn clearfix">
+                            <view class="fr myorderListBtn myorderListPayBtn" wx:if="{{item1.status==0}}" data-ordernum='{{item1.id}}' bindtap='getUnionpay'>付款</view>
+                            <view class="fr myorderListBtn" wx:if="{{item1.status==0}}" data-ordernum='{{item1.id}}' data-istag='qx' bind:tap="cancelOrder">取消订单</view>
+                            <!-- <view class="fr myorderListBtn" wx:if="{{item1.status==4}}" bindtap='Logistics'>查看物流</view>                          -->
+                            <view class="fr myorderListBtn  myorderListPayBtn" wx:if="{{item1.status==3 || item1.status==4}}" data-ordernum='{{item1.id}}' data-istag='qrsh' bind:tap="cancelOrder">确认收货</view>
+                            <view class="fr myorderListBtn myorderListPayBtn" wx:if="{{item1.status==5}}" data-ordernum='{{item1.id}}' bind:tap="goEvaluation">评价</view>
+
+                            <!-- <view class="fr myorderListBtn myorderListRefundButton" wx:if="{{item1.status==5}}" data-orderid='{{item1.id}}' bind:tap="returnMoeny">申请售后</view> -->
+                            <!-- <view class="fr myorderListBtn myorderListRefundButton" wx:if="{{item1.status==3||item1.status==2||item1.status==1}}" data-index='{{index1}}' data-type="Multiple" catchtap="returnMoeny">申请退款</view> -->
+                            <view class="fr myorderListBtn" wx:if="{{item1.status==15 || item1.status==5 || item1.status==6}}" data-ordernum='{{item1.id}}' data-istag='del' bind:tap="cancelOrder">删除订单</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData">暂无订单信息</view>
+            </block>
+        </scroll-view>
+    </swiper-item>
+
+    <!-- 待付款 -->
+    <swiper-item catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:if="{{list.length!=0}}">
+                <view class="myorderList" wx:for="{{list}}" wx:for-item="item1" wx:for-index="index1" wx:key='index1'>
+                    <view class="shopName clearfix" data-orderid='{{item1.id}}' bindtap='details'>
+                        <image class="shopImg fl" src="{{item1.seller.headImg}}" />{{item1.seller.shopName}}
+                    </view>
+                    <view class="commodityBox" data-orderid='{{item1.id}}' bindtap='details'>
+                        <view class="commodityBoxList clearfix" wx:for="{{item1.goods}}" wx:for-item="item2" wx:for-index="index2" wx:key='index2'>
+                            <image class="commodityImg fl" src="{{imgUrl}}{{item2.goodsHeadImg.uploadfilepath}}{{item2.goodsHeadImg.uploadfilename}}" />
+                            <view class="fl commodityBoxListLeft">
+                                <view class="commodityName">{{item2.goodsTitle}}</view>
+                                <view class="commodityProduct ">
+                                    <text class='commodityProductName'>{{item2.goodsLabel}}</text>
+                                </view>
+                                <view class="commodityMoney">￥{{item2.goodsNowPrice}}<text class="commodityNum fr">x{{item2.goodsNum}}</text></view>
+                            </view>
+                        </view>
+
+                    </view>
+
+                    <view class="myorderListWeb">
+
+                        <view class="myorderListWebTxt">共{{item1.totalGoodsNum}}件商品 实付款￥{{item1.payMoney}}</view>
+                        <view class="myorderListWebBtn clearfix">
+                            <view class="fr myorderListBtn myorderListPayBtn" wx:if="{{item1.status==0}}" data-ordernum='{{item1.id}}' bindtap='getUnionpay'>付款</view>
+                            <view class="fr myorderListBtn" wx:if="{{item1.status==0}}" data-ordernum='{{item1.id}}' data-istag='qx' bind:tap="cancelOrder">取消订单</view>
+                            <!-- <view class="fr myorderListBtn" wx:if="{{item1.status==10}}">删除订单</view>   -->
+                        </view>
+
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData">暂无订单信息</view>
+            </block>
+
+        </scroll-view>
+    </swiper-item>
+
+    <!-- 待发货 -->
+    <swiper-item catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:if="{{list.length!=0}}">
+                <view class="myorderList" wx:for="{{list}}" wx:for-item="item1" wx:for-index="index1" wx:key='index1'>
+                    <view class="shopName clearfix" data-orderid='{{item1.id}}' bindtap='details'>
+                        <image class="shopImg fl" src="{{item1.seller.headImg}}" />{{item1.seller.shopName}}
+                    </view>
+                    <view class="commodityBox" data-orderid='{{item1.id}}' bindtap='details'>
+                        <view class="commodityBoxList clearfix" wx:for="{{item1.goods}}" wx:for-item="item2" wx:for-index="index2" wx:key='index2'>
+                            <image class="commodityImg fl" src="{{imgUrl}}{{item2.goodsHeadImg.uploadfilepath}}{{item2.goodsHeadImg.uploadfilename}}" />
+                            <view class="fl commodityBoxListLeft">
+                                <view class="commodityName">{{item2.goodsTitle}}</view>
+                                <view class="commodityProduct ">
+                                    <text class='commodityProductName'>{{item2.goodsLabel}}</text>
+                                </view>
+                                <view class="commodityMoney">￥{{item2.goodsNowPrice}}<text class="commodityNum fr">x{{item2.goodsNum}}</text></view>
+                                <view catchtap="returnMoeny" data-type="Single" data-skuid="{{item2.id}}" data-status="{{item1.status}}" wx:if="{{ item2.state == 1 ||item2.state == 2||item2.state == 3 }}" class="refund-btn">申请退款</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" catchtap="returnMoeny" data-type="Single" data-skuid="{{item2.id}}" data-status="{{item2.state}}" wx:if="{{item2.state==7}}">退款中</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item2.state==8}}">已退款</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item2.state==9}}">退款失败</view>
+                                <view class="fr myorderListBtn myorderListPaytxt " wx:if="{{item2.state==10}}">等待审核</view>
+                                <view class="refund-btn" catchtap="goOverInfo" data-skuid="{{item2.id}}" wx:if="{{item2.state==11}}">填写单号</view>
+                            </view>
+                        </view>
+
+                    </view>
+
+                    <view class="myorderListWeb">
+                        <view class="myorderListWebTxt">共{{item1.totalGoodsNum}}件商品 实付款￥{{item1.payMoney}}</view>
+                        <view class="myorderListWebBtn clearfix">
+                            <!-- <view class="fr myorderListBtn" wx:if="{{item1.status==2||item1.status==1||item1.status==3}}" data-orderid='{{item1.id}}' bind:tap="goRefund">申请退款</view>
+                            <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item1.status==7}}">退款中</view>
+                            <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item1.status==8}}">已退款</view>
+                            <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item1.status==9}}">退款失败</view> -->
+                        </view>
+
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData">暂无订单信息</view>
+            </block>
+        </scroll-view>
+    </swiper-item>
+
+    <!-- 待收货 -->
+    <swiper-item catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:if="{{list.length!=0}}">
+                <view class="myorderList" wx:for="{{list}}" wx:for-item="item1" wx:for-index="index1" wx:key='index1'>
+                    <view class="shopName clearfix" data-orderid='{{item1.id}}' bindtap='details'>
+                        <image class="shopImg fl" src="{{item1.seller.headImg}}" />{{item1.seller.shopName}}
+                    </view>
+                    <view class="commodityBox" data-orderid='{{item1.id}}' bindtap='details'>
+                        <view class="commodityBoxList clearfix" wx:for="{{item1.goods}}" wx:for-item="item2" wx:for-index="index2" wx:key='index2'>
+                            <image class="commodityImg fl" src="{{imgUrl}}{{item2.goodsHeadImg.uploadfilepath}}{{item2.goodsHeadImg.uploadfilename}}" />
+                            <view class="fl commodityBoxListLeft">
+                                <view class="commodityName">{{item2.goodsTitle}}</view>
+                                <view class="commodityProduct ">
+                                    <text class='commodityProductName'>{{item2.goodsLabel}}</text>
+                                </view>
+                                <view class="commodityMoney">￥{{item2.goodsNowPrice}}<text class="commodityNum fr">x{{item2.goodsNum}}</text></view>
+                                <view catchtap="returnMoeny" data-type="Single" data-skuid="{{item2.id}}" data-status="{{item1.status}}" wx:if="{{ item2.state == 1 ||item2.state == 2||item2.state == 3 }}" class="refund-btn">申请退款</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" catchtap="returnMoeny" data-type="Single" data-skuid="{{item2.id}}" data-status="{{item2.state}}" wx:if="{{item2.state==7}}">退款中</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item2.state==8}}">已退款</view>
+                                <view class="fr myorderListBtn myorderListPaytxt" wx:if="{{item2.state==9}}">退款失败</view>
+                                <view class="fr myorderListBtn myorderListPaytxt " wx:if="{{item2.state==10}}">等待审核</view>
+                                <view class="refund-btn" catchtap="goOverInfo" data-skuid="{{item2.id}}" wx:if="{{item2.state==11}}">填写单号</view>
+                            </view>
+                        </view>
+
+                    </view>
+
+                    <view class="myorderListWeb">
+                        <view class="myorderListWebTxt">共{{item1.totalGoodsNum}}件商品 实付款￥{{item1.payMoney}}</view>
+                        <view class="myorderListWebBtn clearfix">
+
+                            <!-- <view class="fr myorderListBtn" wx:if="{{item1.status==3}}" data-orderid='{{item1.id}}' bind:tap="goRefund">申请退款</view> -->
+                            <view class="fr myorderListBtn myorderListPayBtn" data-ordernum='{{item1.id}}' data-istag='qrsh' bind:tap="cancelOrder">确认收货</view>
+                            <!-- <view class="fr myorderListBtn"  bindtap='Logistics'>查看物流</view> -->
+                        </view>
+
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData">暂无订单信息</view>
+            </block>
+
+        </scroll-view>
+    </swiper-item>
+
+    <!-- 已完成 -->
+    <swiper-item catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:if="{{list.length!=0}}">
+                <view class="myorderList" wx:for="{{list}}" wx:for-item="item1" wx:for-index="index1" wx:key='index1'>
+                    <view class="shopName clearfix" data-orderid='{{item1.id}}' bindtap='details'>
+                        <image class="shopImg fl" src="{{item1.seller.headImg}}" />{{item1.seller.shopName}}
+                    </view>
+                    <view class="commodityBox" data-orderid='{{item1.id}}' bindtap='details'>
+                        <view class="commodityBoxList clearfix" wx:for="{{item1.goods}}" wx:for-item="item2" wx:for-index="index2" wx:key='index2'>
+                            <image class="commodityImg fl" src="{{imgUrl}}{{item2.goodsHeadImg.uploadfilepath}}{{item2.goodsHeadImg.uploadfilename}}" />
+                            <view class="fl commodityBoxListLeft">
+                                <view class="commodityName">{{item2.goodsTitle}}</view>
+                                <view class="commodityProduct ">
+                                    <text class='commodityProductName'>{{item2.goodsLabel}}</text>
+                                </view>
+                                <view class="commodityMoney">￥{{item2.goodsNowPrice}}<text class="commodityNum fr">x{{item2.goodsNum}}</text></view>
+                            </view>
+                        </view>
+
+                    </view>
+
+                    <view class="myorderListWeb">
+                        <view class="myorderListWebTxt">共{{item1.totalGoodsNum}}件商品 实付款￥{{item1.payMoney}}</view>
+                        <view class="myorderListWebBtn clearfix">
+                            <view class="fr myorderListBtn myorderListPayBtn" wx:if="{{item1.status==5}}" data-ordernum='{{item1.id}}' bind:tap="goEvaluation">评价</view>
+                            <!-- <view class="fr myorderListBtn" data-orderid='{{item1.id}}' bind:tap="goRefund">申请售后</view> -->
+                            <view class="fr myorderListBtn" data-ordernum='{{item1.id}}' data-istag='del' bind:tap="cancelOrder">删除订单</view>
+                        </view>
+
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData">暂无订单信息</view>
+            </block>
+
+        </scroll-view>
+    </swiper-item>
+</swiper>

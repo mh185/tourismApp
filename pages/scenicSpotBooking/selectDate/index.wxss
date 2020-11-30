@@ -1,0 +1,42 @@
+/* pages/scenicSpotBooking/selectDate/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.van-button--block {
+  width: 100% !important;
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.box {
+  margin-top: 22rpx;
+  padding: 22rpx 30rpx 0 30rpx;
+  background: #ffffff;
+}
+.calendar {
+  --calendar-height: 1100rpx;
+}
+.van-calendar__month-title {
+  text-align: left !important;
+  font-size: var(--calendar-month-title-font-size,13px) !important;
+}
+.van-calendar__day {
+  font-size: var(--calendar-day-font-size,12px) !important;
+}
+.van-button--danger {
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f) !important;
+  border: 0 !important;
+}
+.van-calendar__selected-day {
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f) !important;
+}

@@ -1,0 +1,57 @@
+<!--pages/homePage/recomBusiness/index.wxml-->
+<view class="recomBusiness">
+    <view class="businessRank clearfix">
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='4'><text class="fl">销量</text>
+            <image class="businistessRankListImg fl" src="../../../images/down.png"></image>
+        </view>
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='0'><text class="fl">距离</text>
+            <image class="businistessRankListImg fl" src="../../../images/down.png"></image>
+        </view>
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='2'><text class="fl">最新</text>
+            <image class="businistessRankListImg fl" src="../../../images/down.png"></image>
+        </view>
+        <view class="fl businistessRankList clearfix" bindtap='checkProduct' data-orderNum='6'><text class="fl">人气</text>
+            <image class="businistessRankListImg fl" src="../../../images/down.png"></image>
+        </view>
+    </view>
+    <view class="businessBox" wx:if='{{sellerList!=null&&sellerList.length>0}}'>
+        <view class="businessBoxList" wx:for='{{sellerList}}' wx:for-index="index">
+            <view class="businessBoxListInfor clearfix">
+                <image class="businessBoxListInforImg fl" src="{{item.headImg}}"></image>
+                <view class="fl businessBoxListInforBox">
+                    <view class="businessBoxListInforBoxName">{{item.shopName}}</view>
+                    <view class="businessBoxListInforBoxXin clearfix">
+                        <block wx:for="{{commentPoint}}" wx:for-item="commentPointList" wx:for-index="key">
+                            <image class="businessBoxListInforBoxXinImg fl" wx:if="{{item.serviceScore>key}}" src="{{commentPointList.bright}}"></image>
+                            <image class="businessBoxListInforBoxXinImg fl" wx:else src="{{commentPointList.dark}}"></image>
+                        </block>
+                    </view>
+                </view>
+                <view class="fr businessBoxBtn" bindtap='enterTheShop' data-sellerid='{{item.id}}'>进店</view>
+            </view>
+            <view class="businessBoxListShop clearfix" wx:if="{{sellerGoodsList[item.id].length>0}}">
+                <view class="businessBoxListShopList fl" wx:for="{{sellerGoodsList[item.id]}}" wx:for-item="goods" bindtap='shopDetails' data-id='{{goods.id}}'>
+                    <view class="businessBoxListShopListTu">
+                        <image class="businessBoxListShopListImg" src="{{imgUrl}}{{goods.headImg.uploadfilepath}}{{goods.headImg.uploadfilename}}"></image>
+                    </view>
+                    <view class="businessBoxListShopListName">¥{{goods.nowPrice}}</view>
+                </view>
+            </view>
+            <view class="noData" wx:else>
+                <view class="noDataTu">
+                    <image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image>
+                </view>
+                <view class="noDataTxtx">暂无商品</view>
+            </view>
+        </view>
+    </view>
+    <view class="noData" wx:else>
+        <view class="noDataTu">
+            <image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image>
+        </view>
+        <view class="noDataTxtx">暂无店铺</view>
+    </view>
+    <view wx:if="{{noMoreData}}" class="noData">
+        没有更多数据了
+    </view>
+</view>

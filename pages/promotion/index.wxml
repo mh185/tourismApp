@@ -1,0 +1,71 @@
+<!--pages/promotion/index.wxml-->
+<view class="top_line"></view>
+<!-- 优惠券 -->
+<!-- <view class="coupon_title">
+  <text>优惠券</text>
+</view>
+<view class="task">
+  <swiper class="taskBox">
+    <swiper-item>
+      <block>
+        <view class="taskBox_item" wx:for="{{tasklist}}" wx:for-index="index">
+          <block wx:for-item="tasklist">
+            <view>
+              <image src="{{item.imgUrl}}"></image>
+            </view>
+            <view class="task_title">{{item.title}}</view>
+            <view class="task_btn">{{item.btn_title}}</view>
+            <view class="task_integral">
+              <text class="task_integralunm">{{item.num}}</text> 积分
+            </view>
+          </block>
+        </view>
+      </block>
+    </swiper-item>
+  </swiper>
+</view> -->
+
+<!-- 抽奖区域 -->
+<view class="luckdrawbox">
+  <view class="luckdraw">抽奖</view>
+  <view class="luckdrawimg">
+    <image src="../../images/luckdraw.png" bindtap="luckDraw"></image>
+  </view>
+</view>
+
+<!-- 限时秒杀 开始-->
+<view class="groupbox w" style="margin-bottom: 0;">
+    <view class="group_title">限时秒杀</view>
+    <view class="group_lists">
+        <block wx:for="{{seckillList}}" wx:key="id">
+            <view class="group_items" bindtap="seckillshopDetails" data-id="{{item.goodsId}}">
+                <image src="{{imgUrl+item.imgUrl}}"></image>
+                <view class="groupitem_title">{{item.goodsName}}</view>
+                <view class="group_price">
+                    <text class="groupitem_numb">{{item.seckillPrice}}</text>
+                    <!-- <text class="groupitem_num">¥6450.00</text> -->
+                </view>
+            </view>
+        </block>
+
+    </view>
+</view>
+<!-- 限时秒杀 结束-->
+
+<!-- 拼团 re开始-->
+<view class="groupbox w">
+    <view class="group_title">拼团</view>
+    <view class="group_lists">
+        <block wx:for="{{grouplist}}" wx:key="goodsId">
+            <view class="group_items" bindtap="groupshopDetails" data-id="{{item.goodsId}}" data-goodsLabelId="{{item.goodsLabelId}}" data-goodsLabelIdone="{{item.id}}">
+                <image src="{{imgUrl}}{{item.imgUrl}}"></image>
+                <view class="groupitem_title">{{item.goodsName}}</view>
+                <view class="group_price">
+                    <text class="groupitem_numb">{{item.groupPrice}}</text>
+                    <!-- <text class="groupitem_num">¥6450.00</text> -->
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<!-- 拼团 结束 -->

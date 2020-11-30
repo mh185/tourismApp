@@ -1,0 +1,34 @@
+<!--pages/homePage/search/index.wxml-->
+<view class="box">
+    <view class="search">
+        <input class="searchInput" bindinput="searchInput" value="{{searchTxt}}" placeholder="输入您需要搜索的商品" />
+        <view class="searchBtn" bindtap='searchGoods'><image class="searchBtnImg" src="../../../images/search.png" mode="widthFix"></image></view>
+    </view>
+    <view class="search" wx:if="{{!isSearch}}">
+        <view class="hotSearch">
+            <view class="hotSearchTxt">热门搜索</view>
+            <view class="hotSearchbox"  wx:if="{{hotSearchList!=null&&hotSearchList.length>0}}">
+                <text class="hotSearchboxList" wx:for="{{hotSearchList}}" wx:for-index="index" bindtap='searchBtn' data-searchtxt='{{item}}'>{{item}}</text>
+            </view>
+        </view>
+        <view class="historySearch" wx:if="{{historySearchList!=null&&historySearchList.length>0}}">
+            <view class="historySearchTit">历史搜索<text class="historyDetele fr" bindtap='historyDetele'>删除</text></view>
+            <view class="historySearchBox">
+                <text class="historySearchBoxList" wx:for="{{historySearchList}}" wx:for-index="index" bindtap='searchBtn' data-searchtxt='{{item}}'>{{item}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="content" wx:else>
+        <view wx:if="{{shopList!=null&&shopList.length>0}}">
+             <view class="contentList" wx:for="{{shopList}}" bindtap='shopDetails' data-id="{{item.id}}">
+                 <image class="contentListShopListImg" src="{{imgUrl}}{{item.headImg.uploadfilepath}}{{item.headImg.uploadfilename}}" mode="widthFix"></image>
+                 <view class="contentListShopName">{{item.name}}</view>
+                 <view class="contentListShopNumber"><text>价格:</text>￥{{item.nowPrice}}<text class="fr">销量:{{item.sale||0}}</text></view>
+            </view>   
+        </view>
+         <view class="noData" wx:else>
+            <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+            <view class="noDataTxtx">暂无商品</view>
+        </view>            
+    </view>
+</view>

@@ -1,0 +1,51 @@
+/* pages/user/realNameAuth/index.wxss */
+
+@import '../editPerson/index.wxss';
+.upIdCard-panel {
+    margin-top: 56rpx;
+}
+
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.upIdCard-panel-title {
+    font-size: 32rpx;
+    color: #212121;
+    font-weight: 600;
+}
+
+.upIdCard-panel-body {
+    margin-top: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.upIdCard-panel-item {
+    padding: 20rpx 20rpx 40rpx 20rpx;
+}
+
+.upIdCard-panel-cardbox {}
+
+.upIdCard-panel-cardImg {
+    width: 294rpx;
+    height: 188rpx;
+}
+
+.upIdCard-panel-cardtxt {
+    margin-top: 40rpx;
+    font-size: 26rpx;
+    color: #212121;
+    text-align: center;
+}
+
+.upIdCard-panel-cardtextbold {
+    color: #027D58;
+}

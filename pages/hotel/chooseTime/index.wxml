@@ -1,0 +1,18 @@
+<!--pages/hotel/chooseTime/index.wxml-->
+<view>
+  <view class="top" bindtap="back">
+    <view class="hotelTop">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">选择日期</text>
+    </view>
+  </view>
+  <view class="time">
+    <van-calendar
+      poppable="{{ false }}"
+      show-confirm="{{ false }}"
+      show-title="{{ false }}"
+      type="range"
+      class="calendar"
+    />
+  </view>
+</view>

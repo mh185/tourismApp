@@ -1,0 +1,221 @@
+/* pages/shopCart/index.wxss */
+.shopCartEdit{
+    width: 100%;
+    padding: 30rpx 20rpx;
+    box-sizing: border-box;
+    background: #ffffff;
+    margin-bottom: 20rpx;
+}
+.EditBtn{
+    font-size: 32rpx;
+    color:#707070 ;
+}
+.shopCartBox{
+    width: 100%;
+    padding: 0 20rpx 120rpx;
+    box-sizing: border-box;
+}
+.shopCartBoxList{
+    width: 100%;
+    background: #fff;
+    border-radius: 20rpx;
+    margin-bottom: 10px;
+    box-shadow:0px 0px 6px rgba(43,5,5,0.07);
+}
+.shopIcon{
+  width:26rpx;
+  height:26rpx;
+  margin-top:10rpx;
+  margin-right: 10rpx;
+}
+.shopName{
+    padding: 20rpx;
+    box-sizing: border-box;
+    border-bottom: 1px dashed #f6efe9;
+    position: relative;
+    color:rgba(51,51,51,1);
+    font-size:30rpx;
+}
+.shopName checkbox {
+    width:100%;
+  }
+  /*checkbox 选项框大小  */
+.shopName  checkbox .wx-checkbox-input {
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .right{
+      width:20rpx;
+      height:20rpx;
+      position: absolute;
+      right: 20rpx;
+      top: 30rpx;
+  }
+  .shoppingBox{
+      width: 100%;
+  }
+  .shoppingBoxlist{
+    width: 100%;
+    padding: 40rpx 20rpx;
+    box-sizing: border-box;
+    border-bottom: 1px dashed #f6efe9;
+  }
+  .shoppingBoxlist:last-child{
+    border-bottom:none
+  }
+  .shoppingBoxlistCheckbox{
+    width:50rpx;
+    margin-top:50rpx;
+  }
+  .shoppingBoxlistCheckbox  checkbox {
+    width:100%;
+  }
+  .shoppingBoxlistCheckbox checkbox .wx-checkbox-input {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+  }
+    /*checkbox选中后样式  */
+    .shoppingBoxlistCheckbox checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: #027D58;
+  }
+  .shoppingBoxlistCheckbox checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    width: 28rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+  .shoppingBoxlistCheckboxright{
+      width:calc(100% - 70rpx);
+      margin-left: 20rpx;
+  }
+  .shopImg{
+      width: 160rpx;
+      height:160rpx;
+  }
+  .shopInfor{
+    width: calc(100% - 180rpx);
+    margin-left: 20rpx;
+  }
+  .shopInforName{
+    font-size: 24rpx;
+    color:rgba(42,42,42,1);
+    
+  }
+  .shopInforSpecification{
+    width: 100%;
+    margin:20rpx 0;
+  }
+  .shopInforSpecification .shopInforSpecificationList{
+    display: block;
+    font-size: 24rpx;
+    color:rgba(145,145,145,1);
+    padding: 10rpx;
+    margin-right: 10rpx;
+    background:rgba(244,244,244,1);
+  }
+  .shopInforMoneyLeft{
+    font-size: 30rpx;
+    color:rgba(2,125,88,1);
+    font-weight: 600;
+  }
+  .numebr{
+    width:80rpx ;
+    text-align: center;
+    height: 60rpx;
+    line-height:60rpx;
+    border:1px solid rgba(237,237,237,1);
+    box-sizing: border-box;
+  }
+  .less,.plus{
+    height:60rpx;
+    width: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    background:rgba(242,243,245,1);
+    border-radius:4rpx 0px 0px 4rpx;
+  }
+  .Settlement{
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+  }
+
+  .SettlementLeft  checkbox {
+    width:100%;
+  }
+  .SettlementLeft checkbox .wx-checkbox-input {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    
+  }
+  .SettlementLeft checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    background: #027D58;
+  }
+  .totalMoney{
+    font-size: 26rpx;
+    color:#212121;
+    line-height:60rpx;
+  }
+  .totalMoney text{
+    font-size:36rpx;
+font-family:PingFang SC;
+font-weight:600;
+line-height:60rpx;
+color:rgba(33,33,33,1);
+  }
+  .SettlementBtn{
+    margin-left: 40rpx;
+    border-radius: 50rpx;
+    background:#027D58 ;
+    color:#fff;
+    font-size: 32rpx;
+    padding: 10rpx 40rpx;
+  }
+  .deleteBtn{
+    margin-left: 40rpx;
+    border-radius: 50rpx;
+    border:1px solid rgba(239,34,34,1);
+    color:#EF2222;
+    font-size: 32rpx;
+    padding: 10rpx 40rpx;
+  }
+  
+  .NoCartData{
+    width: 100%;
+    padding:200rpx 80rpx 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .NoCartDataImg{
+    width:200rpx;
+    margin-bottom:20rpx;
+  }
+  .NoCartDataTis{
+    font-size: 30rpx;
+    color: #B9B9B9;
+    margin-bottom:40rpx;
+  }
+  .goShopping{
+    border-radius: 50rpx;
+    background:#027D58 ;
+    color:#FFFFFF;
+    font-size: 32rpx;
+    padding: 15rpx 40rpx;
+    width: 200rpx;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .selectAll{
+    font-size: 30rpx;
+  }

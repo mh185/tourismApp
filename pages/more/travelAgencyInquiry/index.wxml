@@ -1,0 +1,43 @@
+<!--pages/more/travelAgencyInquiry/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">旅行社查询</text>
+  </view>
+</van-nav-bar>
+<van-search 
+  value="{{ name }}" 
+  bind:change='onChange'
+  placeholder="请输入旅行社名称" 
+  shape="round"
+  background="#fff" />
+<view class="card_box">
+  <view class="middle" wx:if="{{ condition }}">
+  <!-- <view class="middle"> -->
+    <view class="middle_list" wx:for="{{cardList}}" wx:key="key">
+      <image class="middle_list_lefe" src="{{iconUrl}}/item-2.png" />
+      <image class="middle_list_trademark" src="{{host}}{{item.logoFileManageUrl}}" />
+      <view class="middle_list_right">
+        <view class="right_upper">{{item.name}}</view>
+        <view class="right_lower" data-tell="{{item.phone}}" bindtap="freeTell">
+          <image src="{{iconUrl}}/tel.png" />
+          {{item.phone}}
+        </view>
+      </view>
+    </view>
+    <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+    <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <!-- <view class="box" wx:if="{{buttom}}" bindtap="queryResults">
+    <view class="box_title">查询</view>
+  </view> -->
+</view>
+<view class="box" bindtap="queryResults">
+  <view class="box_title">查询</view>
+</view>

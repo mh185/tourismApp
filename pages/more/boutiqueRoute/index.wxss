@@ -1,0 +1,76 @@
+/* pages/boutiqueRoute/index.wxss */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.listItem {
+  margin: 26rpx 30rpx 0;
+}
+.list {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-bottom: 40rpx;
+}
+.listItem .list-img image {
+  width: 250rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  background: rgba(0,0,0,0);
+}
+.listItem .list-rignt {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-left: 38rpx;
+  /* width: ; */
+}
+.listItem .list-title {
+  font-size: 26rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #1d1d1d;
+}
+.listItem .list_middle {
+  font-size: 24rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #262323;
+  display: flex;
+  align-items: center;
+}
+.list_middle_img {
+  width: 60rpx;
+  height: 60rpx;
+  /* background: rgba(0,0,0,0); */
+  border-radius: 50%;
+}
+.listItem .list_middle text {
+  margin-left: 14rpx;
+}
+.listItem .list_money {
+  font-size: 22rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #ff5555;
+}
+.listItem .list_money text {
+  font-size: 44rpx;
+}
+.van-tabs__line {
+  background-color:#E4CE8E !important;
+}

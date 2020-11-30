@@ -1,0 +1,70 @@
+<!--pages/cultural/index.wxml-->
+
+<view class="bj">
+  <van-search placeholder="搜索大会直播" value="{{ value }}" bind:change="onSearch" background="#FAFAFA" useActionSlot>
+    <view slot="action">
+       图标 
+    </view>
+  </van-search>
+  <view class="cultural-banner"></view>
+
+<!-- 直播 -->
+<view class="live">
+  <view class="live-head">
+    <view class="head-item">
+        <view class="head-logo"><view class="nav-line"></view>大会直播</view>
+        <!-- <view class="live-imge"><image src="../../images/index/live-logo.png" /></view> -->
+    </view>
+    <view class="head-item more" bindtap="toLive">
+      更多
+      <image class="more-icon" src="../../images/index/more.png" />
+    </view>
+  </view>
+  <view class="live-body">
+      <view class="live-body-left live-body-item">
+          <view class="live-body-img"><image src="../../images/index/live1.png"/></view>
+          <view class="live-body-title"><image src="../../images/index/live-icon.png" class="live-body-icon"/>龙城好风光</view>
+      </view>
+      <view class="live-body-right live-body-item">
+          <view class="live-right-item">
+            <view class="live-body-img"><image src="../../images/index/live1.png"/></view>
+          <view class="live-body-title"><image src="../../images/index/live-icon.png" class="live-body-icon"/>龙城好风光</view>
+          </view>
+          <view class="live-right-item">
+            <view class="live-body-img"><image src="../../images/index/live1.png"/></view>
+          <view class="live-body-title"><image src="../../images/index/live-icon.png" class="live-body-icon"/>龙城好风光</view>
+          <!-- <view class="live-body-title"><van-icon name="../../images/index/live-icon.png" />龙城好风光</view> -->
+
+          </view>
+      </view>
+  </view>
+</view>
+  <!-- 咨询列表 -->
+<view class="consult">
+  <view class="live-head">
+    <view class="head-item">
+        <view class="head-logo"><view class="nav-line"></view>大会资讯</view>
+        <!-- <view class="live-imge"><image src="../../images/index/live-logo.png" /></view> -->
+    </view>
+  </view>
+
+  <view class="newList">
+      <view class="list-itme" wx:for="{{listDate}}">
+        <view class="list-left">
+            <image src="../../images/index/liev2.png"></image>
+        </view>
+        <view class="list-right">
+            <view class="list-title">鹿心社、陈武等颁发证书</view>
+            <view class="list-center">
+              鹿心社、陈武等为2019年广西文化旅游品牌单位颁发证书...
+            </view>
+            <view class="list-more">
+                <view class="more-time">2020-09-01 10:30</view>
+                <view class="more-see"><van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png"></van-icon>280</view>
+            </view>
+        </view>
+      </view>
+  </view>
+</view>
+  
+</view>

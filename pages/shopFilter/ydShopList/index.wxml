@@ -1,0 +1,81 @@
+<view class="mayAlsolike">
+    <!-- <view class="selShoptit">猜你喜欢<text class="more fr"  bindtap='youMayAlsoLikeMore'>更多</text></view> -->
+     <view class="businessRank clearfix">
+       <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='0'><text class="fl">销量</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+       <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='1'><text class="fl">位置</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view>
+       <!-- <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='2'><text class="fl">价格</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view> -->
+       <!-- <view class="fl businistessRankList clearfix" bindtap="likefilter" data-ordernum='3'><text class="fl">人气</text><image class="businistessRankListImg fl" src="../../../images/down.png" ></image></view> -->
+     </view>
+     <!-- 商品列表 -->
+     <view wx:if="{{orderNum==0}}">
+        <view class="businessBox" wx:if='{{ydShopList!=null&&ydShopList.length>0}}'>
+            <view class="businessBoxList" wx:for='{{ydShopList}}' wx:for-index="index">
+                <view class="businessBoxListInfor clearfix">
+                    <image class="businessBoxListInforImg fl" src="{{imgUrl}}{{item.shopImg}}" ></image>
+                    <view class="fl businessBoxListInforBox">
+                        <view class="businessBoxListInforBoxName">{{item.shopName}}</view>
+                    </view>
+                    <view class="fr businessBoxBtn" bindtap='enterTheShop' data-sellerid='{{item.id}}'>进店</view>
+                </view>
+                <view class="businessBoxListShop clearfix" wx:if="{{item.minLabels.length>0}}">
+                    <view class="businessBoxListShopList fl" wx:for="{{item.minLabels}}" wx:for-item="goods" bindtap='shopDetails' data-id='{{goods.id}}'>
+                        <view class="businessBoxListShopListTu"><image class="businessBoxListShopListImg" mode="widthFix" src="{{imgUrl}}{{goods.labelImg}}"></image></view>
+                        <view class="businessBoxListShopListName">¥{{goods.price}}</view>
+                    </view>
+                </view>
+                <view class="noData" wx:else>
+                    <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+                    <view class="noDataTxtx">当前商家暂无商品</view>
+                </view>
+            </view>
+        </view>
+        <view class="noData" wx:else>
+            <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+            <view class="noDataTxtx">暂无商家</view>
+        </view>
+   </view>
+   <!-- 店铺列表 -->
+   <view wx:else>
+       <view class="businessBox" wx:if='{{ydShopList!=null&&ydShopList.length>0}}'>
+           <view class="businessBoxList" wx:for='{{ydShopList}}' wx:for-index="index">
+               <view class="businessBoxListInfor clearfix">
+                   <image class="businessBoxListInforImg fl" src="{{imgUrl}}{{item.shopImg}}" ></image>
+                   <view class="fl businessBoxListInforBox">
+                       <view class="businessBoxListInforBoxName">{{item.shopName}}</view>
+                   </view>
+                   <view class="fr businessBoxBtn" bindtap='enterTheShop' data-sellerid='{{item.id}}'>进店</view>
+               </view>
+               <view class="businessBoxListShop clearfix" wx:if="{{item.minLabels.length>0}}">
+                   <view class="businessBoxListShopList fl" wx:for="{{item.minLabels}}" wx:for-item="goods" bindtap='shopDetails' data-id='{{goods.id}}'>
+                       <view class="businessBoxListShopListTu"><image class="businessBoxListShopListImg" mode="widthFix" src="{{imgUrl}}{{goods.labelImg}}"></image></view>
+                       <view class="businessBoxListShopListName">¥{{goods.price}}</view>
+                   </view>
+               </view>
+               <view class="noData" wx:else>
+                   <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+                   <view class="noDataTxtx">当前商家暂无商品</view>
+               </view>
+           </view>
+       </view>
+       <view class="noData" wx:else>
+           <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+           <view class="noDataTxtx">暂无商家</view>
+       </view>
+
+   </view>
+       
+</view>
+<!-- 位置弹出框 -->
+<view class="popup" wx:if="{{floorModel}}">
+    <view class="selectFloorBox">
+        <view class="floorContent">
+            <scroll-view scroll-y>
+                <block wx:for="{{seleFloors}}">
+                    <view class="selectFloor" bindtap="selectFloor" data-selectFloor="{{item}}">{{item}}</view>
+
+                </block>
+            </scroll-view>
+        </view>
+        <view class="selectFloorBtn" bindtap='selectFloorBtn'>确定</view>
+    </view>
+</view>

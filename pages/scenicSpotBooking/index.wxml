@@ -1,0 +1,113 @@
+<!--pages/scenicSpotBooking/index.wxml-->
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class' bind:click-left="onClickLeft">
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">景区预约</text>
+  </view>
+</van-nav-bar>
+<view class="head" bindtap="appointmentClick">
+  <view class="appointment_title" data-id="{{0}}">
+    线上预约
+    <text class=" {{activeNum == '0' ? 'appointment_text':''}}"></text>
+    <!-- <text class="appointment_text"></text> -->
+  </view>
+  <view class="appointment_title margin" data-id="{{1}}">
+    电话预约
+    <text class=" {{activeNum == '1' ? 'appointment_text':''}}"></text>
+    <!-- <text class="appointment_text"></text> -->
+  </view>
+</view>
+<!-- 线上预约 -->
+<view class="bj" wx:if='{{appointment}}'>
+  <view class="top_padding">
+    <view class="top">
+      <view class="top_title">
+        <image src="{{iconUrl}}/item.png" />出行信息
+      </view>
+      <view class="top_cell">
+        <van-cell-group border="{{ false }}">
+          <van-cell title="选择景区" title-class="title_class" value="{{chooseScenic}}" value-class="value_class" is-link bind:click="toChooseScenic" />
+          <van-cell title="出行日期" title-class="title_class" value="{{dateTime}}" value-class="value_class" is-link bind:click="toSelectDate" />
+          <van-cell title="预约时段" title-class="title_class" value="{{time}}" value-class="value_class ash" border="{{ false }}" is-link bind:click="toappointmentPeriod" />
+        </van-cell-group>
+      </view>
+    </view>
+    <view class="middle">
+      <view class="middle_title">
+        <image src="{{iconUrl}}/item.png" />游客信息</view>
+      <view class="middle_card">
+        <view wx:for="{{cardList}}" bindtap="selectCard" data-id="{{item.id}}" wx:key='{{index}}' class="middle_card_white {{item.checked ? 'background_yellow' :''}}">{{item.name}}</view>
+      </view>
+      <view class="middle_in_box" bindtap="toAddTraveler">
+        <view class="middle_in">添加游客</view>
+      </view>
+    </view>
+    <view class="list_box" bindtap="toTravelers">出行人列表</view>
+    <view class="bottom_box">
+      <view class="bottom">
+        <view class="bottom_left bottom_title" bindtap="toSubscribeList">我的预约</view>
+        <view bindtap="subscribe" class="bottom_right bottom_title">预约</view>
+      </view>
+    </view>
+  </view>
+  <van-popup show="{{ show }}" bind:close="popupBottom" position="bottom">
+    <van-picker show-toolbar columns="{{ columns }}" bind:cancel="popupBottom" bind:confirm="pickerTime" />
+  </van-popup>
+</view>
+<!-- 电话预约 -->
+<view class="attractions" wx:else>
+  <!-- <view class="attractions_top"> -->
+    <!-- 筛选 -->
+    <view class="screening">
+      <view>
+        <view class="screening_box" bindtap="showScreening">
+          <view class="screening_right">柳州市</view>
+          <!-- <view bindtap="showScreening"> -->
+          <view>
+            <van-icon wx:if='{{!screeningBool}}' name="arrow-down" />
+            <van-icon wx:else name="arrow-up" />
+          </view>
+          <view wx:if='{{selectItemId}}' class="options action">{{selectItemId}}</view>
+        </view>
+        <view class="wxif" wx:if='{{screeningBool}}'>
+          <view class="one">选择</view>
+          <view class="three">
+            <view bindtap="onSelectCity" 
+              data-item="{{item}}" 
+              class="city {{ selectItemId == item.name ? 'action':'' }}" 
+              wx:for="{{cityList}}" 
+              wx:key="key">
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+          <view class="bottom_box">
+            <view class="bottom">
+              <view class="bottom_left bottom_title" bindtap="reset">重置</view>
+              <view class="bottom_right bottom_title" bindtap="confirm">确认</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  <!-- </view> -->
+  <view class="content" wx:if="{{scenicListData.length > 0}}">
+    <view wx:for="{{scenicListData}}" data-id="{{item.id}}" class="list_item" bindtap="toDetails">
+      <view class="img_box">
+        <image class="list_item_img" src="{{hostList}}{{item.fileManage.url}}" />
+        <view class="aaa">{{item.starLevel}}</view>
+      </view>
+      <view class="title_box">
+        <view class="name">{{item.name}}</view>
+        <view class="time">开放时间：{{item.openTime}}-{{item.closeTime}}</view>
+        <view class="time">景区电话：{{item.orderPhone}}</view>
+        <view class="telephone" data-phone="{{item.orderPhone}}" bindtap="toTelephone">拨打电话</view>
+      </view>
+    </view>
+    <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+    <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <view wx:else class="_nothing_box">
+    <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+    <view>暂无内容</view>
+  </view>
+</view>

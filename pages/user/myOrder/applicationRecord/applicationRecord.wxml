@@ -1,0 +1,35 @@
+<!--pages/user/myOrder/applicationRecord/applicationRecord.wxml-->
+<view class="wrap">
+    <view class="item">
+        <view class="item_title">申请记录</view>
+        <view class="item_line font_28">
+            <text class="item_crice"></text>
+            <text>买家申请退款 </text>
+            <text> {{data.refundTime}}</text>
+        </view>
+        <view class="item_line color_185 font_28">
+            <text class="item_crice"></text>
+            <text>退款说明  </text>
+            <text> {{data.refundReason}}</text>
+        </view>
+        <view class="item_line color_185 font_28">
+            <text class="item_crice"></text>
+            <text>退款金额 </text>
+            <text> ￥{{data.refundPrice}}</text>
+        </view>
+
+        <view class="red font_28 item_tps">
+            等待卖家处理中
+        </view>
+
+    </view>
+    <view class="bottom_box">
+        <view class="font_24">
+            剩余时间：
+            <text class="red ">{{downTime[0]}}:{{downTime[1]}}:{{downTime[2]}}</text>
+        </view>
+        <view class="tpsBtn font_28">
+            商家在48小时未处理将自动退款
+        </view>
+    </view>
+</view>

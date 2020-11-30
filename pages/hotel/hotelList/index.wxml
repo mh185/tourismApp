@@ -1,0 +1,118 @@
+<!-- pages/hotel/hotelList/index.wxml -->
+<view>
+  <view class="top">
+    <view class="hotelTop" bindtap="tohotelReservation">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">酒店</text>
+    </view>
+  </view>
+  <!-- 搜索 -->
+  <van-search class="search" value="{{value}}" placeholder="搜索关键词/位置/酒店名" />
+  <view class="threeColumns">
+    <view class="threeColumnsList">
+      <text class="">价格</text>
+      <van-icon class="threeColumnsDown" name="arrow-down" color="#000000" />
+    </view>
+    <view class="threeColumnsList">
+      <text class="">星级</text>
+      <van-icon class="threeColumnsDown" name="arrow-down" color="#000000" />
+    </view>
+    <view class="threeColumnsList">
+      <text class="">位置</text>
+      <van-icon class="threeColumnsDown" name="arrow-down" color="#000000" />
+    </view>
+  </view>
+  <!-- 酒店列表 -->
+  <view class="fourColumns">
+    <view class="fourColumnsList">
+      <image class="fourColumnsList_image" src="../../../images/hotel/hotelList.png" />
+      <view>
+        <text class="hotelName" bindtap="toHotelDetails">{{hotelName}}</text>
+        <view>
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/ash_stars.png" />
+        </view>
+        <text class="hotelAddress">{{hotelAddress}}</text>
+        <text class="money_box"><text>￥</text><text class="money">{{money}}</text><text>起</text></text>
+      </view>
+      <view class="distance_box">
+      <view class="distance">
+        <image class="distanceIcon" src="../../../images/hotel/distance.png" />
+        <text class="distance_text">{{distance}}</text>
+      </view>
+      </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="divider_box"><view class="divider"></view></view>
+    <view class="fourColumnsList">
+      <image class="fourColumnsList_image" src="../../../images/hotel/hotelList.png" />
+      <view>
+        <text class="hotelName">{{hotelName}}</text>
+        <view>
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/ash_stars.png" />
+        </view>
+        <text class="hotelAddress">{{hotelAddress}}</text>
+        <text class="money_box"><text>￥</text><text class="money">{{money}}</text><text>起</text></text>
+      </view>
+      <view class="distance_box">
+      <view class="distance">
+        <image class="distanceIcon" src="../../../images/hotel/distance.png" />
+        <text class="distance_text">{{distance}}</text>
+      </view>
+      </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="divider_box"><view class="divider"></view></view>
+    <view class="fourColumnsList">
+      <image class="fourColumnsList_image" src="../../../images/hotel/hotelList.png" />
+      <view>
+        <text class="hotelName">{{hotelName}}</text>
+        <view>
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/ash_stars.png" />
+        </view>
+        <text class="hotelAddress">{{hotelAddress}}</text>
+        <text class="money_box"><text>￥</text><text class="money">{{money}}</text><text>起</text></text>
+      </view>
+      <view class="distance_box">
+      <view class="distance">
+        <image class="distanceIcon" src="../../../images/hotel/distance.png" />
+        <text class="distance_text">{{distance}}</text>
+      </view>
+      </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="divider_box"><view class="divider"></view></view>
+    <view class="fourColumnsList">
+      <image class="fourColumnsList_image" src="../../../images/hotel/hotelList.png" />
+      <view>
+        <text class="hotelName">{{hotelName}}</text>
+        <view>
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/yellow_stars.png" />
+          <image class="stars" src="../../../images/hotel/ash_stars.png" />
+        </view>
+        <text class="hotelAddress">{{hotelAddress}}</text>
+        <text class="money_box"><text>￥</text><text class="money">{{money}}</text><text>起</text></text>
+      </view>
+      <view class="distance_box">
+      <view class="distance">
+        <image class="distanceIcon" src="../../../images/hotel/distance.png" />
+        <text class="distance_text">{{distance}}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+/* pages/homePage/mationDetails/index.wxss */
+.mationDetails{
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: #fff;
+}
+.mationDetailsTit{
+    width: 100%;
+    font-size: 30rpx;
+    color:#212121;
+}
+.mationDetailsTime{
+    font-size: 24rpx;
+    color:#dbdbdb;
+}
+.mationDetailsTxt{
+    width: 100%;
+    margin-top: 20rpx;
+}
+.text-center{
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+<!--pages/homePage/mationDetails/index.wxml-->
+<view class='mationDetails'>
+    <view class="mationDetailsTit">
+        {{detailInfor.title}}
+        <text class="mationDetailsTime fr">{{detailInfor.createDate}}</text>
+    </view>
+    <view class="mationDetailsTxt text-center" wx:if="{{detailInfor.headImg}}">  
+        <image src='{{imgUrl}}{{detailInfor.headImg.uploadfilepath}}{{detailInfor.headImg.uploadfilename}}' mode="aspectFit"></image>
+    </view>
+    <view class="mationDetailsTxt text-center" wx:if="{{detailInfor.videoInfo}}">
+        <video src='{{imgUrl}}{{detailInfor.videoInfo.uploadfilepath}}{{detailInfor.videoInfo.uploadfilename}}' mode="aspectFit"></video>
+    </view>
+    <view class="mationDetailsTxt">
+        <rich-text nodes="{{detailInfor.body}}"></rich-text>
+    </view>
+</view>

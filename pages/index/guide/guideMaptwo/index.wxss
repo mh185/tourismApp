@@ -1,0 +1,22 @@
+/* pages/index/guide/guideMaptwo/index.wxss */
+page {
+  min-height: 100vh;
+  height: 100%;
+  /* background: url("https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640") no-repeat; */
+  background-size: cover;
+  background-position: center 0;
+  position: relative;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.van-tabs__line {
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+}

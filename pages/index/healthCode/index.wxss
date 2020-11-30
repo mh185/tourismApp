@@ -1,0 +1,73 @@
+/* pages/index/healthCode/index.wxss */
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+.card_box {
+  margin: 20rpx 30rpx 0;
+  /* padding: 48rpx 62rpx 0 48rpx; */
+  width: 690rpx;
+  height: 462rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  box-shadow: 0px 10rpx 20rpx 0px rgba(130,130,130,0.16); 
+}
+.top_box {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  text-align: left;
+  color: #1d1d1d;
+  padding: 48rpx 0 38rpx 48rpx;
+}
+.pop_head{
+  width: 6rpx;
+  height: 30rpx;
+  /* background: linear-gradient(180deg,#f0d78d, #e1cc8f); */
+  /* border-radius: 0px 6rpx 6rpx 0px; */
+  margin-right: 26rpx;
+}
+.left_title {
+  color: #646464 !important;
+}
+.input-class {
+  font-size: 32rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  color: #1d1d1d;
+}
+.right_arrow {
+  color: #fff;
+}
+.van-cell {
+  padding: 28rpx 62rpx 28rpx 48rpx !important;
+}
+.button {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 92rpx;
+  width: 580rpx;
+  height: 80rpx;
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+  box-shadow: 0px -20rpx 40rpx 0px rgba(184,184,184,0.1); 
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  line-height: 80rpx;
+}

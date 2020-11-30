@@ -1,0 +1,65 @@
+<!-- pages/user/myCollect/index.wxml -->
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">
+        商品
+    </view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">
+        店铺
+    </view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange">
+    <swiper-item class="swiper-item" catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:for="{{collectList}}" wx:key="index">
+                <view bindtap="goGoodsInfo" data-id="{{item.id}}" class="commodityBoxList clearfix">
+                    <view class='imgBox fl'>
+                        <image class="commodityImg" src="{{item.headImg && imgUrl+item.headImg.uploadfilepath+item.headImg.uploadfilename}}" />
+                    </view>
+                    <view class="fl commodityBoxListLeft">
+                        <view class="commodityName">{{item.name}}</view>
+                        <view class="commodityMoney">
+                            ￥{{item.nowPrice}}
+                            <view class="collectIcon fr" catchtap="cancelCollect"  data-id="{{item.id}}"><image src="../../../images/icon-scY.png" /></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="noData" wx:if="{{isLoading}}">
+                <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+                <view class="noDataTxtx">暂无商品收藏信息</view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item class="swiper-item" catchtouchmove="forbidMove">
+        <scroll-view scroll-y class="scroll-view" bindscrolltolower='accountManagerList'>
+            <block wx:for="{{collectList}}" wx:key="index">
+                <view bindtap="goShopInfo" data-id="{{item.id}}" class="businessBoxList">
+                    <view class="businessBoxListInfor clearfix">
+                         <image class="businessBoxListInforImg fl" src="{{item.headImg}}"></image>
+                        <!-- <image class="businessBoxListInforImg fl" src="{{item.headImg && imgUrl+item.shopImg.uploadfilepath+item.shopImg.uploadfilename}}"></image> -->
+                        <view class="fl businessBoxListInforBox">
+                            <view class="businessBoxListInforBoxName">{{item.shopName}}</view>
+                        </view>
+                        <navigator url="/pages/enterTheShop/index?sellerid={{item.id}}" class="fr businessBoxBtn">进店</navigator >
+                    </view>
+                    <view class="businessBoxListShop clearfix" wx:if="{{goodsList[item.id].length>0}}">
+                        <view class="businessBoxListShopList fl" bindtap="goGoodsInfo" data-id="{{goods.id}}" wx:for="{{goodsList[item.id]}}" wx:for-item="goods">
+                            <view class="goods-icon">
+                                <image class="businessBoxListShopListImg" src="{{goods.headImg && imgUrl+goods.headImg.uploadfilepath+goods.headImg.uploadfilename}}" mode="widthFix"></image>
+                            </view>
+                            <view class="businessBoxListShopListName">¥{{goods.nowPrice}}</view>
+                        </view>
+                    </view>
+                    <view class="noData" wx:else>
+                        <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+                        <view class="noDataTxtx">暂无商品</view>
+                    </view>  
+                </view>
+            </block>
+            <view class="noData" wx:if="{{isLoading}}">
+                <view class="noDataTu"><image class="noDataTuImg" src="../../../images/noData.png" mode="widthFix"></image></view>
+                <view class="noDataTxtx">暂无店铺收藏信息</view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>

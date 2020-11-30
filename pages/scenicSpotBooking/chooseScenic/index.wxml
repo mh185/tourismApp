@@ -1,0 +1,53 @@
+<!--pages/scenicSpotBooking/chooseScenic/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">选择景区</text>
+  </view>
+</van-nav-bar>
+<!-- 搜索 -->
+<view class="search_box">
+  <van-search 
+    bind:search='onSearch' 
+    bind:change='onChange'
+    shape="round" 
+    placeholder="搜索景区名称" 
+    value="{{keyWord}}" 
+  />
+</view>
+<!-- 景区列表 -->
+<view wx:if="{{scenicList.length>0}}" class="listBox">
+  <view class="reco-item" wx:for="{{scenicList}}" wx:key="index">
+    <view class="reco-item-left" data-id="{{item.id}}" data-scenic='{{item.name}}' bindtap="toSelect">
+      <image src="{{item.imgUrl}}"></image>
+      <view class="aaaa">{{item.level}}</view>
+      <view class="left_box">
+        <view class="rich_box left_box_One">
+          <rich-text nodes="{{item.name}}"></rich-text>
+        </view>
+        <!-- <view class="left_box_One">{{item.name}}</view> -->
+        <!-- <view class="left_box_Two">开放时间：{{item.openTime}} - {{item.closeTime}}</view> -->
+        <view class="left_box_button">
+          <view>
+            <view class="left_box_Three">{{item.amountNow}}人</view>
+            <view class="left_box_Four">正在游玩</view>
+          </view>
+          <view class="button">选择</view>
+          <!-- <view class="button" bindtap="toSelect">选择</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="loading" hidden="{{searchLoading}}">点击载入更多...</view>
+  <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+</view>
+<view wx:else class="_nothing_box">
+  <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+  <view>暂无内容</view>
+</view>

@@ -1,0 +1,121 @@
+<!--pages/more/attractions/attractionsDetail/index.wxml-->
+<import src="../../../../components/wxParse/wxParse.wxml"/> 
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">景区详情</text>
+  </view>
+</van-nav-bar>
+<view class="attractionsDetail">
+  <!-- 轮播 -->
+  <view class="head">
+    <swiper bindchange="swiperBindchange">
+      <block wx:for="{{travelsRotation}}" wx:for-item="item" wx:key="index">
+        <swiper-item>
+          <image class="head_img" src="{{host}}{{item.url}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="current_class">
+      {{current}}/{{travelsRotation.length}}
+    </view>
+  </view>
+  <!-- <view class="head">
+    <image class="head_img" src="{{host}}{{detailData.miniHandDrawing.url}}" />
+  </view> -->
+  <view class="content">
+    <view class="content_box">
+      <view class="content_box_head">
+        <view class="box_left">
+          <text class="box_title">{{detailData.name}}</text>
+          <view class="box_a">{{detailData.starLevel}}</view>
+        </view>
+        <view class="box_title_right" bindtap="generatePoster">
+          生成海报
+          <image class="box_right_img" src="{{iconUrl}}/share.png" />
+        </view>
+      </view>
+      <view class="content_box_head">
+        <view class="content_box_head" bindtap="toWeather">
+          <image class="box_head_img" src="{{iconUrl}}/tianqi.png" />
+          <text class="temperature">{{weather}}</text>
+        </view>
+        <view>
+          <text class="prince">人均 <text class="prince_num">{{detailData.avgPrice}}元</text> </text>
+        </view>
+      </view>
+      <view class="content_box_head margin_one">
+        <text class="time">开放时间：{{detailData.openTime}}-{{detailData.closeTime}}</text>
+      </view>
+      <view class="content_box_head margin_two">
+        <text class="time">景区电话：{{detailData.phone}}</text>
+        <view class="content_box_head" bindtap="toPhone">
+          <text class="time">电话</text>
+          <image class="box_right_img" src="{{iconUrl}}/service.png" />
+        </view>
+      </view>
+      <view class="content_box_head" bindtap="toScenic">
+        <text class="time">景区地址：{{detailData.position}}</text>
+        <view class="content_box_head">
+          <text class="time">导航</text>
+          <image class="box_right_img" src="{{iconUrl}}/guide2.png" />
+        </view>
+      </view>
+      <view class="title">简介</view>
+      <view class="introduce">
+          <view class="rich_box">
+            <rich-text nodes="{{detailData.summary}}"></rich-text>
+          </view>
+        <!-- {{detailData.summary}} -->
+      </view>
+      <view class="person_number">
+        <view class="person_number_box">
+          <view class="number">{{detailData.doubleInstantMaxLoadCapacity}}万</view>
+          <view class="number_introduce">瞬时最大承载量</view>
+        </view>
+        <view class="person_number_box">
+          <view class="number">{{detailData.doubleDailyMaxLoadCapacity}}万</view>
+          <view class="number_introduce">日最大承载量</view>
+        </view>
+        <view class="person_number_box">
+          <view class="number">{{detailData.doubleCurrentTourism}}万</view>
+          <view class="number_introduce">实时客流</view>
+        </view>
+        <view class="person_number_box">
+          <view class="number">{{detailData.advanceAppointmentsDays}}</view>
+          <view class="number_introduce">提前预约天数</view>
+        </view>
+      </view>
+      <view class="scenic">
+        <view class="title">景区导览</view>
+        <image class="scenic_img" src="{{host}}{{detailData.miniHandDrawing.url}}" bindtap="toGuideMap" />
+      </view>
+      <view class="scenic">
+        <view class="title">出行方式</view>
+        <view class="scenic_text">
+          <view class="rich_box">
+            <rich-text nodes="{{detailData.tripMode}}"></rich-text>
+          </view>
+          <!-- {{detailData.tripMode}} -->
+        </view>
+      </view>
+      <view class="scenic">
+        <view class="title">景区景点详情</view>
+      
+          <view class="rich_boxs">
+            <!-- 解析图片base64的方法 -->
+            <template is="wxParse" data="{{wxParseData:courseDetail.nodes}}" />
+            <!-- <rich-text nodes="{{detailData.description}}"></rich-text> -->
+          </view>
+          <!-- {{detailData.description}} -->
+      </view>
+     
+    </view>
+  </view>
+</view>

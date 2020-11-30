@@ -1,0 +1,24 @@
+<!--pages/logIn/otherLogin/index.wxml-->
+<view class="otherLogin">
+    <view class="otherLoginTit">登录/注册</view>
+    <view class="otherLoginBox">
+        <view class="otherLoginBoxList clearfix">
+            <view class="fl otherLoginBoxLisTit">手机号</view>
+            <view class="fl otherLoginBoxLisTxt"><input class="otherLoginBoxLisTxtInput" value="{{telPhone}}"  type="number" maxlength='11' bindinput='geTel' placeholder='请输入手机号'/></view>
+            <image class="otherLoginImg fl" bindtap="notelPhone" src="../../../images/clear.png" ></image>
+        </view>
+         <view class="otherLoginBoxList clearfix">
+            <view class="fl otherLoginBoxLisTit">验证码</view>
+            <view class="fl CaptchaTxt"><input class="CaptchaInput"  type="number" maxlength='6' bindinput='getSmsCode' placeholder='请输入验证码'/></view>
+            <view class="Captcha" wx:if="{{snsMsgWait==60}}" bindtap="sendCode">获取验证码</view>
+            <view class="CaptchaN" wx:else>重新获取{{snsMsgWait}}</view>
+        </view>
+    </view>
+    <view class="choose">
+        <checkbox bindtap="checkboxChange" checked="{{checked}}"></checkbox>
+        <view class="choose_text">阅读并接受<text bindtap="handleAgreement">《用户注册协议》</text></view>
+    </view>
+    <view class="LoginBtn clearfix">
+        <button class="LoginButton" bindtap='telLogin' disabled="{{disabled}}">登录</button>
+    </view>
+</view>

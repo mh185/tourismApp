@@ -1,0 +1,195 @@
+/* pages/more/attractions/attractionsDetail/index.wxss */
+/* @import "../../../../components/wxParse/wxParse.wxss"; */
+page {
+  min-height: 100vh;
+  background: url("http://47.108.86.202:8081/icon/bj01.png") no-repeat;
+  background-size: 100%;
+  background-position-y: -47rpx;
+}
+#myVideo{
+  width: 100%;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.head_img {
+  width: 100%;
+  height: 100%;
+}
+.head{
+  position: relative;
+}
+.head swiper {
+  height: 415rpx;
+}
+.current_class{
+  position: absolute;
+  width: 68rpx;
+  height: 40rpx;
+  opacity: 0.7;
+  background: #050505;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+  bottom: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.content {
+  padding: 0 30rpx;
+}
+
+.content_box {
+  padding: 23rpx;
+  margin-top: -30rpx;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.04);
+  z-index: 100;
+  position: relative;
+}
+
+.content_box_head {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+  align-items: center;
+}
+.margin_one {
+  margin-top: 56rpx;
+}
+.margin_two {
+  margin: 14rpx 0;
+}
+.box_left {
+  display: flex;
+  align-items: center;
+  width: 500rpx;
+}
+.box_title {
+  font-size: 36rpx;
+  font-weight: 800;
+  color: #1d1d1d;
+}
+.box_a {
+  margin-left: 10rpx;
+  width: 88rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg,#f0d78d, #e1cc8f);
+  border-radius: 16rpx 0px 16rpx 0px;
+  font-size: 20rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Medium;
+  font-weight: 500;
+  line-height: 30rpx;
+  text-align: center;
+  color: #552f09;
+}
+.box_title_right {
+  font-size: 20rpx;
+  font-weight: 500;
+  color: #676767;
+}
+
+.box_head_img {
+  width: 30rpx;
+  height: 30rpx;
+}
+.box_right_img{
+  width: 20rpx;
+  margin-left: 16rpx;
+  height: 20rpx;
+}
+.temperature {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #552f09;
+}
+
+.prince {
+  font-size: 18rpx;
+  color: #f55;
+}
+
+.prince_num {
+  font-size: 28rpx;
+}
+
+.time {
+  font-size: 20rpx;
+  font-weight: 500;
+  color: #676767;
+  width: 85%;
+}
+.introduction {
+  font-size: 28rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 52rpx;
+}
+.introduce {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #1d1d1d;
+  line-height: 20px;
+  letter-spacing: 0px;
+  padding: 8rpx 0 24rpx 0;
+}
+
+.person_number {
+  display: flex;
+  justify-content: space-around
+}
+.person_number_box{
+  text-align: center
+}
+.number {
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #e7d08e;
+}
+
+.number_introduce {
+  font-size: 18rpx;
+  font-weight: 500;
+  color: #c8c8c8;
+}
+.title{
+  margin-top: 56rpx;
+  font-size: 28rpx;
+  font-weight: 800;
+  color: #000000;
+}
+.scenic_img{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 270rpx;
+}
+.scenic_text{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #1d1d1d;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+/* .scenic {
+  width: 100%;
+} */
+.rich_boxs {
+  /* width: 400rpx; */
+  margin-top: 26rpx;
+  overflow: hidden;
+}
+.rich_boxs rich-text{
+  font-size: 24rpx;
+}

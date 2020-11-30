@@ -1,0 +1,80 @@
+/* pages/user/setUp/harvestAddress/index.wxss */
+.address{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20rpx;
+
+}
+.userInfor{
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f5f5f5;
+}
+.userInforName{
+    font-size: 36rpx;
+    margin-bottom: 20rpx;
+}
+.userInforName .tel{
+    font-size: 32rpx;
+    color: #707070;
+}
+.userInfoAddress{
+    font-size: 28rpx;
+    color: #707070;
+}
+
+.userInforSet{
+    width: 100%;
+    padding:20rpx;
+    box-sizing: border-box;
+}
+.userInforSetleft{
+    font-size: 32rpx;
+}
+.userInforRadio .wx-radio-input{
+    width: 30rpx;
+    height:30rpx;
+}
+.editImg,.deteleImg{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+    margin-top:5rpx;
+}
+.edit{
+    margin-right: 60rpx;
+    font-size: 28rpx;
+    color: #707070;
+}
+.detele{
+    font-size: 28rpx;
+    color: #707070;
+}
+.operatingBtnBox{
+    height:216rpx;
+    width: 100%;
+    background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 100%);
+    box-shadow:0px -3px 20px rgba(143,143,143,0.16);
+    position: fixed;
+    bottom: 0rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+}
+.operatingBtn{
+    width: 90%;
+    font-size: 30rpx;
+    height: 98rpx;
+    color: #fff;
+    background: #027D58;
+    margin-top: 36rpx;
+    line-height: 98rpx;
+    text-align: center;
+    border-radius:50rpx ;
+    font-weight:600;
+}
+.radio-group{
+padding-bottom:216rpx;
+}

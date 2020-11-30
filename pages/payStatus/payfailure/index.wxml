@@ -1,0 +1,11 @@
+<!--pages/payStatus/payfailure/index.wxml-->
+<view class="payfailure">
+<image class="payfailure-icon" src="../../../images/failure.png" />
+<view class="payfailureTxt">
+    支付失败
+</view>
+<view class="payfailureBtn clearfix">
+    <view class="payfailureBtnLeft fl" bindtap='goShopping'>继续购物</view>
+    <view class="payfailureBtnRight fr" bindtap='goOrder'>查看订单</view>
+</view>
+</view>

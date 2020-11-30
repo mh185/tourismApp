@@ -1,0 +1,35 @@
+<!--pages/index/healthCode/healthQrCode/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">健康码</text>
+  </view>
+</van-nav-bar>
+<web-view src="https://www.lzzhmp.com/weixin/lyj/login_jkm_index.jsp?xm={{userHealth.xm}}&zjhm={{userHealth.zjhm}}&zjzldm={{userHealth.zjzldm}}&dhhm={{userHealth.dhhm}}"></web-view>
+<!-- <web-view src="http://www.lzzhmp.com/weixin/lyj/login_jkm_index.jsp?token={{usrToken}}"></web-view> -->
+<!-- <web-view src="http://www.lzzhmp.com/weixin/lyj/login_jkm_index.jsp?token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3IiwidXNlcklkIjoiNyIsImV4cCI6MTYwNjI3NjcyMX0.k9VT7m2dvZYo47rkVCu4xkAyS2gTxnUQliF7tdHR-L0F36oyU3mSX5ef1vnw8YqueUhWYywhjQqk_Dw1YqRTRQ"></web-view> -->
+<!-- <web-view src="http://www.lzzhmp.com/weixin/lyj/login_jkm_index.jsp"></web-view> -->
+<!-- <view class="card_box">
+  <view class="title">证件类型: <text>{{cardType}}</text></view>
+  <view class="title jianju">姓名: <text>{{healthCodes.name}}</text></view>
+  <view class="title">证件号: <text>{{healthCodes.cardNumber}}</text></view>
+</view>
+<view class="botton_box">
+  <view class="">
+    <canvas class="canvas-code Qr_code_box" canvas-id="myQrcode" style=""/>
+  </view>
+  <view class="health">{{health}}</view>
+  <view class="health">「{{passable}}」</view>
+  <view class="prompt jianju_bottom">
+    若体温高于37.3度或出现发热，干咳，乏力等症状，请及时到医院就医
+  </view>
+  <view class="prompt">
+    湖北来桂人员，请及时向目的地社区报备，并进行核酸检测，检测费用由当地政府承担
+  </view>
+</view> -->

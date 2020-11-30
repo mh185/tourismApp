@@ -1,0 +1,80 @@
+<!--pages/destination/index.wxml-->
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class' >
+  <view slot="left" class="nav_left">
+    <!-- <van-icon name="arrow-left" /> -->
+    <text class="nav_left_text">目的地</text>
+  </view>
+</van-nav-bar>
+<!-- 城市 -->
+<view class="head">
+  <view bindtap="click_option" data-id="first" bindtap="toMoredestination" class="first  {{activeNum == 'first' ? 'active_color':''}}">
+    柳州市
+    <text class=" {{activeNum == 'first' ? 'active':''}}"></text>
+  </view>
+  <view class="scroll_tab">
+    <view class="{{activeNum == item.code ? 'active_color':''}}" wx:for='{{cityList}}' bindtap="toMoredestination" wx:key="index" data-id="{{item.code}}">
+      {{item.name}}
+      <text class=" {{activeNum == item.code ? 'active':''}}"></text>
+    </view>
+  </view>
+</view>
+<view class="location">
+  <!-- 筛选 -->
+  <view class="screening">
+    <view class="top_box">
+      <view class="screening_box">
+        <view class="screening_box_right">
+          <view class="screening_right">筛选</view>
+          <view wx:if="{{hotShow}}" class="options action">热门</view>
+          <view wx:if="{{chooseStar}}" class="options action">{{chooseStar}}</view>
+        </view>
+
+
+        <view class="icon_left" bindtap="showScreening">
+          <van-icon wx:if='{{!screeningBool}}' name="arrow-down" />
+          <van-icon wx:else name="arrow-up" />
+        </view>
+      </view>
+      <view class="wxif" wx:if='{{screeningBool}}'>
+        <view class="one">选择</view>
+        <view class="three">
+          <view class="whole">全部</view>
+          <view bindtap="clickHot" class="hot {{hotShow ? 'action':'' }}">热门</view>
+        </view>
+        <view class="three">
+          <view class="whole">全部</view>
+
+          <view class="hot" class="hot {{item.show ? 'action': '' }}" bindtap="clickStar" data-index="{{index}}" data-code="{{item.name}}" wx:for="{{gradeList}}" wx:key="index">{{item.name}}</view>
+        </view>
+        <view class="bottom_box">
+          <view class="bottom">
+            <view class="bottom_left bottom_title" bindtap="onReset">重置</view>
+            <view class="bottom_right bottom_title" bindtap="onConfirm">确认</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 景区列表 -->
+  <view class="listBox" wx:if='{{scenicList.length > 0}}'>
+    <view class="reco-item" wx:for="{{scenicList}}" wx:key="index">
+      <view class="reco-item-left" data-id="{{item.id}}" bindtap="toAttractionsDetail">
+        <image src="{{host}}{{item.fileManage.url}}"></image>
+        <view class="aaaa">{{item.starLevel}}</view>
+        <view class="left_box">
+          <view class="left_box_One">{{item.name}}</view>
+          <view class="left_box_Two">开放时间：{{item.openTime}} - {{item.closeTime}}</view>
+          <view class="left_box_Three">{{item.currentTourism}}人</view>
+          <view class="left_box_Four">正在游玩</view>
+        </view>
+      </view>
+      <view class="button" data-id="{{item.id}}" data-handDrawingId="{{item.handDrawingId}}" bindtap="toMuideMap">在线导览</view>
+    </view>
+    <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+    <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <view wx:else class="_nothing_box">
+    <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+    <view>暂无内容</view>
+  </view>
+</view>

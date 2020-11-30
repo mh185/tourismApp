@@ -1,0 +1,66 @@
+<!--pages/commodity/invoice/index.wxml-->
+<view class="invoiceBox">
+    <view class="invoiceCenter">
+        <view class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">发票类型</text><text class="fr invoiceCenterListRight">普通发票</text></view>
+        <view class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">抬头类型</text>
+            <view class="fr">
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" >
+                        <radio value="1" checked="{{typesOf==1?true:false}}"/>个人或事业单位
+                    </label>
+                    <label class="radio" >
+                        <radio value="2" checked="{{typesOf==2?true:false}}"/>企业
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+        <view class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">发票抬头</text>
+            <view class='fr'><input value="{{invoice}}" class="invoiceCenterListTXT" bindinput="invoiceLookUp" type="text" placeholder="请输入发票抬头" placeholder-style="font-size:24rpx;color:#8a8a8a"/></view>
+        </view>
+          <view wx:if='{{typesOf==2}}' class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">税号</text>
+            <view class='fr'><input  value="{{taxID}}" class="invoiceCenterListTXT" bindinput="invoiceTaxID" type="text" placeholder="纳税人识别号" placeholder-style="font-size:24rpx;color:#8a8a8a"/></view>
+        </view>
+
+         <view wx:if='{{typesOf==2}}' class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">开户银行</text>
+            <view class='fr'><input  value="{{bankAccount}}" class="invoiceCenterListTXT" bindinput="invoiceBankAccount" type="text" placeholder="选填" placeholder-style="font-size:24rpx;color:#8a8a8a"/></view>
+        </view>
+         <view wx:if='{{typesOf==2}}' class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">银行账号</text>
+            <view class='fr'><input  value="{{bankNum}}" class="invoiceCenterListTXT" bindinput="invoiceBankNum" type="text" placeholder="选填" placeholder-style="font-size:24rpx;color:#8a8a8a"/></view>
+        </view>
+         <view wx:if='{{typesOf==2}}' class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">企业地址</text>
+            <view class='fr'><input  value="{{address}}" class="invoiceCenterListTXT" bindinput="invoiceAddress" type="text" placeholder="选填" placeholder-style="font-size:24rpx;color:#8a8a8a"/></view>
+        </view>
+         <view wx:if='{{typesOf==2}}' class="invoiceCenterList clearfix"><text class="fl invoiceCenterListLeft">企业电话</text>
+            <view class='fr'><input  value="{{phone}}" class="invoiceCenterListTXT" bindinput="invoiceTel" type="text" placeholder="选填" placeholder-style="font-size:24rpx;color:#8a8a8a"/></view>
+        </view>
+    </view>
+      <view class="invoiceCenter">
+        <view class="invoiceCenterList clearfix">
+            <text class="fl invoiceCenterListLeft">发票内容</text><image class="tisImg fl" bindtap='ispopup' mode="widthFix" src="../../../images/tis.png"/>
+            <view class="fr">
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" >
+                        <radio value="1" checked="{{true}}"/>明细
+                    </label>
+                 </radio-group>
+            </view>
+        </view>
+
+    </view>
+</view>
+
+<view class="invoiceBtn">
+    <view bindtap='confirmBtn' class="confirm invoiceBtnList">确认</view>
+    <view bindtap='notInvoice' class="notInvoice invoiceBtnList">不开发票</view>
+</view>
+
+<view class="popup" wx:if="{{isShow}}">
+    <view class="popupCenter">
+        <view class="popupCenterTu clearfix"><image class="popupCenterImg fr" bindtap='ispopup' src='../../../images/close.png' /></view>
+        <view class="popupCenterTit">发票内容说明</view>
+        <view class="popupCenterWeb">
+            <view class="popupCenterTxt clearfix"><text class="fl popupCenterTxtLeft">·</text><text class="fl popupCenterTxtRight">发票内容将显示详细商品名称也价格信息。</text></view>
+             <view class="popupCenterTxt clearfix"><text class="fl popupCenterTxtLeft">·</text><text class="fl popupCenterTxtRight">部分商家可能开具发票内容为商品所属类别及价格信息，如有特殊需求，请联系商家客服</text></view>
+        </view>
+    </view>
+</view>

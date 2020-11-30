@@ -1,0 +1,47 @@
+<!--pages/poster/index.wxml-->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">生成海报</text>
+  </view>
+</van-nav-bar>
+<view class="poster_img">
+  <image src="{{banner}}"></image>
+</view>
+<view class="poster_title">
+  <view class="title">{{title}} </view>
+  <view class="name"> <image src="{{headimg}}"/>{{name}}</view>
+</view>
+<view class="poster_logo">
+  <view class="logo_left">
+    <image src="{{logo}}"></image>
+  </view>
+  <view class="logo_right">
+    <image src="{{erweima}}"></image>
+  </view>
+</view>
+<view class="moer">
+  <!-- <text>长按保存图片</text> | <text>分享给好友</text>
+   -->
+   <button bindtap='formSubmit' class="baoImg">保存图片</button>
+   <text>|</text>
+   <button open-type="share" data-tag="share1" id="btn_share1">分享给好友</button>
+   
+</view>
+<!-- <view class='imagePathBox' hidden="{{maskHidden == false}}">
+      <image src="{{imagePath}}" class='shengcheng'></image>
+      <button class='baocun' bindtap='baocun'>保存到相册</button>
+      <button class='quxiao' bindtap='quxiao'>取消</button>
+      
+    </view>
+   <view hidden="{{maskHidden == false}}" class="mask"></view>  -->
+  <view class="canvas-box">
+      <canvas  style="width: 375px;height: 567px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view>  
+

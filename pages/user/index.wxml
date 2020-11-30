@@ -1,0 +1,104 @@
+<!--pages/user/index.wxml-->
+<van-nav-bar fixed='{{true}}' placeholder='{{true}}' border='{{false}}' custom-class='back_class'
+	bind:click-left="onClickLeft">
+	<view slot="left" class="nav_left">
+		<!-- <van-icon name="arrow-left" /> -->
+		<text>我的</text>
+	</view>
+</van-nav-bar>
+<view class="userInfor clearfix an" wx:if="{{userInfor!=null&&userInfor!=''}}" >
+	<view class="userInforName clearfix fl ">
+		<view class="usrname">{{userInfor.nickName}}</view>
+		<view class="tel">{{userInfor.mobile}}</view>
+		<view class="authentication" bindtap="toAuthentication">
+			 <view class="sm" wx:if="{{!authentication}}"><image class="button_img" src="{{iconUrl}}/authentication_1.png" />未实名</view>
+			  <view class="sm wsm" wx:else><image class="button_img" src="{{iconUrl}}/authentication_2.png" />已实名</view>
+		</view>
+	</view>
+	<image class="headImg fr" src="{{userInfor.headImg}}" />
+	<!-- <image class="headImg fr" src="{{iconUrl}}/jingxuanluxian5.png" />   -->
+</view>
+<view class="button_box" wx:else>
+	<image class="button_img" src="{{iconUrl}}/personal-hover.png" />
+	<view class="button_loginBtn_box">
+		<button class="button_loginBtn" open-type="getUserInfo" bindgetuserinfo="getPerson">立即登录</button>
+	</view>
+</view>
+<!-- 
+<view class="memberCentre">
+	<image class="memberImg" src="../../images/vipBg.png" mode="widthFix"></image>
+	<view class="memberCentreBox clearfix">
+		<image class="memberCentreBoxImg fl" src="../../images/vipIcon.png" mode="widthFix"></image>
+		<view class="fl memberCentreBoxWeb">
+			<text class="memberCentreBoxWebNmae">VIP会员卡</text>
+			<text class="memberCentreBoxWebGrade" wx:if="{{userInfor!=null&&userInfor!=''}}">会员等级{{userInfor.level||0}}</text>
+			<text class="memberCentreBoxWebGrade" wx:else>会员等级0</text>
+		</view>
+		<view class="fr memberCentreBoxBtn">
+			<image bindtap="toMemberCenter" class="memberCentreImg" src="../../images/memberCentre.png" mode="widthFix"></image>
+		</view>
+	</view>
+</view> -->
+  <view class="operating">
+    <!-- <view class="operatlist clearfix" bindtap='myOrder'>
+		<image class="operatlistImg fl" src="../../images/myOrder-icon.png"></image>
+		<view class="operatlistrigth clearfix">
+			全部订单
+			<image class="rightImg fr" src="../../images/right.png" mode="widthFix"></image>
+		</view>
+	</view>
+	<view class="operatlist clearfix" bindtap="cardRoll">
+        <image class="operatlistImg fl" src="../../images/IHaveCoupons.png" ></image>
+        <view class="operatlistrigth clearfix">
+            我的卡券
+            <image class="rightImg fr" src="../../images/right.png"  mode="widthFix"></image>
+        </view>
+    </view>
+	<view class="operatlist clearfix" bindtap='myCollection'>
+		<image class="operatlistImg fl" src="../../images/myCollection.png"></image>
+		<view class="operatlistrigth clearfix">
+			我的收藏
+			<image class="rightImg fr" src="../../images/right.png" mode="widthFix"></image>
+		</view>
+	</view> -->
+    <!-- <navigator url="/pages/user/merchantCheckIn/index" hover-class="none" class="operatlist clearfix">
+        <image class="operatlistImg fl" src="../../images/merchantSet.png" ></image>
+        <view class="operatlistrigth clearfix">
+            商家入驻
+            <image class="rightImg fr" src="../../images/right.png"  mode="widthFix"></image>
+        </view>
+    </navigator> -->
+    <!-- <view class="operatlist clearfix">
+        <image class="operatlistImg fl" src="../../images/inforIcon.png" ></image>
+        <view class="operatlistrigth clearfix">
+            消息
+            <image class="rightImg fr" src="../../images/right.png"  mode="widthFix"></image>
+        </view>
+    </view> -->
+    <!-- <view class="operatlist clearfix" bindtap='setUp'>
+		<image class="operatlistImg fl" src="../../images/setIcon.png"></image>
+		<view class="operatlistrigth clearfix">
+			设置
+			<image class="rightImg fr" src="../../images/right.png" mode="widthFix"></image>
+		</view>
+	</view> -->
+    <view class="operatlist clearfix" bindtap='toHelp'>
+      <view class="operatlistrigth clearfix">
+        帮助中心
+        <image class="rightImg fr" src="../../images/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="operatlist clearfix" bindtap='getTell'>
+      <view class="operatlistrigth clearfix">
+        联系我们
+        <image class="rightImg fr" src="../../images/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="operatlist clearfix" bindtap='toAboutUs'>
+      <view class="operatlistrigth clearfix">
+        关于我们
+        <image class="rightImg fr" src="../../images/right.png" mode="widthFix"></image>
+      </view>
+		</view>
+	
+  </view>

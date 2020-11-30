@@ -1,0 +1,39 @@
+<!--pages/more/deliciousFood/index.wxml-->
+<van-nav-bar 
+	fixed='{{true}}' 
+	placeholder='{{true}}' 
+	border='{{false}}' 
+	custom-class='back_class' 
+	bind:click-left="onClickLeft"
+  >
+	<view slot="left" class="nav_left">
+		<van-icon name="arrow-left" />
+		<text class="nav_left_text">美食</text>
+	</view>
+</van-nav-bar>
+<view class="attractions">
+  <!-- <view class="head">
+    <view bindtap="click_option" data-index="first" data-id="first" class="first  {{activeNum == 'first' ? 'active_color':''}}"> 
+      柳州市 
+      <text class=" {{activeNum == 'first' ? 'active':''}}"></text>
+    </view>
+    <view class="scroll_tab">
+      <view class="{{activeNum == index ? 'active_color':''}}" wx:for='{{cityList}}' bindtap="click_option" wx:key data-index="{{index}}" data-id="{{item.id}}">
+        {{item.name}}
+        <text class=" {{activeNum == index ? 'active':''}}"></text>
+      </view>
+    </view>
+  </view> -->
+  <view class="content" wx:if="{{foodList.length > 0}}">
+    <view wx:for="{{foodList}}" wx:key data-item="{{item.id}}" class="one" bindtap="toFoodDetails">
+      <image src="{{host}}{{item.coverUrl}}" />
+      <view class="title">{{item.name}}</view>
+    </view>
+      <view class="loading" hidden="{{searchLoading}}" bindtap="onClickMore">点击载入更多...</view>
+      <view class="loading" hidden="{{!searchLoading}}">已加载全部</view>
+  </view>
+  <view wx:else class="_nothing_box">
+    <image class="_nothing" src="{{iconUrl}}/403.png"></image>
+    <view>暂无内容</view>
+  </view>
+</view>

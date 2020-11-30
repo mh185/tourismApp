@@ -1,0 +1,128 @@
+/* pages/cultural/index.wxss */
+.bj{
+  background: url("http://47.108.86.202/tourism/bj.png");
+  background-size: 50%;
+}
+.cultural-banner{
+   width: 750rpx;
+   height: 428rpx;
+   background-color: brown;
+}
+
+.live{
+  padding: 30rpx;
+}
+ .live-head{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 24rpx;
+}
+ .live-head .head-item .live-imge image{
+  width: 120rpx;
+  height: 52rpx;
+}
+.head-logo{
+  color: #1d1d1d;
+  font-size: 30rpx;
+  display: flex;
+}
+.nav-line{
+  background: linear-gradient(180deg, #80FF8E 0%, #35D9BA 100%);
+  width: 7rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.head-logo .logo-item{
+  margin-right: 50rpx;
+  line-height: 46rpx;
+}
+.head-logo .logo-item2{
+ font-size: 24rpx;
+ color: #c8c8c8;
+}
+ .live-head .more{
+  font-size:  24rpx;
+  color: #c8c8c8;
+}
+ .more .more-icon{
+  width: 22rpx;
+  height: 22rpx;
+}
+.live .live-body{
+  width: 100%;
+  height: 360rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.live-body-item{
+  width: 49%;
+}
+.live-right-item{
+  height: 49%;
+}
+.live-body-img{
+  height: 100%;
+}
+.live-body-title{
+   position: relative;
+   left: 18rpx;
+   bottom: 48rpx;
+   font-size: 24rpx;
+   font-weight: 500;
+   line-height: 40rpx;
+   color: #ffffff;
+}
+.live-body-icon{
+  width: 26rpx;
+  height: 28rpx;
+  /* float: left; */
+  margin-right: 10rpx ;
+}
+.live .live-body .live-body-img image{
+  width: 100%;
+  height: 100%;
+}
+.live-body-righ{
+  height: 100%;
+}
+.live .live-body .live-body-right{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.consult{
+  padding: 30rpx;
+}
+.newList .list-itme{
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 0;
+}
+.newList .list-left{
+  margin-right: 20rpx;
+}
+.newList .list-left image{
+  width: 142rpx;
+  height: 142rpx;
+}
+.list-title{
+   color: #333333;
+   font-size: 32rpx;
+   font-weight: 500;
+}
+.list-center{
+  color: #C8C8C8;
+  font-size: 22rpx;
+  font-weight: 500;
+  margin: 10rpx 0;
+}
+.list-more{
+  display: flex;
+  justify-content: space-between;
+  color: #666666;
+  font-size: 22rpx;
+}
+.list-more .van-icon {
+  margin-right: 10rpx;
+}

@@ -1,0 +1,142 @@
+<wxs module="filters" src="../../../../utils/filters.wxs"></wxs>
+<view class="orderInfor">
+    <!-- 待付款 -->
+    <view class="orderInforList" wx:if="{{orderdetails.status==0}}">
+        <view class="pendPaymentName">等待买家付款</view>
+        <!-- <view class="pendPaymentTime">剩余时间21小时20分钟自动关闭</view> -->
+    </view>
+    <!-- 待发货，待收货 -->
+    <view class="orderInforList" wx:if="{{orderdetails.status==2}}">
+        <view class="pendPaymentName">卖家已发货</view>
+        <view class="pendPaymentTime">剩10天后订单将会自动确认收货</view>
+    </view>
+    <!-- 完成 -->
+    <view class="orderInforList" wx:if="{{orderdetails.status==6}}">
+        <view class="pendPaymentName">交易完成</view>
+    </view>
+    <!-- <view class="orderInforList">
+        <view class="pendPaymentName">[无锡市]快件有【江苏南京航空部】扫描发往【重庆转运】，由于疫情防控和交通管制的影响</view>
+    </view> -->
+    <!-- 用户信息 -->
+    <view class="orderInforList">
+        <view class="userInfor">
+            {{orderdetails.userName}}
+            <text class="tel">{{orderdetails.phoneInfo}}</text>
+        </view>
+        <view class="userInforAddress">{{orderdetails.address ? orderdetails.address:'' }}</view>
+    </view>
+</view>
+<view class="myorderList">
+    <view class="shopName clearfix">
+        <image class="shopImg fl" src="{{orderdetails.seller.headImg}}" />
+        {{orderdetails.seller.shopName}}
+    </view>
+    <view class="commodityBox">
+        <block wx:for="{{orderdetails.goods}}" wx:for-item="item" wx:for-index="index" wx:key='index'>
+            <view class="commodityBoxList clearfix" data-goodsid='{{item.goodsId}}' bind:tap="goGoodsDetails">
+                <image class="commodityImg fl" src="{{imgUrl}}{{item.goodsHeadImg.uploadfilepath}}{{item.goodsHeadImg.uploadfilename}}" />
+                <view class="fl commodityBoxListLeft">
+                    <view class="commodityName">{{item.goodsTitle}}</view>
+                    <view class="commodityProduct">
+                        <text class="commodityProductName">{{item.goodsLabel}}</text>
+                    </view>
+                    <view class="commodityMoney">
+                        ￥{{item.goodsNowPrice}}
+                        <text class="fr commodityNum">x{{item.goodsNum}}</text>
+                    </view>
+                    <view catchtap="returnMoeny" data-type="Single" data-skuid="{{item.id}}" data-status="{{item.state}}" wx:if="{{ item.state == 1||item.state == 2||item.state == 3 ||item.state==4}}" class="refund-btn">
+                        申请退款
+                    </view>
+                    <view class="fr myorderListBtn myorderListPaytxt color_lv" wx:if="{{item.state==8}}">
+                        已退款
+                    </view>
+                    <view class="fr myorderListBtn myorderListPaytx color_lvt" wx:if="{{item.state==9}}">
+                        退款失败
+                    </view>
+                    <view class="fr myorderListBtn myorderListPaytxt color_lv " wx:if="{{item.state==7}}">
+                        退款中
+                    </view>
+                    <view class="fr myorderListBtn myorderListPaytxt color_lv" wx:if="{{item.state==10}}">
+                        等待审核
+                    </view>
+                    <view class="refund-btn" catchtap="goOverInfo" data-skuid="{{item.id}}" wx:if="{{item.state==11}}">
+                        填写单号
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="myorderListWeb">
+        <view class="myorderListWebList">
+            备注
+            <text class="fr">{{orderdetails.remarks?orderdetails.remarks:'无'}}</text>
+        </view>
+        <view class="myorderListWebList">
+            快递费
+            <text class="fr">￥{{orderdetails.freight?orderdetails.freight:'0'}}</text>
+        </view>
+        <!-- <view class="myorderListWebList">
+            积分
+            <text class="fr">-￥{{orderdetails.integral?orderdetails.integral:'0'}}</text>
+        </view> -->
+        <view class="myorderListWebList">
+            优惠券
+            <!-- <text class="myorderListWebListYhM">满</text>
+            <text class="myorderListWebListYhMj">满减</text> -->
+            <text class="fr">￥{{filters.toFix(orderdetails.discountPrice)}}</text>
+        </view>
+        <view class="myorderListWebTxt">
+            共{{orderdetails.totalGoodsNum}}件商品 实付款￥{{filters.toFix(orderdetails.payMoney)}}
+        </view>
+    </view>
+</view>
+<view class="myorderBottom">
+    <view class="myorderBottomList">
+        订单编号
+        <text class="fr">{{orderdetails.orderNum}}</text>
+    </view>
+    <view class="myorderBottomList">
+        创建时间
+        <text class="fr">{{orderdetails.createDate}}</text>
+    </view>
+    <view class="myorderBottomList" wx:if="{{orderdetails.status!=0 && orderdetails.status!=10}}">
+        物流编号
+        <text class="fr copyWl" wx:if="{{orderdetails.waybillNum}}" data-waybillnum="{{orderdetails.waybillNum}}" bind:tap="reCopy">
+            复制
+        </text>
+        <text class="fr">{{orderdetails.waybillNum?orderdetails.waybillNum:'无'}}</text>
+    </view>
+    <view class="myorderBottomList" wx:if="{{orderdetails.type !== 0&& orderdetails.statusText == '已付款'}}">
+        消费码
+        <view class="erweima">
+            <canvas canvas-id="myQrcode"></canvas>
+        </view>
+    </view>
+</view>
+<block wx:if="{{orderdetails.status==0||orderdetails.status==3||orderdetails.status==5||orderdetails.status==4||orderdetails.status==15}}">
+    <view class="operatingBtnBox">
+        <view class="myorderBottomBtn fr">
+            <view class="fl orderButton" wx:if="{{orderdetails.status==0}}" data-ordernum='{{orderdetails.id}}' data-istag='qx' bind:tap="cancelOrder">
+                取消订单
+            </view>
+            <view class="fl orderButton orderPayButton" wx:if="{{orderdetails.status==0}}" data-ordernum='{{orderdetails.id}}' bindtap='getUnionpay'>
+                付款
+            </view>
+            <view class="fl orderButton orderPayButton" wx:if="{{orderdetails.status==3 || orderdetails.status==4}}" data-ordernum='{{orderdetails.id}}' data-istag='qrsh' bind:tap="cancelOrder">
+                确认收货
+            </view>
+            <view class="fl orderButton orderPayButton" wx:if="{{orderdetails.status==5}}" data-ordernum='{{orderdetails.id}}' bind:tap="goEvaluation">
+                评价
+            </view>
+            <view class="fl orderButton orderPayButton" wx:if="{{orderdetails.status==5 ||orderdetails.status==15}}" data-ordernum='{{orderdetails.id}}' data-istag='del' bind:tap="cancelOrder">
+                删除订单
+            </view>
+            <!-- <view class="fl orderButton " wx:if="{{orderdetails.status==3||orderdetails.status==2||orderdetails.status==1}}" data-orderid='{{orderdetails.id}}' bind:tap="goRefund">申请退款</view> -->
+            <!-- <view class="fl orderButton " wx:if="{{orderdetails.status==5}}" data-orderid='{{orderdetails.id}}' bind:tap="goRefund">申请售后</view> -->
+            <view class="fl orderButton " wx:if="{{orderdetails.status==4}}">查看物流</view>
+            <!-- <view class="fl ordertxt " wx:if="{{orderdetails.status==7}}">退款中</view>
+        <view class="fl ordertxt " wx:if="{{orderdetails.status==8}}">已退款</view>
+        <view class="fl ordertxt " wx:if="{{orderdetails.status==9}}">退款失败</view> -->
+        </view>
+    </view>
+</block>

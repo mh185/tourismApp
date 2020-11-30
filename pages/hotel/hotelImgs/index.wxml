@@ -1,0 +1,22 @@
+<!--pages/hotel/hotelImgs/index.wxml-->
+<view>
+  <view class="top" bindtap="back">
+    <view class="hotelTop">
+      <van-icon class="hotelTopLeft" name="arrow-left" />
+      <text class="head_title">酒店相册</text>
+    </view>
+  </view>
+   <view class="content">
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+    <image class="content_list" src="../../../images/hotel/hotelDetails_top.png" />
+
+
+   </view>
+  </view>

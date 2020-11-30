@@ -1,0 +1,35 @@
+<!--pages/enterTheShop/index.wxml-->
+<view class="store clearfix" wx:if="{{sellerInfor!=null}}">
+    <!-- <image class="storeImg fl" src="{{imgUrl}}{{sellerInfor.shopImg.uploadfilepath}}{{sellerInfor.shopImg.uploadfilename}}" ></image> -->
+    <image class="storeImg fl" src="{{sellerInfor.headImg}}" ></image>
+    <view class="fl storeBox">
+        <view class="storeBoxName">{{sellerInfor.shopName}}</view>
+    </view>
+   
+    <view class="fr businessBoxBtn" bindtap='collect' wx:if='{{!sellerInfor.collection}}'>+关注</view>
+     <view class="fr businessBoxBtn" bindtap='cancelCollect' wx:else>已关注</view>
+</view>
+<view class="filter">
+    <text bindtap='recomOrGoods' data-type='0' class="{{recomOrGoods==0?'on':''}}">商品</text>
+    <text bindtap='recomOrGoods' data-type='1' class="{{recomOrGoods==1?'on':''}}">推荐</text>
+</view>
+    <view class='content' wx:if="{{shopList!=null&&shopList.length>0}}">
+        <view class="contentList" wx:for="{{shopList}}" bindtap='shopDetails' data-id="{{item.id}}">
+            <image class="contentListShopListImg" src="{{imgUrl}}{{item.headImg.uploadfilepath}}{{item.headImg.uploadfilename}}" mode="widthFix"></image>
+            <view class="contentListShopName">{{item.name}}</view>
+            <view class="contentListShopNumber"><text>价格:</text>￥{{item.nowPrice}}<text class="fr">销量:{{item.sale||0}}</text></view>
+        </view>  
+    </view>
+     <view class="noData" wx:else>
+          <view class="noDataTu"><image class="noDataTuImg" src="../../images/noData.png" mode="widthFix"></image></view>
+          <view class="noDataTxtx">暂无商品</view>
+     </view>  
+    <view class="loginPrompt" wx:if="{{isloginPrompt}}">
+    <view class='loginPromptBox'>
+        <view class="loginPromptBoxTit">您还未登录，请先登录</view>
+        <view class='loginPromptBoxBtn clearfix'>
+            <button class="loginPromptBoxBtnLeft fl" bindtap='hide'>取消</button>
+            <button class="loginPromptBoxBtnRight fl" open-type="getUserInfo" bindgetuserinfo="getPerson">去登陆</button>
+        </view>
+    </view>
+</view>

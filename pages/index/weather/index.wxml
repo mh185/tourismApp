@@ -1,0 +1,39 @@
+<!--pages/index/weather/index.wxml-->
+<image wx:if='{{show}}' class="backGround" src="{{iconUrl}}/tianqierjibt.png"></image>
+<image wx:else class="backGround" src="{{iconUrl}}/tianqierji.png"></image>
+<view class="box">
+  <van-nav-bar 
+    fixed='{{true}}' 
+    placeholder='{{true}}' 
+    border='{{false}}' 
+    custom-class='back_class' 
+    bind:click-left="onClickLeft"
+    >
+    <view slot="left" class="nav_left">
+      <van-icon name="arrow-left" />
+      <text class="nav_left_text">天气</text>
+    </view>
+  </van-nav-bar>
+  <view class="yunceng_box"><image class="yunceng" src="{{iconUrl}}/yunceng.png"/></view>
+  <view class="upper_box">
+    <view class="head">
+      <view class="head_temperature">{{temperature}}</view>
+      <view class="head_weather">{{weather}}</view>
+    </view>
+    <view class="weatherList">
+      <!-- <view wx:for="{{weatherList}}" wx:key="key"> -->
+      <view class="weather_list_item" wx:for="{{weatherList}}" wx:key="key">
+        <text>{{item.date}}</text>
+        <text>{{item.week}}</text>
+        <view class="title_box">
+          <image class="item_img" src="{{item.max_img}}"/>
+          <text>{{item.min_temperature}}/{{item.max_temperature}}</text>
+          <view class="state_text">{{item.min_scene!=item.max_scene?item.min_scene+'转'+item.max_scene:item.min_scene}}</view>
+          <!-- <image src="{{host}}{{icon}}"/> -->
+          <!-- <text class="quality_text">空气质量：优</text> -->
+          <!-- <image class="item_img" src="{{host}}{{icon}}"/> -->
+        </view> 
+      </view>
+    </view>
+  </view>
+</view>

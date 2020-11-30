@@ -1,0 +1,31 @@
+<!-- pages/enterfoodShop/foodDetail/index.wxml -->
+<view class="food_container">
+    <view class="p_left">
+        <view class="meal_name">{{foodInfo.name}}</view>
+        <!-- 销量 -->
+        <view class="sales_num">
+            销量 :
+            <text>{{foodInfo.mouthNum}}</text>
+            份
+        </view>
+        <view class="imgs">
+            <scroll-view scroll-x="{{true}}">
+                <swiper>
+                    <swiper-item wx:for="{{foodInfo.imgs}}" wx:for-item="imgs">
+                        <image src="{{imgUrl}}{{imgs.uploadfilepath}}{{imgs.uploadfilename}}"></image>
+                    </swiper-item>
+                </swiper>
+            </scroll-view>
+        </view>
+        <view class="meal_name">主菜</view>
+    </view>
+    <view class="menuDetail">
+            <rich-text nodes="{{foodInfo.body}}"></rich-text>
+        </view>
+    <view class="level"></view>
+    <!-- 底部工具栏 -->
+    <view class="bottom_tool">
+        <view class="total_price">￥{{price}}</view>
+        <view class="buyBtn" bindtap="buyBtn">立即购买</view>
+    </view>
+</view>

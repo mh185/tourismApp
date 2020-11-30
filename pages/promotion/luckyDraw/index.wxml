@@ -1,0 +1,159 @@
+<!--pages/promotion/luckyDraw/index.wxml-->
+<!-- <text>pages/promotion/luckyDraw/index.wxml</text> -->
+<view class="lucky-wrap">
+
+    <view class="relative">
+        <image class="showMsg" src="../../../images/luckyBg.png"></image>
+        <image class="showText" src="../../../images/showText.png"></image>
+    </view>
+
+    <view class="topbar">
+        <view class="topbar-score">可用积分：{{ score }}</view>
+        <view class="topbar-record" bindtap="showRecord">中奖记录</view>
+    </view>
+
+    <view class="lucky-roulette">
+        
+        <view class="head-text">
+            <image class="head-text__img" src="../../../images/lucky-head-text.png"></image>
+        </view>
+
+        <swiper class="roll-list" interval="{{ swiper.interval }}" duration="{{ swiper.duration }}" vertical="{{ swiper.vertical }}" circular="{{ swiper.circular }}" autoplay="{{ swiper.autoplay }}">
+            <swiper-item wx:for="{{ rollList }}" wx:key="index">
+                <view class="roll-list__item">{{ item }}</view>
+            </swiper-item>
+        </swiper>
+
+        <view class="roulette">
+
+            <view class="roulette-row">
+                <!-- 1-4 -->
+                <view wx:for="{{ luckList }}" wx:if="{{ index <= 3 }}" wx:key="index" class="lucky_item {{ item.active ? 'lucky_item--active' : '' }}">
+                    <view class="goods">
+                        <image class="goods-img" mode="heightFix" src="{{ item.luckImg }}"></image>
+                        <view class="goods-name">{{ item.luckName }}</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="roulette-row">
+
+                <view class="roulette-column roulette-column--reverse">
+                    <!-- 11-12 -->
+                    <view wx:for="{{ luckList }}" wx:if="{{ index === 10 || index === 11 }}" wx:key="index" class="lucky_item {{ item.active ? 'lucky_item--active' : '' }}">
+                        <view class="goods">
+                            <image class="goods-img" mode="heightFix" src="{{ item.luckImg }}"></image>
+                            <view class="goods-name">{{ item.luckName }}</view>
+                        </view>
+                    </view>
+                </view>
+
+                <view class="roulette-button" bindtap="startLuck">
+                    <image class="start" src="../../../images/start.png"></image>
+                    <text class="surplus">剩余次数：{{ surplus }}</text>
+                </view>
+                
+                <view class="roulette-column">
+                    <!-- 5-6 -->
+                    <view wx:for="{{ luckList }}" wx:if="{{ index === 4 || index === 5 }}" wx:key="index" class="lucky_item {{ item.active ? 'lucky_item--active' : '' }}">
+                        <view class="goods">
+                            <image class="goods-img" mode="heightFix" src="{{ item.luckImg }}"></image>
+                            <view class="goods-name">{{ item.luckName }}</view>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+
+            <view class="roulette-row roulette-row--reverse">
+                <!-- 7-10 -->
+                <view wx:for="{{ luckList }}" wx:if="{{ index >= 6 && index <= 9 }}" wx:key="index" class="lucky_item {{ item.active ? 'lucky_item--active' : '' }}">
+                    <view class="goods">
+                        <image class="goods-img" mode="heightFix" src="{{ item.luckImg }}"></image>
+                        <view class="goods-name">{{ item.luckName }}</view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="foot-text">
+            <image class="foot-text__img" bindtap="showRule" src="../../../images/lucky-foot-text.png"></image>
+        </view>
+
+    </view>
+
+    <view class="popover {{ isShowPopover ? 'popover--show' : '' }}">
+        <view class="popover-bg" bindtap="hidePopover"></view>
+        <view class="popover-wrap">
+            <view class="popover-head">
+                <view class="title">{{ popoverTitle }}</view>
+                <image class="close" bindtap="hidePopover" src="../../../images/close2.png"></image>
+            </view>
+            <scroll-view scroll-y="true" class="popover-content">
+                <view class="record-content" wx:if="{{ popoverType === 'record' }}">
+                    <view class="record-list" wx:for="{{ recordList }}" wx:key="index">
+                        <view class="list-item">
+                            <view class="list-item__name">您的奖品</view>
+                            <view class="list-item__value">{{ item.prizeName }}</view>
+                        </view>
+                        <view class="list-item">
+                            <view class="list-item__name">中奖时间</view>
+                            <view class="list-item__value">{{ item.formatTime }}</view>
+                        </view>
+                        <view class="list-item">
+                            <view class="list-item__name">状态</view>
+                            <view class="list-item__value">{{ item.state === '0' ? '未兑奖' : '已兑奖' }}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="rule-content" wx:if="{{ popoverType === 'rule' }}">
+                    <view class="part">1、抽奖总则</view>
+                    <view class="part">
+                        <view>1.1. 详细规则</view>
+                        <view class="indent">1）发起抽奖：绑定手机的玩家、主播皆可发起互动抽奖。发起时需在官方给定的范围内选择抽奖的奖励和条件。</view>
+                        <view class="indent">2）参与抽奖：任何用户，只要满足发起者设置的抽奖规则，皆可参与抽奖。（同一用户每个抽奖仅可参与1次）</view>
+                        <view class="indent">3）开奖规则：根据发起者设置的规则，满足开奖条件后后即从已参与的用户中选出中奖用户。 中奖用户收到“中奖”提示后，请主动联系主播要求发奖。</view>
+                        <view class="indent">4）如发起者未履行发奖义务，记录主播房间号和详细的中奖记录后反馈至在线客服，官方将会进行提醒或者处罚。</view>
+                        <view class="indent">5）若参与人数只有1人，本场抽奖将会被流局。</view>
+                    </view>
+                    <view class="part">1.2. 抽奖活动由玩家和主播发起。除氧秀直播平台限定的既有方式外，发起者不得自定义中奖规则和任何领奖附加条件，此类附加规则和条件一律无效。</view>
+                    <view class="part">1.3. 发起者仅可在氧秀官方给定的范围内发起抽奖，不得自定义中奖规则和任何领奖附加条件，一经发现，按违规操作处理。</view>
+                    <view class="part">1.4. 抽奖规则及本协议唯一解释权归氧秀直播所有。发起者如有疑议，应立即停止使用互动抽奖；如继续使用互动抽奖，视为同意。</view>
+                    <view class="part">1.5. 互动抽奖仅用于主播和玩家之间的互动，增加直播间的玩法。如官方发现有蓄意利用互动抽奖组织涉嫌赌博、传销等其他违法行为。氧秀直播将视情况向有关部门举报或自行根据互动抽奖规范处理。</view>
+                    <view class="part">2、发起抽奖</view>
+                    <view class="part">2.1. 发起者对奖品的设置应当符合法律规定、氧秀直播规范，不得以虚假或故意误导用户方式设置奖品。奖品需真实、准确，对于任何非法、违背道德的奖品，一经发现，按违规操作处理。</view>
+                    <view class="part">2.2. 抽奖奖品数量无上限，一经发起不可修改。如有疑问，请联系客服。</view>
+                    <view class="part">2.3. 每次抽奖设置的参与人数不得少于2人</view>
+                    <view class="part">
+                        <view>2.4. 发起者可设置参与抽奖的条件，包括：</view>
+                        <view class="indent">1）奖品类型：发起可以从礼物栏里挑选礼物让粉丝赠送，礼物数量不得小于1个。</view>
+                        <view class="indent">2）参与方式：主播可以选择用户通过口令或礼物参与抽奖，两种方式不可同时选择。</view>
+                        <view class="indent">3）口令抽奖：发起者定义发言内容，限制12个字，注意文明用语，部分敏感词汇会屏蔽。</view>
+                        <view class="indent">4）礼物抽奖：发起定义参与的礼物及数量，礼物数量不得小于1个。</view>
+                    </view>
+                    <view class="part">2.5. 所有符合条件的用户都可以参加活动，发起者不得额外收取任何费用，如有违规，用户可向客服进行举报。</view>
+                    <view class="part">3、兑奖规则</view>
+                    <view class="part">3.1. 用户参加抽奖活动，如遇到奖励为氧币和礼物等无需提供联系方式时。奖品将在中奖的15分钟内自动发放至中奖用户的个人账户。</view>
+                    <view class="part">3.2. 用户参加抽奖活动，如遇到需要提供联系方式、个人信息时。应在中奖的3日内及时将信息发送给发起者，并保持满足抽奖条件不变，如未在期限内提供相关信息，发起者有权视用户放弃中奖资格。</view>
+                    <view class="part">3.3. 发起者应当保证中奖用户提交的相关个人信息的安全，严禁外泄。如出现泄露个人隐私等侵权行为，相关责任由发起者自行承担。</view>
+                    <view class="part">3.4. 发起者应在收到中奖用户相关信息的7日内按照中奖用户填写的信息进行奖品发放。如使用物流寄送发生纠纷，由发起者与用户自行解决。</view>
+                    <view class="part">4、违规操作及处理</view>
+                    <view class="part">
+                        <view>4.1. 如发起者实施下述行为，氧秀直播有权根据违规情况对发起者进行警告、暂停使用、封房、扣除氧币或氧豆、收回帐户等处理：</view>
+                        <view class="indent">1) 主播设置的奖品不符合本协议规定的奖品规则或氧秀直播其他规范、规则；</view>
+                        <view class="indent">2) 主播实际兑奖不符合本协议规定的兑奖规则或氧秀直播其他规范、规则；</view>
+                        <view class="indent">3) 主播对奖品领取规则描述不清或擅自收取中奖用户费用；</view>
+                        <view class="indent">4) 其他违反相关法律法规、氧秀直播其他规范、规则的行为。</view>
+                    </view>
+                    <view class="part">4.2. 如用户以任何不正当手段（包括但不限于注册多个账号、使用外挂等）行为参与抽奖活动，氧秀直播一经发现可采取警告、暂停使用、禁言、收回帐户等处理。</view>
+                    <view class="part">5、其他</view>
+                    <view class="part">5.1. 本协议为《氧吧用户协议》不可分割的一部分，本协议未尽之事宜，适用《氧吧用户协议》及氧秀直播平台其他协议的相关约定。</view>
+                    <view class="part">5.2. 如发起者与用户之间就抽奖规则、中奖条件、奖品设置及领取存在争议时，应自行解决，与氧秀直播无关。如相关争议导致氧秀直播遭受损失（包括但不限于自身的直接经济损失、商誉损失及对外支付的赔偿金、和解款、律师费、诉讼费等间接经济损失），氧秀直播有权就所遭受的损失向发起者或用户追偿。</view>
+                    <view class="part">5.3. 本协议适用于管理参与氧秀直播平台互动抽奖功能的用户和行为。</view>
+                    <view class="part">5.4. 本协议于主播或用户首次使用互动抽奖活动之时起生效。</view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

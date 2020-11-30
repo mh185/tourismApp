@@ -1,0 +1,56 @@
+/* pages/more/index.wxss */
+Page {
+  background: #FFFCF5;
+}
+.nav_left{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 500;
+  font-family: Source Han Serif CN;
+
+}
+.nav_left .nav_left_text{
+  margin-left:24rpx;
+}
+.top {
+  padding: 72rpx 32rpx 0 30rpx;
+}
+.top .top_title {
+  font-size: 32rpx;
+  font-family: Source Han Serif CN, Source Han Serif CN-Heavy;
+  font-weight: 500;
+  text-align: left;
+  color: #1d1d1d;
+}
+.top .top_title image {
+  width: 6rpx;
+  height: 30rpx;
+  border-radius: 0px 6rpx 6rpx 0px;
+  margin-right: 24rpx;
+}
+.top_list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-items: flex-start;
+  margin-top: 12rpx;
+}
+.consultingService_item{
+  width: 20%;
+  /* height: 60rpx; */
+  /* line-height: 60rpx; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.consultingService_item image {
+  width: 84rpx;
+  height: 84rpx;
+  margin-top: 38rpx;
+}
+.consultingService_item text {
+  text-align: center;
+  font-size: 22rpx;
+  color: #222222;
+  margin-top: 12rpx;
+}

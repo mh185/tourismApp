@@ -1,0 +1,129 @@
+/* pages/user/myOrder/Logistics/index.wxss */
+.myorderList{
+    width: 100%;
+    padding: 20rpx 20rpx;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+.shopName{
+ width: 100%;  
+ font-size: 32rpx; 
+ color: #515151;
+ margin-bottom: 20rpx;
+}
+.shopImg{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+.commodityBox{
+    width: 100%;
+    border-bottom: 1px solid #f6f6f6;
+}
+.commodityBoxList{
+    width: 100%;
+    padding: 20rpx 0;
+}
+.commodityImg{
+    width: 160rpx;
+    height: 160rpx;
+    display: block;
+}
+.commodityBoxListLeft{
+    width: calc(100% - 180rpx);
+    margin-left: 20rpx;
+    padding: 15rpx 0;
+}
+.commodityName{
+    font-size: 32rpx;
+    color: #2c2c2c;
+    font-weight: 600;
+}
+.commodityProduct{
+    font-size: 24rpx;
+    color: #cdcdcd;
+    margin: 10rpx 0;
+}
+.commodityMoney{
+    font-size: 32rpx;
+    color: #2c2c2c;
+    font-weight: 600;
+}
+.myorderListWeb{
+    padding-top: 20rpx;
+    text-align: right;
+  
+}
+.myorderListWebTxt{
+    font-size: 24rpx;
+    color: #2c2c2c;
+    font-weight: 600;
+    margin-bottom:10rpx;
+}
+.myorderListBtn{
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    color: #2c2c2c;
+    border-radius: 60rpx;
+    background: #dbdbdb;
+    width: 160rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+.myorderListWebTxt .numebr{
+    font-size: 24rpx;
+    color:#dbdbdb;
+    margin-left: 10rpx;
+}
+.LogisticsInfor{
+    width: 100%;
+    padding: 40rpx 20rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+.LogisticsInforBox{
+    width: 100%;
+    border-left: 1px solid #f5f5f5;
+}
+.LogisticsInforBoxList{
+    width: 100%;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+    padding-bottom: 40rpx;
+    position: relative;
+}
+.LogisticsInforBoxList:last-child{
+    padding-bottom: 0rpx;
+}
+.carryOut{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: -20rpx;
+}
+.LogisticsInforBoxListrightName{
+font-size: 28rpx;
+color: #707070;
+font-weight: bold;
+margin-bottom: 10rpx;
+}
+.LogisticsInforBoxListrightName.on{
+    color: #2c2c2c;
+}
+.LogisticsInforBoxListrightTime{
+    font-size: 24rpx;
+color: #dbdbdb;
+}
+.point{
+    display: block;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background: #cdcdcd;
+    border: 10rpx solid #fff;
+    position: absolute;
+    left: -16rpx;
+
+}

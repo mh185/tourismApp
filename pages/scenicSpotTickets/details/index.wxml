@@ -1,0 +1,46 @@
+<!--pages/scenicSpotTickets/details/index.wxml-->
+<view class="bj">
+  <view class="head">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}">
+      <swiper-item>
+        <view class="swiper-item">
+          <image src="../../../images/index/headbg.png" />
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item">
+          <image src="../../../images/index/headbg.png" />
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item">
+          <image src="../../../images/index/headbg.png" />
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="introduce">
+    <van-row>
+      <van-col span="12" class="introduce-title">白莲洞风景区</van-col>
+      <van-col span="12" class="col-right">分享 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" /></van-col>
+    </van-row>
+    <van-row>
+        <van-col span="24">开放时间：12:00-18:00</van-col>
+    </van-row>
+    <van-row>
+        <van-col span="12">18898665655</van-col>
+        <van-col span="12" class="col-right">咨询 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" /></van-col>
+    </van-row>
+    <van-row>
+        <van-col span="12">广西壮族自治区柳州市柳石路407号</van-col>
+        <van-col span="12" class="col-right">导览 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" /></van-col>
+    </van-row>
+    <view>
+      为深入贯彻落实党中央、国务院关于促进文化建设和旅游发展的重大决策部署，落实2019年广西文化旅游发展大会的精神，加快。旅游发展大会的精神更多
+    </view>
+    <van-row>
+        <van-col span="24">语音介绍</van-col>
+    </van-row>
+  </view>
+ 
+</view>

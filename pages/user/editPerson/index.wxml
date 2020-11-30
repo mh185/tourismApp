@@ -1,0 +1,95 @@
+<!-- pages/user/editPerson/index.wxml -->
+<van-nav-bar 
+  fixed='{{true}}' 
+  placeholder='{{true}}' 
+  border='{{false}}' 
+  custom-class='back_class' 
+  bind:click-left="onClickLeft"
+  >
+  <view slot="left" class="nav_left">
+    <van-icon name="arrow-left" />
+    <text class="nav_left_text">个人中心</text>
+  </view>
+</van-nav-bar>
+<form bindsubmit="formSubmit">
+    <view class="editPersonBox">
+        <view class="editList ">
+            <view class="editListLeft">头像</view>
+            <view class="editListRight" bindtap="uploadImg">
+                <image wx:if="{{headImg}}" name="headImg" src="{{headImg}}" class="headImg" />
+                <image wx:if="{{!headImg}}" class="headImg fl" src="../../../images/headImg.png" mode="widthFix" />
+                <image src="../../../images/right.png" class="iconRight" />
+            </view>
+        </view>
+        <view class="editList">
+            <view class="editListLeft">昵称</view>
+            <view class="editListRight">
+                <input class="editListRightInput" name="nickName" maxlength="16" value="{{nickName}}" type="text" placeholder="请输入昵称" />
+                <image class="iconRight" src="../../../images/right.png" />
+            </view>
+        </view>
+        <view class="editList">
+            <view class="editListLeft">性别</view>
+            <view class="editListRight">
+                <picker bindchange="bindGenderChange" name="gender" value="{{gender}}" range-key="text" range="{{sex}}">
+                    <view class="picker {{!gender ? 'noInfo' : ''}}">{{gender==='1'?'男':gender==='0'?'女':'请选择性别'}}</view>
+                </picker>
+                <image class="iconRight" src="../../../images/right.png" />
+            </view>
+        </view>
+        <!-- <view class="editList">
+            <view class="editListLeft">姓名</view>
+            <view class="editListRight">
+                <input class="editListRightInput" name="realName" maxlength="16" value="{{realName}}" type="text" placeholder="请选择姓名" />
+                <image class="iconRight" src="../../../images/right.png" />
+            </view>
+        </view> -->
+        <view class="editList">
+            <view class="editListLeft">生日</view>
+            <view class="editListRight">
+                <picker mode="date" name="birthday" value="{{birthday}}" end="{{endTime}}" bindchange="bindBirthdayChange">
+                    <view name="birthday" class="picker {{!birthday ? 'noInfo' : ''}}"> {{ birthday || '请选择生日'}}</view>
+                </picker>
+                <image class="iconRight" src="../../../images/right.png" />
+            </view>
+        </view>
+        <view class="editList" bindtap="goAuth">
+            <view class="editListLeft">认证</view>
+            <view class="editListRight">
+                <span style="color:#B9B9B9">{{auth[authStatus]}}</span>
+                <!-- <input type="idcard" class="editListRightInput" name="auth" value="{{auth}}" maxlength="18" type="text" bindinput="bindIdCardInput" placeholder="请输入身份证号" /> -->
+                <image class="iconRight" src="../../../images/right.png" />
+            </view>
+        </view>
+        <view class="editList">
+            <view class="editListLeft">地区</view>
+            <view class="editListRight">
+                <input class="verifiedlistWebInput fr" disabled placeholder="请选择" value="{{address}}" focus="{{focus}}" bindtap="open" />
+                <image class="iconRight" src="../../../images/right.png" />
+            </view>
+        </view>
+        <view class="error-tips">{{idCardTips}}</view>
+    </view>
+    <view class="operatingBtnBox">
+        <button class="operatingBtn" formType="submit">保存</button>
+    </view>
+</form>
+
+<!--三级联动 -->
+<view wx:if="{{condition}}" class="citypicker">
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+        <view class="cityheader">
+            <view bindtap="open" class="city-cancel">取消</view>
+            <view bindtap="close" class="city-true">确定</view>
+        </view>
+        <picker-view-column>
+            <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
